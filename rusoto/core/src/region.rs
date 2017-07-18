@@ -40,22 +40,22 @@ pub struct ParseRegionError {
 impl Display for Region {
     fn fmt(&self, f: &mut Formatter) -> Result<(), FmtError> {
         let region_str = match *self {
-            Region::ApNortheast1 => "ap-northeast-1".to_string(),
-            Region::ApNortheast2 => "ap-northeast-2".to_string(),
-            Region::ApSouth1 => "ap-south-1".to_string(),
-            Region::ApSoutheast1 => "ap-southeast-1".to_string(),
-            Region::ApSoutheast2 => "ap-southeast-2".to_string(),
-            Region::CaCentral1 => "ca-central-1".to_string(),
-            Region::EuCentral1 => "eu-central-1".to_string(),
-            Region::EuWest1 => "eu-west-1".to_string(),
-            Region::EuWest2 => "eu-west-2".to_string(),
-            Region::SaEast1 => "sa-east-1".to_string(),
-            Region::UsEast1 => "us-east-1".to_string(),
-            Region::UsEast2 => "us-east-2".to_string(),
-            Region::UsWest1 => "us-west-1".to_string(),
-            Region::UsWest2 => "us-west-2".to_string(),
-            Region::CnNorth1 => "cn-north-1".to_string(),
-            Region::Local(ref hostname) => hostname.clone(),
+            Region::ApNortheast1 => "ap-northeast-1",
+            Region::ApNortheast2 => "ap-northeast-2",
+            Region::ApSouth1 => "ap-south-1",
+            Region::ApSoutheast1 => "ap-southeast-1",
+            Region::ApSoutheast2 => "ap-southeast-2",
+            Region::CaCentral1 => "ca-central-1",
+            Region::EuCentral1 => "eu-central-1",
+            Region::EuWest1 => "eu-west-1",
+            Region::EuWest2 => "eu-west-2",
+            Region::SaEast1 => "sa-east-1",
+            Region::UsEast1 => "us-east-1",
+            Region::UsEast2 => "us-east-2",
+            Region::UsWest1 => "us-west-1",
+            Region::UsWest2 => "us-west-2",
+            Region::CnNorth1 => "cn-north-1",
+            Region::Local(ref hostname) => &hostname,
         };
 
         write!(f, "{}", region_str)
