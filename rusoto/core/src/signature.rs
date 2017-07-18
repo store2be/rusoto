@@ -98,7 +98,12 @@ impl SignedRequest {
     pub fn scheme(&self) -> String {
         match self.scheme {
             Some(ref p) => p.to_string(),
-            None => build_scheme(&self.region)
+            None => {
+                match self.region {
+                    Region::Local(_) => "http".to_owned(),
+                    _                => "https".to_owned()
+                }
+            }
         }
     }
 
@@ -398,13 +403,6 @@ fn encode_uri_strict(uri: &str) -> String {
 fn to_hexdigest<T: AsRef<[u8]>>(t: T) -> String {
     let h = digest::digest(&digest::SHA256, t.as_ref());
     h.as_ref().to_hex().to_string()
-}
-
-fn build_scheme(region: &Region) -> String {
-    match *region {
-        Region::Local(_) => "http".to_owned(),
-        _                => "https".to_owned()
-    }
 }
 
 fn build_hostname(service: &str, region: &Region) -> String {
