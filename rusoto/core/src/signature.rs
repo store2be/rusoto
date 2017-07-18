@@ -64,7 +64,7 @@ impl SignedRequest {
     }
 
     pub fn set_endpoint_prefix(&mut self, endpoint_prefix: String) {
-        self.hostname = Some(build_hostname(&endpoint_prefix, self.region));
+        self.hostname = Some(build_hostname(&endpoint_prefix, &self.region));
     }
 
     pub fn set_payload(&mut self, payload: Option<Vec<u8>>) {
@@ -98,14 +98,14 @@ impl SignedRequest {
     pub fn scheme(&self) -> String {
         match self.scheme {
             Some(ref p) => p.to_string(),
-            None => build_scheme(self.region)
+            None => build_scheme(&self.region)
         }
     }
 
     pub fn hostname(&self) -> String {
         match self.hostname {
             Some(ref h) => h.to_string(),
-            None => build_hostname(&self.service, self.region),
+            None => build_hostname(&self.service, &self.region),
         }
     }
 
@@ -146,7 +146,7 @@ impl SignedRequest {
         debug!("Creating request to send to AWS.");
         let hostname = match self.hostname {
             Some(ref h) => h.to_string(),
-            None => build_hostname(&self.service, self.region),
+            None => build_hostname(&self.service, &self.region),
         };
 
         // Gotta remove and re-add headers since by default they append the value.  If we're following
@@ -400,34 +400,34 @@ fn to_hexdigest<T: AsRef<[u8]>>(t: T) -> String {
     h.as_ref().to_hex().to_string()
 }
 
-fn build_scheme(region: Region) -> String {
-    match region {
+fn build_scheme(region: &Region) -> String {
+    match *region {
         Region::Local(_) => "http".to_owned(),
         _                => "https".to_owned()
     }
 }
 
-fn build_hostname(service: &str, region: Region) -> String {
+fn build_hostname(service: &str, region: &Region) -> String {
     //iam has only 1 endpoint, other services have region-based endpoints
     match service {
         "iam" => {
-            match region {
-                Region::Local(hostname) => hostname.to_owned(),
+            match *region {
+                Region::Local(ref hostname) => hostname.to_owned(),
                 Region::CnNorth1 => format!("{}.{}.amazonaws.com.cn", service, region),
                 _ => format!("{}.amazonaws.com", service),
             }
         }
         "s3" => {
-            match region {
-                Region::Local(hostname) => hostname.to_owned(),
+            match *region {
+                Region::Local(ref hostname) => hostname.to_owned(),
                 Region::UsEast1 => "s3.amazonaws.com".to_string(),
                 Region::CnNorth1 => format!("s3.{}.amazonaws.com.cn", region),
                 _ => format!("s3-{}.amazonaws.com", region),
             }
         }
         _ => {
-            match region {
-                Region::Local(hostname) => hostname.to_owned(),
+            match *region {
+                Region::Local(ref hostname) => hostname.to_owned(),
                 Region::CnNorth1 => format!("{}.{}.amazonaws.com.cn", service, region),
                 _ => format!("{}.{}.amazonaws.com", service, region),
             }
