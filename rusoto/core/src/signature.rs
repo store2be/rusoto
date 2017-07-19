@@ -444,13 +444,13 @@ mod tests {
 
     #[test]
     fn get_hostname_none_present() {
-        let request = SignedRequest::new("POST", "sqs", Region::UsEast1, "/");
+        let request = SignedRequest::new("POST", "sqs", &Region::UsEast1, "/");
         assert_eq!("sqs.us-east-1.amazonaws.com", request.hostname());
     }
 
     #[test]
     fn get_hostname_happy_path() {
-        let mut request = SignedRequest::new("POST", "sqs", Region::UsEast1, "/");
+        let mut request = SignedRequest::new("POST", "sqs", &Region::UsEast1, "/");
         request.set_hostname(Some("test-hostname".to_string()));
         assert_eq!("test-hostname", request.hostname());
     }
@@ -460,7 +460,7 @@ mod tests {
                                                            "foo");
         let mut request = SignedRequest::new("GET",
                                              "s3",
-                                             Region::UsEast1,
+                                             &Region::UsEast1,
                                              "/path with spaces: the sequel");
         request.sign(provider.credentials().as_ref().unwrap());
         assert_eq!("/path%20with%20spaces%3A%20the%20sequel",
@@ -489,7 +489,7 @@ mod tests {
     fn query_percent_encoded() {
         let mut request = SignedRequest::new("GET",
                                              "s3",
-                                             Region::UsEast1,
+                                             &Region::UsEast1,
                                              "/path with spaces: the sequel++");
         request.add_param("key:with@funny&characters",
                           "value with/funny%characters/Рускии");
