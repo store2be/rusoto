@@ -7105,7 +7105,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn allocate_static_ip(&self,
                           input: &AllocateStaticIpRequest)
                           -> Result<AllocateStaticIpResult, AllocateStaticIpError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.AllocateStaticIp");
@@ -7132,7 +7132,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn attach_static_ip(&self,
                         input: &AttachStaticIpRequest)
                         -> Result<AttachStaticIpResult, AttachStaticIpError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.AttachStaticIp");
@@ -7160,7 +7160,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
         (&self,
          input: &CloseInstancePublicPortsRequest)
          -> Result<CloseInstancePublicPortsResult, CloseInstancePublicPortsError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -7185,7 +7185,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn create_domain(&self,
                      input: &CreateDomainRequest)
                      -> Result<CreateDomainResult, CreateDomainError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.CreateDomain");
@@ -7211,7 +7211,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn create_domain_entry(&self,
                            input: &CreateDomainEntryRequest)
                            -> Result<CreateDomainEntryResult, CreateDomainEntryError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.CreateDomainEntry");
@@ -7239,7 +7239,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
         (&self,
          input: &CreateInstanceSnapshotRequest)
          -> Result<CreateInstanceSnapshotResult, CreateInstanceSnapshotError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.CreateInstanceSnapshot");
@@ -7266,7 +7266,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn create_instances(&self,
                         input: &CreateInstancesRequest)
                         -> Result<CreateInstancesResult, CreateInstancesError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.CreateInstances");
@@ -7294,7 +7294,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
         (&self,
          input: &CreateInstancesFromSnapshotRequest)
          -> Result<CreateInstancesFromSnapshotResult, CreateInstancesFromSnapshotError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -7319,7 +7319,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn create_key_pair(&self,
                        input: &CreateKeyPairRequest)
                        -> Result<CreateKeyPairResult, CreateKeyPairError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.CreateKeyPair");
@@ -7345,7 +7345,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn delete_domain(&self,
                      input: &DeleteDomainRequest)
                      -> Result<DeleteDomainResult, DeleteDomainError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.DeleteDomain");
@@ -7371,7 +7371,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn delete_domain_entry(&self,
                            input: &DeleteDomainEntryRequest)
                            -> Result<DeleteDomainEntryResult, DeleteDomainEntryError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.DeleteDomainEntry");
@@ -7398,7 +7398,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn delete_instance(&self,
                        input: &DeleteInstanceRequest)
                        -> Result<DeleteInstanceResult, DeleteInstanceError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.DeleteInstance");
@@ -7426,7 +7426,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
         (&self,
          input: &DeleteInstanceSnapshotRequest)
          -> Result<DeleteInstanceSnapshotResult, DeleteInstanceSnapshotError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.DeleteInstanceSnapshot");
@@ -7453,7 +7453,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn delete_key_pair(&self,
                        input: &DeleteKeyPairRequest)
                        -> Result<DeleteKeyPairResult, DeleteKeyPairError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.DeleteKeyPair");
@@ -7479,7 +7479,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn detach_static_ip(&self,
                         input: &DetachStaticIpRequest)
                         -> Result<DetachStaticIpResult, DetachStaticIpError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.DetachStaticIp");
@@ -7506,7 +7506,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn download_default_key_pair
         (&self)
          -> Result<DownloadDefaultKeyPairResult, DownloadDefaultKeyPairError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.DownloadDefaultKeyPair");
@@ -7532,7 +7532,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn get_active_names(&self,
                         input: &GetActiveNamesRequest)
                         -> Result<GetActiveNamesResult, GetActiveNamesError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.GetActiveNames");
@@ -7559,7 +7559,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn get_blueprints(&self,
                       input: &GetBlueprintsRequest)
                       -> Result<GetBlueprintsResult, GetBlueprintsError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.GetBlueprints");
@@ -7583,7 +7583,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
 
     #[doc="<p>Returns the list of bundles that are available for purchase. A bundle describes the specs for your virtual private server (or <i>instance</i>).</p>"]
     fn get_bundles(&self, input: &GetBundlesRequest) -> Result<GetBundlesResult, GetBundlesError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.GetBundles");
@@ -7605,7 +7605,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
 
     #[doc="<p>Returns information about a specific domain recordset.</p>"]
     fn get_domain(&self, input: &GetDomainRequest) -> Result<GetDomainResult, GetDomainError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.GetDomain");
@@ -7629,7 +7629,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
 
     #[doc="<p>Returns a list of all domains in the user's account.</p>"]
     fn get_domains(&self, input: &GetDomainsRequest) -> Result<GetDomainsResult, GetDomainsError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.GetDomains");
@@ -7653,7 +7653,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn get_instance(&self,
                     input: &GetInstanceRequest)
                     -> Result<GetInstanceResult, GetInstanceError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.GetInstance");
@@ -7678,7 +7678,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
         (&self,
          input: &GetInstanceAccessDetailsRequest)
          -> Result<GetInstanceAccessDetailsResult, GetInstanceAccessDetailsError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -7704,7 +7704,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
         (&self,
          input: &GetInstanceMetricDataRequest)
          -> Result<GetInstanceMetricDataResult, GetInstanceMetricDataError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.GetInstanceMetricData");
@@ -7732,7 +7732,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
         (&self,
          input: &GetInstancePortStatesRequest)
          -> Result<GetInstancePortStatesResult, GetInstancePortStatesError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.GetInstancePortStates");
@@ -7759,7 +7759,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn get_instance_snapshot(&self,
                              input: &GetInstanceSnapshotRequest)
                              -> Result<GetInstanceSnapshotResult, GetInstanceSnapshotError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.GetInstanceSnapshot");
@@ -7786,7 +7786,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn get_instance_snapshots(&self,
                               input: &GetInstanceSnapshotsRequest)
                               -> Result<GetInstanceSnapshotsResult, GetInstanceSnapshotsError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.GetInstanceSnapshots");
@@ -7813,7 +7813,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn get_instance_state(&self,
                           input: &GetInstanceStateRequest)
                           -> Result<GetInstanceStateResult, GetInstanceStateError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.GetInstanceState");
@@ -7840,7 +7840,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn get_instances(&self,
                      input: &GetInstancesRequest)
                      -> Result<GetInstancesResult, GetInstancesError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.GetInstances");
@@ -7864,7 +7864,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
 
     #[doc="<p>Returns information about a specific key pair.</p>"]
     fn get_key_pair(&self, input: &GetKeyPairRequest) -> Result<GetKeyPairResult, GetKeyPairError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.GetKeyPair");
@@ -7888,7 +7888,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn get_key_pairs(&self,
                      input: &GetKeyPairsRequest)
                      -> Result<GetKeyPairsResult, GetKeyPairsError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.GetKeyPairs");
@@ -7912,7 +7912,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn get_operation(&self,
                      input: &GetOperationRequest)
                      -> Result<GetOperationResult, GetOperationError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.GetOperation");
@@ -7938,7 +7938,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn get_operations(&self,
                       input: &GetOperationsRequest)
                       -> Result<GetOperationsResult, GetOperationsError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.GetOperations");
@@ -7965,7 +7965,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
         (&self,
          input: &GetOperationsForResourceRequest)
          -> Result<GetOperationsForResourceResult, GetOperationsForResourceError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -7988,7 +7988,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
 
     #[doc="<p>Returns a list of all valid regions for Amazon Lightsail. Use the <code>include availability zones</code> parameter to also return the availability zones in a region.</p>"]
     fn get_regions(&self, input: &GetRegionsRequest) -> Result<GetRegionsResult, GetRegionsError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.GetRegions");
@@ -8012,7 +8012,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn get_static_ip(&self,
                      input: &GetStaticIpRequest)
                      -> Result<GetStaticIpResult, GetStaticIpError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.GetStaticIp");
@@ -8036,7 +8036,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn get_static_ips(&self,
                       input: &GetStaticIpsRequest)
                       -> Result<GetStaticIpsResult, GetStaticIpsError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.GetStaticIps");
@@ -8062,7 +8062,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn import_key_pair(&self,
                        input: &ImportKeyPairRequest)
                        -> Result<ImportKeyPairResult, ImportKeyPairError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.ImportKeyPair");
@@ -8086,7 +8086,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
 
     #[doc="<p>Returns a Boolean value indicating whether your Lightsail VPC is peered.</p>"]
     fn is_vpc_peered(&self) -> Result<IsVpcPeeredResult, IsVpcPeeredError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.IsVpcPeered");
@@ -8110,7 +8110,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
         (&self,
          input: &OpenInstancePublicPortsRequest)
          -> Result<OpenInstancePublicPortsResult, OpenInstancePublicPortsError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.OpenInstancePublicPorts");
@@ -8132,7 +8132,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
 
     #[doc="<p>Tries to peer the Lightsail VPC with the user's default VPC.</p>"]
     fn peer_vpc(&self) -> Result<PeerVpcResult, PeerVpcError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.PeerVpc");
@@ -8158,7 +8158,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
         (&self,
          input: &PutInstancePublicPortsRequest)
          -> Result<PutInstancePublicPortsResult, PutInstancePublicPortsError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.PutInstancePublicPorts");
@@ -8185,7 +8185,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn reboot_instance(&self,
                        input: &RebootInstanceRequest)
                        -> Result<RebootInstanceResult, RebootInstanceError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.RebootInstance");
@@ -8212,7 +8212,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn release_static_ip(&self,
                          input: &ReleaseStaticIpRequest)
                          -> Result<ReleaseStaticIpResult, ReleaseStaticIpError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.ReleaseStaticIp");
@@ -8239,7 +8239,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn start_instance(&self,
                       input: &StartInstanceRequest)
                       -> Result<StartInstanceResult, StartInstanceError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.StartInstance");
@@ -8265,7 +8265,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn stop_instance(&self,
                      input: &StopInstanceRequest)
                      -> Result<StopInstanceResult, StopInstanceError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.StopInstance");
@@ -8289,7 +8289,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
 
     #[doc="<p>Attempts to unpeer the Lightsail VPC from the user's default VPC.</p>"]
     fn unpeer_vpc(&self) -> Result<UnpeerVpcResult, UnpeerVpcError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.UnpeerVpc");
@@ -8314,7 +8314,7 @@ impl<P, D> Lightsail for LightsailClient<P, D>
     fn update_domain_entry(&self,
                            input: &UpdateDomainEntryRequest)
                            -> Result<UpdateDomainEntryResult, UpdateDomainEntryError> {
-        let mut request = SignedRequest::new("POST", "lightsail", self.region, "/");
+        let mut request = SignedRequest::new("POST", "lightsail", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Lightsail_20161128.UpdateDomainEntry");

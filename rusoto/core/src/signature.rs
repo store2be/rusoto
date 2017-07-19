@@ -40,11 +40,11 @@ pub struct SignedRequest {
 
 impl SignedRequest {
     /// Default constructor
-    pub fn new(method: &str, service: &str, region: Region, path: &str) -> SignedRequest {
+    pub fn new(method: &str, service: &str, region: &Region, path: &str) -> SignedRequest {
         SignedRequest {
             method: method.to_string(),
             service: service.to_string(),
-            region: region,
+            region: region.clone(),
             path: path.to_string(),
             headers: BTreeMap::new(),
             params: Params::new(),
