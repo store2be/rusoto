@@ -3758,7 +3758,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
     fn acknowledge_job(&self,
                        input: &AcknowledgeJobInput)
                        -> Result<AcknowledgeJobOutput, AcknowledgeJobError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodePipeline_20150709.AcknowledgeJob");
@@ -3786,7 +3786,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
         (&self,
          input: &AcknowledgeThirdPartyJobInput)
          -> Result<AcknowledgeThirdPartyJobOutput, AcknowledgeThirdPartyJobError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -3812,7 +3812,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
         (&self,
          input: &CreateCustomActionTypeInput)
          -> Result<CreateCustomActionTypeOutput, CreateCustomActionTypeError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -3840,7 +3840,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
     fn create_pipeline(&self,
                        input: &CreatePipelineInput)
                        -> Result<CreatePipelineOutput, CreatePipelineError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodePipeline_20150709.CreatePipeline");
@@ -3867,7 +3867,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
     fn delete_custom_action_type(&self,
                                  input: &DeleteCustomActionTypeInput)
                                  -> Result<(), DeleteCustomActionTypeError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -3891,7 +3891,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
 
     #[doc="<p>Deletes the specified pipeline.</p>"]
     fn delete_pipeline(&self, input: &DeletePipelineInput) -> Result<(), DeletePipelineError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodePipeline_20150709.DeletePipeline");
@@ -3916,7 +3916,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
     fn disable_stage_transition(&self,
                                 input: &DisableStageTransitionInput)
                                 -> Result<(), DisableStageTransitionError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -3942,7 +3942,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
     fn enable_stage_transition(&self,
                                input: &EnableStageTransitionInput)
                                -> Result<(), EnableStageTransitionError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -3968,7 +3968,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
     fn get_job_details(&self,
                        input: &GetJobDetailsInput)
                        -> Result<GetJobDetailsOutput, GetJobDetailsError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodePipeline_20150709.GetJobDetails");
@@ -3994,7 +3994,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
     fn get_pipeline(&self,
                     input: &GetPipelineInput)
                     -> Result<GetPipelineOutput, GetPipelineError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodePipeline_20150709.GetPipeline");
@@ -4018,7 +4018,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
     fn get_pipeline_execution(&self,
                               input: &GetPipelineExecutionInput)
                               -> Result<GetPipelineExecutionOutput, GetPipelineExecutionError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodePipeline_20150709.GetPipelineExecution");
@@ -4045,7 +4045,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
     fn get_pipeline_state(&self,
                           input: &GetPipelineStateInput)
                           -> Result<GetPipelineStateOutput, GetPipelineStateError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodePipeline_20150709.GetPipelineState");
@@ -4073,7 +4073,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
         (&self,
          input: &GetThirdPartyJobDetailsInput)
          -> Result<GetThirdPartyJobDetailsOutput, GetThirdPartyJobDetailsError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -4098,7 +4098,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
     fn list_action_types(&self,
                          input: &ListActionTypesInput)
                          -> Result<ListActionTypesOutput, ListActionTypesError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodePipeline_20150709.ListActionTypes");
@@ -4126,7 +4126,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
         (&self,
          input: &ListPipelineExecutionsInput)
          -> Result<ListPipelineExecutionsOutput, ListPipelineExecutionsError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -4154,7 +4154,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
     fn list_pipelines(&self,
                       input: &ListPipelinesInput)
                       -> Result<ListPipelinesOutput, ListPipelinesError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodePipeline_20150709.ListPipelines");
@@ -4180,7 +4180,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
     fn poll_for_jobs(&self,
                      input: &PollForJobsInput)
                      -> Result<PollForJobsOutput, PollForJobsError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodePipeline_20150709.PollForJobs");
@@ -4205,7 +4205,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
         (&self,
          input: &PollForThirdPartyJobsInput)
          -> Result<PollForThirdPartyJobsOutput, PollForThirdPartyJobsError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -4233,7 +4233,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
     fn put_action_revision(&self,
                            input: &PutActionRevisionInput)
                            -> Result<PutActionRevisionOutput, PutActionRevisionError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodePipeline_20150709.PutActionRevision");
@@ -4260,7 +4260,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
     fn put_approval_result(&self,
                            input: &PutApprovalResultInput)
                            -> Result<PutApprovalResultOutput, PutApprovalResultError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodePipeline_20150709.PutApprovalResult");
@@ -4287,7 +4287,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
     fn put_job_failure_result(&self,
                               input: &PutJobFailureResultInput)
                               -> Result<(), PutJobFailureResultError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodePipeline_20150709.PutJobFailureResult");
@@ -4312,7 +4312,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
     fn put_job_success_result(&self,
                               input: &PutJobSuccessResultInput)
                               -> Result<(), PutJobSuccessResultError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodePipeline_20150709.PutJobSuccessResult");
@@ -4337,7 +4337,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
     fn put_third_party_job_failure_result(&self,
                                           input: &PutThirdPartyJobFailureResultInput)
                                           -> Result<(), PutThirdPartyJobFailureResultError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -4360,7 +4360,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
     fn put_third_party_job_success_result(&self,
                                           input: &PutThirdPartyJobSuccessResultInput)
                                           -> Result<(), PutThirdPartyJobSuccessResultError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -4383,7 +4383,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
     fn retry_stage_execution(&self,
                              input: &RetryStageExecutionInput)
                              -> Result<RetryStageExecutionOutput, RetryStageExecutionError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodePipeline_20150709.RetryStageExecution");
@@ -4411,7 +4411,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
         (&self,
          input: &StartPipelineExecutionInput)
          -> Result<StartPipelineExecutionOutput, StartPipelineExecutionError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -4439,7 +4439,7 @@ impl<P, D> CodePipeline for CodePipelineClient<P, D>
     fn update_pipeline(&self,
                        input: &UpdatePipelineInput)
                        -> Result<UpdatePipelineOutput, UpdatePipelineError> {
-        let mut request = SignedRequest::new("POST", "codepipeline", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codepipeline", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodePipeline_20150709.UpdatePipeline");

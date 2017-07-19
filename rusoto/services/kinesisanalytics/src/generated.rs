@@ -2399,7 +2399,7 @@ impl<P, D> KinesisAnalytics for KinesisAnalyticsClient<P, D>
 {
     #[doc="<p>Adds a CloudWatch log stream to monitor application configuration errors. For more information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href=\"http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html\">Monitoring Configuration Errors</a>.</p>"]
 fn add_application_cloud_watch_logging_option(&self, input: &AddApplicationCloudWatchLoggingOptionRequest)  -> Result<AddApplicationCloudWatchLoggingOptionResponse, AddApplicationCloudWatchLoggingOptionError>{
-        let mut request = SignedRequest::new("POST", "kinesisanalytics", self.region, "/");
+        let mut request = SignedRequest::new("POST", "kinesisanalytics", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2424,7 +2424,7 @@ fn add_application_cloud_watch_logging_option(&self, input: &AddApplicationCloud
     fn add_application_input(&self,
                              input: &AddApplicationInputRequest)
                              -> Result<AddApplicationInputResponse, AddApplicationInputError> {
-        let mut request = SignedRequest::new("POST", "kinesisanalytics", self.region, "/");
+        let mut request = SignedRequest::new("POST", "kinesisanalytics", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2453,7 +2453,7 @@ fn add_application_cloud_watch_logging_option(&self, input: &AddApplicationCloud
         (&self,
          input: &AddApplicationOutputRequest)
          -> Result<AddApplicationOutputResponse, AddApplicationOutputError> {
-        let mut request = SignedRequest::new("POST", "kinesisanalytics", self.region, "/");
+        let mut request = SignedRequest::new("POST", "kinesisanalytics", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2483,7 +2483,7 @@ fn add_application_cloud_watch_logging_option(&self, input: &AddApplicationCloud
          input: &AddApplicationReferenceDataSourceRequest)
          -> Result<AddApplicationReferenceDataSourceResponse,
                    AddApplicationReferenceDataSourceError> {
-        let mut request = SignedRequest::new("POST", "kinesisanalytics", self.region, "/");
+        let mut request = SignedRequest::new("POST", "kinesisanalytics", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2508,7 +2508,7 @@ fn add_application_cloud_watch_logging_option(&self, input: &AddApplicationCloud
     fn create_application(&self,
                           input: &CreateApplicationRequest)
                           -> Result<CreateApplicationResponse, CreateApplicationError> {
-        let mut request = SignedRequest::new("POST", "kinesisanalytics", self.region, "/");
+        let mut request = SignedRequest::new("POST", "kinesisanalytics", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2536,7 +2536,7 @@ fn add_application_cloud_watch_logging_option(&self, input: &AddApplicationCloud
     fn delete_application(&self,
                           input: &DeleteApplicationRequest)
                           -> Result<DeleteApplicationResponse, DeleteApplicationError> {
-        let mut request = SignedRequest::new("POST", "kinesisanalytics", self.region, "/");
+        let mut request = SignedRequest::new("POST", "kinesisanalytics", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2562,7 +2562,7 @@ fn add_application_cloud_watch_logging_option(&self, input: &AddApplicationCloud
 
     #[doc="<p>Deletes a CloudWatch log stream from an application. For more information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href=\"http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html\">Monitoring Configuration Errors</a>.</p>"]
 fn delete_application_cloud_watch_logging_option(&self, input: &DeleteApplicationCloudWatchLoggingOptionRequest)  -> Result<DeleteApplicationCloudWatchLoggingOptionResponse, DeleteApplicationCloudWatchLoggingOptionError>{
-        let mut request = SignedRequest::new("POST", "kinesisanalytics", self.region, "/");
+        let mut request = SignedRequest::new("POST", "kinesisanalytics", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2588,7 +2588,7 @@ fn delete_application_cloud_watch_logging_option(&self, input: &DeleteApplicatio
         (&self,
          input: &DeleteApplicationOutputRequest)
          -> Result<DeleteApplicationOutputResponse, DeleteApplicationOutputError> {
-        let mut request = SignedRequest::new("POST", "kinesisanalytics", self.region, "/");
+        let mut request = SignedRequest::new("POST", "kinesisanalytics", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2611,7 +2611,7 @@ fn delete_application_cloud_watch_logging_option(&self, input: &DeleteApplicatio
 
     #[doc="<p>Deletes a reference data source configuration from the specified application configuration.</p> <p>If the application is running, Amazon Kinesis Analytics immediately removes the in-application table that you created using the <a>AddApplicationReferenceDataSource</a> operation. </p> <p>This operation requires permissions to perform the <code>kinesisanalytics.DeleteApplicationReferenceDataSource</code> action.</p>"]
 fn delete_application_reference_data_source(&self, input: &DeleteApplicationReferenceDataSourceRequest)  -> Result<DeleteApplicationReferenceDataSourceResponse, DeleteApplicationReferenceDataSourceError>{
-        let mut request = SignedRequest::new("POST", "kinesisanalytics", self.region, "/");
+        let mut request = SignedRequest::new("POST", "kinesisanalytics", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2636,7 +2636,7 @@ fn delete_application_reference_data_source(&self, input: &DeleteApplicationRefe
     fn describe_application(&self,
                             input: &DescribeApplicationRequest)
                             -> Result<DescribeApplicationResponse, DescribeApplicationError> {
-        let mut request = SignedRequest::new("POST", "kinesisanalytics", self.region, "/");
+        let mut request = SignedRequest::new("POST", "kinesisanalytics", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2664,7 +2664,7 @@ fn delete_application_reference_data_source(&self, input: &DeleteApplicationRefe
     fn discover_input_schema(&self,
                              input: &DiscoverInputSchemaRequest)
                              -> Result<DiscoverInputSchemaResponse, DiscoverInputSchemaError> {
-        let mut request = SignedRequest::new("POST", "kinesisanalytics", self.region, "/");
+        let mut request = SignedRequest::new("POST", "kinesisanalytics", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2692,7 +2692,7 @@ fn delete_application_reference_data_source(&self, input: &DeleteApplicationRefe
     fn list_applications(&self,
                          input: &ListApplicationsRequest)
                          -> Result<ListApplicationsResponse, ListApplicationsError> {
-        let mut request = SignedRequest::new("POST", "kinesisanalytics", self.region, "/");
+        let mut request = SignedRequest::new("POST", "kinesisanalytics", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "KinesisAnalytics_20150814.ListApplications");
@@ -2719,7 +2719,7 @@ fn delete_application_reference_data_source(&self, input: &DeleteApplicationRefe
     fn start_application(&self,
                          input: &StartApplicationRequest)
                          -> Result<StartApplicationResponse, StartApplicationError> {
-        let mut request = SignedRequest::new("POST", "kinesisanalytics", self.region, "/");
+        let mut request = SignedRequest::new("POST", "kinesisanalytics", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "KinesisAnalytics_20150814.StartApplication");
@@ -2746,7 +2746,7 @@ fn delete_application_reference_data_source(&self, input: &DeleteApplicationRefe
     fn stop_application(&self,
                         input: &StopApplicationRequest)
                         -> Result<StopApplicationResponse, StopApplicationError> {
-        let mut request = SignedRequest::new("POST", "kinesisanalytics", self.region, "/");
+        let mut request = SignedRequest::new("POST", "kinesisanalytics", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "KinesisAnalytics_20150814.StopApplication");
@@ -2773,7 +2773,7 @@ fn delete_application_reference_data_source(&self, input: &DeleteApplicationRefe
     fn update_application(&self,
                           input: &UpdateApplicationRequest)
                           -> Result<UpdateApplicationResponse, UpdateApplicationError> {
-        let mut request = SignedRequest::new("POST", "kinesisanalytics", self.region, "/");
+        let mut request = SignedRequest::new("POST", "kinesisanalytics", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",

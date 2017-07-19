@@ -1299,7 +1299,7 @@ impl<P, D> Acm for AcmClient<P, D>
     fn add_tags_to_certificate(&self,
                                input: &AddTagsToCertificateRequest)
                                -> Result<(), AddTagsToCertificateError> {
-        let mut request = SignedRequest::new("POST", "acm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "acm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CertificateManager.AddTagsToCertificate");
@@ -1324,7 +1324,7 @@ impl<P, D> Acm for AcmClient<P, D>
     fn delete_certificate(&self,
                           input: &DeleteCertificateRequest)
                           -> Result<(), DeleteCertificateError> {
-        let mut request = SignedRequest::new("POST", "acm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "acm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CertificateManager.DeleteCertificate");
@@ -1349,7 +1349,7 @@ impl<P, D> Acm for AcmClient<P, D>
     fn describe_certificate(&self,
                             input: &DescribeCertificateRequest)
                             -> Result<DescribeCertificateResponse, DescribeCertificateError> {
-        let mut request = SignedRequest::new("POST", "acm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "acm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CertificateManager.DescribeCertificate");
@@ -1376,7 +1376,7 @@ impl<P, D> Acm for AcmClient<P, D>
     fn get_certificate(&self,
                        input: &GetCertificateRequest)
                        -> Result<GetCertificateResponse, GetCertificateError> {
-        let mut request = SignedRequest::new("POST", "acm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "acm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CertificateManager.GetCertificate");
@@ -1403,7 +1403,7 @@ impl<P, D> Acm for AcmClient<P, D>
     fn import_certificate(&self,
                           input: &ImportCertificateRequest)
                           -> Result<ImportCertificateResponse, ImportCertificateError> {
-        let mut request = SignedRequest::new("POST", "acm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "acm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CertificateManager.ImportCertificate");
@@ -1430,7 +1430,7 @@ impl<P, D> Acm for AcmClient<P, D>
     fn list_certificates(&self,
                          input: &ListCertificatesRequest)
                          -> Result<ListCertificatesResponse, ListCertificatesError> {
-        let mut request = SignedRequest::new("POST", "acm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "acm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CertificateManager.ListCertificates");
@@ -1458,7 +1458,7 @@ impl<P, D> Acm for AcmClient<P, D>
         (&self,
          input: &ListTagsForCertificateRequest)
          -> Result<ListTagsForCertificateResponse, ListTagsForCertificateError> {
-        let mut request = SignedRequest::new("POST", "acm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "acm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CertificateManager.ListTagsForCertificate");
@@ -1485,7 +1485,7 @@ impl<P, D> Acm for AcmClient<P, D>
     fn remove_tags_from_certificate(&self,
                                     input: &RemoveTagsFromCertificateRequest)
                                     -> Result<(), RemoveTagsFromCertificateError> {
-        let mut request = SignedRequest::new("POST", "acm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "acm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -1508,7 +1508,7 @@ impl<P, D> Acm for AcmClient<P, D>
     fn request_certificate(&self,
                            input: &RequestCertificateRequest)
                            -> Result<RequestCertificateResponse, RequestCertificateError> {
-        let mut request = SignedRequest::new("POST", "acm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "acm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CertificateManager.RequestCertificate");
@@ -1535,7 +1535,7 @@ impl<P, D> Acm for AcmClient<P, D>
     fn resend_validation_email(&self,
                                input: &ResendValidationEmailRequest)
                                -> Result<(), ResendValidationEmailError> {
-        let mut request = SignedRequest::new("POST", "acm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "acm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CertificateManager.ResendValidationEmail");

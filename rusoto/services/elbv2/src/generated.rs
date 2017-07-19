@@ -8316,7 +8316,7 @@ impl<P, D> Elb for ElbClient<P, D>
 {
     #[doc="<p>Adds the specified tags to the specified resource. You can tag your Application Load Balancers and your target groups.</p> <p>Each tag consists of a key and an optional value. If a resource already has a tag with the same key, <code>AddTags</code> updates its value.</p> <p>To list the current tags for your resources, use <a>DescribeTags</a>. To remove tags from your resources, use <a>RemoveTags</a>.</p>"]
     fn add_tags(&self, input: &AddTagsInput) -> Result<AddTagsOutput, AddTagsError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AddTags");
@@ -8357,7 +8357,7 @@ impl<P, D> Elb for ElbClient<P, D>
     fn create_listener(&self,
                        input: &CreateListenerInput)
                        -> Result<CreateListenerOutput, CreateListenerError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateListener");
@@ -8401,7 +8401,7 @@ impl<P, D> Elb for ElbClient<P, D>
     fn create_load_balancer(&self,
                             input: &CreateLoadBalancerInput)
                             -> Result<CreateLoadBalancerOutput, CreateLoadBalancerError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateLoadBalancer");
@@ -8443,7 +8443,7 @@ impl<P, D> Elb for ElbClient<P, D>
 
     #[doc="<p>Creates a rule for the specified listener.</p> <p>Each rule can have one action and one condition. Rules are evaluated in priority order, from the lowest value to the highest value. When the condition for a rule is met, the specified action is taken. If no conditions are met, the default action for the default rule is taken. For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules\">Listener Rules</a> in the <i>Application Load Balancers Guide</i>.</p> <p>To view your current rules, use <a>DescribeRules</a>. To update a rule, use <a>ModifyRule</a>. To set the priorities of your rules, use <a>SetRulePriorities</a>. To delete a rule, use <a>DeleteRule</a>.</p>"]
     fn create_rule(&self, input: &CreateRuleInput) -> Result<CreateRuleOutput, CreateRuleError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateRule");
@@ -8484,7 +8484,7 @@ impl<P, D> Elb for ElbClient<P, D>
     fn create_target_group(&self,
                            input: &CreateTargetGroupInput)
                            -> Result<CreateTargetGroupOutput, CreateTargetGroupError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateTargetGroup");
@@ -8528,7 +8528,7 @@ impl<P, D> Elb for ElbClient<P, D>
     fn delete_listener(&self,
                        input: &DeleteListenerInput)
                        -> Result<DeleteListenerOutput, DeleteListenerError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteListener");
@@ -8572,7 +8572,7 @@ impl<P, D> Elb for ElbClient<P, D>
     fn delete_load_balancer(&self,
                             input: &DeleteLoadBalancerInput)
                             -> Result<DeleteLoadBalancerOutput, DeleteLoadBalancerError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteLoadBalancer");
@@ -8614,7 +8614,7 @@ impl<P, D> Elb for ElbClient<P, D>
 
     #[doc="<p>Deletes the specified rule.</p>"]
     fn delete_rule(&self, input: &DeleteRuleInput) -> Result<DeleteRuleOutput, DeleteRuleError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteRule");
@@ -8655,7 +8655,7 @@ impl<P, D> Elb for ElbClient<P, D>
     fn delete_target_group(&self,
                            input: &DeleteTargetGroupInput)
                            -> Result<DeleteTargetGroupOutput, DeleteTargetGroupError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteTargetGroup");
@@ -8699,7 +8699,7 @@ impl<P, D> Elb for ElbClient<P, D>
     fn deregister_targets(&self,
                           input: &DeregisterTargetsInput)
                           -> Result<DeregisterTargetsOutput, DeregisterTargetsError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeregisterTargets");
@@ -8744,7 +8744,7 @@ impl<P, D> Elb for ElbClient<P, D>
         (&self,
          input: &DescribeAccountLimitsInput)
          -> Result<DescribeAccountLimitsOutput, DescribeAccountLimitsError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeAccountLimits");
@@ -8788,7 +8788,7 @@ impl<P, D> Elb for ElbClient<P, D>
     fn describe_listeners(&self,
                           input: &DescribeListenersInput)
                           -> Result<DescribeListenersOutput, DescribeListenersError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeListeners");
@@ -8833,7 +8833,7 @@ impl<P, D> Elb for ElbClient<P, D>
         (&self,
          input: &DescribeLoadBalancerAttributesInput)
          -> Result<DescribeLoadBalancerAttributesOutput, DescribeLoadBalancerAttributesError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeLoadBalancerAttributes");
@@ -8876,7 +8876,7 @@ impl<P, D> Elb for ElbClient<P, D>
         (&self,
          input: &DescribeLoadBalancersInput)
          -> Result<DescribeLoadBalancersOutput, DescribeLoadBalancersError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeLoadBalancers");
@@ -8920,7 +8920,7 @@ impl<P, D> Elb for ElbClient<P, D>
     fn describe_rules(&self,
                       input: &DescribeRulesInput)
                       -> Result<DescribeRulesOutput, DescribeRulesError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeRules");
@@ -8963,7 +8963,7 @@ impl<P, D> Elb for ElbClient<P, D>
     fn describe_ssl_policies(&self,
                              input: &DescribeSSLPoliciesInput)
                              -> Result<DescribeSSLPoliciesOutput, DescribeSSLPoliciesError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeSSLPolicies");
@@ -9007,7 +9007,7 @@ impl<P, D> Elb for ElbClient<P, D>
     fn describe_tags(&self,
                      input: &DescribeTagsInput)
                      -> Result<DescribeTagsOutput, DescribeTagsError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeTags");
@@ -9051,7 +9051,7 @@ impl<P, D> Elb for ElbClient<P, D>
         (&self,
          input: &DescribeTargetGroupAttributesInput)
          -> Result<DescribeTargetGroupAttributesOutput, DescribeTargetGroupAttributesError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeTargetGroupAttributes");
@@ -9093,7 +9093,7 @@ impl<P, D> Elb for ElbClient<P, D>
     fn describe_target_groups(&self,
                               input: &DescribeTargetGroupsInput)
                               -> Result<DescribeTargetGroupsOutput, DescribeTargetGroupsError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeTargetGroups");
@@ -9137,7 +9137,7 @@ impl<P, D> Elb for ElbClient<P, D>
     fn describe_target_health(&self,
                               input: &DescribeTargetHealthInput)
                               -> Result<DescribeTargetHealthOutput, DescribeTargetHealthError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeTargetHealth");
@@ -9181,7 +9181,7 @@ impl<P, D> Elb for ElbClient<P, D>
     fn modify_listener(&self,
                        input: &ModifyListenerInput)
                        -> Result<ModifyListenerOutput, ModifyListenerError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ModifyListener");
@@ -9226,7 +9226,7 @@ impl<P, D> Elb for ElbClient<P, D>
         (&self,
          input: &ModifyLoadBalancerAttributesInput)
          -> Result<ModifyLoadBalancerAttributesOutput, ModifyLoadBalancerAttributesError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ModifyLoadBalancerAttributes");
@@ -9266,7 +9266,7 @@ impl<P, D> Elb for ElbClient<P, D>
 
     #[doc="<p>Modifies the specified rule.</p> <p>Any existing properties that you do not modify retain their current values.</p> <p>To modify the default action, use <a>ModifyListener</a>.</p>"]
     fn modify_rule(&self, input: &ModifyRuleInput) -> Result<ModifyRuleOutput, ModifyRuleError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ModifyRule");
@@ -9307,7 +9307,7 @@ impl<P, D> Elb for ElbClient<P, D>
     fn modify_target_group(&self,
                            input: &ModifyTargetGroupInput)
                            -> Result<ModifyTargetGroupOutput, ModifyTargetGroupError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ModifyTargetGroup");
@@ -9352,7 +9352,7 @@ impl<P, D> Elb for ElbClient<P, D>
         (&self,
          input: &ModifyTargetGroupAttributesInput)
          -> Result<ModifyTargetGroupAttributesOutput, ModifyTargetGroupAttributesError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ModifyTargetGroupAttributes");
@@ -9394,7 +9394,7 @@ impl<P, D> Elb for ElbClient<P, D>
     fn register_targets(&self,
                         input: &RegisterTargetsInput)
                         -> Result<RegisterTargetsOutput, RegisterTargetsError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "RegisterTargets");
@@ -9436,7 +9436,7 @@ impl<P, D> Elb for ElbClient<P, D>
 
     #[doc="<p>Removes the specified tags from the specified resource.</p> <p>To list the current tags for your resources, use <a>DescribeTags</a>.</p>"]
     fn remove_tags(&self, input: &RemoveTagsInput) -> Result<RemoveTagsOutput, RemoveTagsError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "RemoveTags");
@@ -9477,7 +9477,7 @@ impl<P, D> Elb for ElbClient<P, D>
     fn set_ip_address_type(&self,
                            input: &SetIpAddressTypeInput)
                            -> Result<SetIpAddressTypeOutput, SetIpAddressTypeError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "SetIpAddressType");
@@ -9521,7 +9521,7 @@ impl<P, D> Elb for ElbClient<P, D>
     fn set_rule_priorities(&self,
                            input: &SetRulePrioritiesInput)
                            -> Result<SetRulePrioritiesOutput, SetRulePrioritiesError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "SetRulePriorities");
@@ -9565,7 +9565,7 @@ impl<P, D> Elb for ElbClient<P, D>
     fn set_security_groups(&self,
                            input: &SetSecurityGroupsInput)
                            -> Result<SetSecurityGroupsOutput, SetSecurityGroupsError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "SetSecurityGroups");
@@ -9607,7 +9607,7 @@ impl<P, D> Elb for ElbClient<P, D>
 
     #[doc="<p>Enables the Availability Zone for the specified subnets for the specified load balancer. The specified subnets replace the previously enabled subnets.</p>"]
     fn set_subnets(&self, input: &SetSubnetsInput) -> Result<SetSubnetsOutput, SetSubnetsError> {
-        let mut request = SignedRequest::new("POST", "elasticloadbalancing", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticloadbalancing", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "SetSubnets");

@@ -10225,7 +10225,7 @@ impl<P, D> Ses for SesClient<P, D>
     fn clone_receipt_rule_set(&self,
                               input: &CloneReceiptRuleSetRequest)
                               -> Result<CloneReceiptRuleSetResponse, CloneReceiptRuleSetError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CloneReceiptRuleSet");
@@ -10270,7 +10270,7 @@ impl<P, D> Ses for SesClient<P, D>
         (&self,
          input: &CreateConfigurationSetRequest)
          -> Result<CreateConfigurationSetResponse, CreateConfigurationSetError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateConfigurationSet");
@@ -10313,7 +10313,7 @@ impl<P, D> Ses for SesClient<P, D>
 
     #[doc="<p>Creates a configuration set event destination.</p> <note> <p>When you create or update an event destination, you must provide one, and only one, destination. The destination can be either Amazon CloudWatch or Amazon Kinesis Firehose.</p> </note> <p>An event destination is the AWS service to which Amazon SES publishes the email sending events associated with a configuration set. For information about using configuration sets, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>"]
 fn create_configuration_set_event_destination(&self, input: &CreateConfigurationSetEventDestinationRequest) -> Result<CreateConfigurationSetEventDestinationResponse, CreateConfigurationSetEventDestinationError>{
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateConfigurationSetEventDestination");
@@ -10355,7 +10355,7 @@ fn create_configuration_set_event_destination(&self, input: &CreateConfiguration
     fn create_receipt_filter(&self,
                              input: &CreateReceiptFilterRequest)
                              -> Result<CreateReceiptFilterResponse, CreateReceiptFilterError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateReceiptFilter");
@@ -10399,7 +10399,7 @@ fn create_configuration_set_event_destination(&self, input: &CreateConfiguration
     fn create_receipt_rule(&self,
                            input: &CreateReceiptRuleRequest)
                            -> Result<CreateReceiptRuleResponse, CreateReceiptRuleError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateReceiptRule");
@@ -10444,7 +10444,7 @@ fn create_configuration_set_event_destination(&self, input: &CreateConfiguration
         (&self,
          input: &CreateReceiptRuleSetRequest)
          -> Result<CreateReceiptRuleSetResponse, CreateReceiptRuleSetError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateReceiptRuleSet");
@@ -10490,7 +10490,7 @@ fn create_configuration_set_event_destination(&self, input: &CreateConfiguration
         (&self,
          input: &DeleteConfigurationSetRequest)
          -> Result<DeleteConfigurationSetResponse, DeleteConfigurationSetError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteConfigurationSet");
@@ -10533,7 +10533,7 @@ fn create_configuration_set_event_destination(&self, input: &CreateConfiguration
 
     #[doc="<p>Deletes a configuration set event destination.</p> <p>Configuration set event destinations are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>"]
 fn delete_configuration_set_event_destination(&self, input: &DeleteConfigurationSetEventDestinationRequest) -> Result<DeleteConfigurationSetEventDestinationResponse, DeleteConfigurationSetEventDestinationError>{
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteConfigurationSetEventDestination");
@@ -10575,7 +10575,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
     fn delete_identity(&self,
                        input: &DeleteIdentityRequest)
                        -> Result<DeleteIdentityResponse, DeleteIdentityError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteIdentity");
@@ -10620,7 +10620,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
         (&self,
          input: &DeleteIdentityPolicyRequest)
          -> Result<DeleteIdentityPolicyResponse, DeleteIdentityPolicyError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteIdentityPolicy");
@@ -10665,7 +10665,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
     fn delete_receipt_filter(&self,
                              input: &DeleteReceiptFilterRequest)
                              -> Result<DeleteReceiptFilterResponse, DeleteReceiptFilterError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteReceiptFilter");
@@ -10709,7 +10709,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
     fn delete_receipt_rule(&self,
                            input: &DeleteReceiptRuleRequest)
                            -> Result<DeleteReceiptRuleResponse, DeleteReceiptRuleError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteReceiptRule");
@@ -10754,7 +10754,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
         (&self,
          input: &DeleteReceiptRuleSetRequest)
          -> Result<DeleteReceiptRuleSetResponse, DeleteReceiptRuleSetError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteReceiptRuleSet");
@@ -10799,7 +10799,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
     fn delete_verified_email_address(&self,
                                      input: &DeleteVerifiedEmailAddressRequest)
                                      -> Result<(), DeleteVerifiedEmailAddressError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteVerifiedEmailAddress");
@@ -10826,7 +10826,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
         (&self,
          input: &DescribeActiveReceiptRuleSetRequest)
          -> Result<DescribeActiveReceiptRuleSetResponse, DescribeActiveReceiptRuleSetError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeActiveReceiptRuleSet");
@@ -10869,7 +10869,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
         (&self,
          input: &DescribeConfigurationSetRequest)
          -> Result<DescribeConfigurationSetResponse, DescribeConfigurationSetError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeConfigurationSet");
@@ -10913,7 +10913,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
     fn describe_receipt_rule(&self,
                              input: &DescribeReceiptRuleRequest)
                              -> Result<DescribeReceiptRuleResponse, DescribeReceiptRuleError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeReceiptRule");
@@ -10958,7 +10958,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
         (&self,
          input: &DescribeReceiptRuleSetRequest)
          -> Result<DescribeReceiptRuleSetResponse, DescribeReceiptRuleSetError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeReceiptRuleSet");
@@ -11004,7 +11004,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
         (&self,
          input: &GetIdentityDkimAttributesRequest)
          -> Result<GetIdentityDkimAttributesResponse, GetIdentityDkimAttributesError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetIdentityDkimAttributes");
@@ -11048,7 +11048,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
          input: &GetIdentityMailFromDomainAttributesRequest)
          -> Result<GetIdentityMailFromDomainAttributesResponse,
                    GetIdentityMailFromDomainAttributesError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetIdentityMailFromDomainAttributes");
@@ -11092,7 +11092,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
          input: &GetIdentityNotificationAttributesRequest)
          -> Result<GetIdentityNotificationAttributesResponse,
                    GetIdentityNotificationAttributesError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetIdentityNotificationAttributes");
@@ -11134,7 +11134,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
     fn get_identity_policies(&self,
                              input: &GetIdentityPoliciesRequest)
                              -> Result<GetIdentityPoliciesResponse, GetIdentityPoliciesError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetIdentityPolicies");
@@ -11180,7 +11180,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
          input: &GetIdentityVerificationAttributesRequest)
          -> Result<GetIdentityVerificationAttributesResponse,
                    GetIdentityVerificationAttributesError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetIdentityVerificationAttributes");
@@ -11220,7 +11220,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
 
     #[doc="<p>Returns the user's current sending limits.</p> <p>This action is throttled at one request per second.</p>"]
     fn get_send_quota(&self) -> Result<GetSendQuotaResponse, GetSendQuotaError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetSendQuota");
@@ -11261,7 +11261,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
 
     #[doc="<p>Returns the user's sending statistics. The result is a list of data points, representing the last two weeks of sending activity.</p> <p>Each data point in the list contains statistics for a 15-minute interval.</p> <p>This action is throttled at one request per second.</p>"]
     fn get_send_statistics(&self) -> Result<GetSendStatisticsResponse, GetSendStatisticsError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetSendStatistics");
@@ -11306,7 +11306,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
         (&self,
          input: &ListConfigurationSetsRequest)
          -> Result<ListConfigurationSetsResponse, ListConfigurationSetsError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListConfigurationSets");
@@ -11351,7 +11351,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
     fn list_identities(&self,
                        input: &ListIdentitiesRequest)
                        -> Result<ListIdentitiesResponse, ListIdentitiesError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListIdentities");
@@ -11396,7 +11396,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
         (&self,
          input: &ListIdentityPoliciesRequest)
          -> Result<ListIdentityPoliciesResponse, ListIdentityPoliciesError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListIdentityPolicies");
@@ -11441,7 +11441,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
     fn list_receipt_filters(&self,
                             input: &ListReceiptFiltersRequest)
                             -> Result<ListReceiptFiltersResponse, ListReceiptFiltersError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListReceiptFilters");
@@ -11485,7 +11485,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
     fn list_receipt_rule_sets(&self,
                               input: &ListReceiptRuleSetsRequest)
                               -> Result<ListReceiptRuleSetsResponse, ListReceiptRuleSetsError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListReceiptRuleSets");
@@ -11529,7 +11529,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
     fn list_verified_email_addresses
         (&self)
          -> Result<ListVerifiedEmailAddressesResponse, ListVerifiedEmailAddressesError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListVerifiedEmailAddresses");
@@ -11571,7 +11571,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
     fn put_identity_policy(&self,
                            input: &PutIdentityPolicyRequest)
                            -> Result<PutIdentityPolicyResponse, PutIdentityPolicyError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "PutIdentityPolicy");
@@ -11616,7 +11616,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
         (&self,
          input: &ReorderReceiptRuleSetRequest)
          -> Result<ReorderReceiptRuleSetResponse, ReorderReceiptRuleSetError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ReorderReceiptRuleSet");
@@ -11661,7 +11661,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
     fn send_bounce(&self,
                    input: &SendBounceRequest)
                    -> Result<SendBounceResponse, SendBounceError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "SendBounce");
@@ -11700,7 +11700,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
 
     #[doc="<p>Composes an email message based on input data, and then immediately queues the message for sending.</p> <p>There are several important points to know about <code>SendEmail</code>:</p> <ul> <li> <p>You can only send email from verified email addresses and domains; otherwise, you will get an \"Email address not verified\" error. If your account is still in the Amazon SES sandbox, you must also verify every recipient email address except for the recipients provided by the Amazon SES mailbox simulator. For more information, go to the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html\">Amazon SES Developer Guide</a>.</p> </li> <li> <p>The total size of the message cannot exceed 10 MB. This includes any attachments that are part of the message.</p> </li> <li> <p>Amazon SES has a limit on the total number of recipients per message. The combined number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send an email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group.</p> </li> <li> <p>For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted against your sending quota - the maximum number of emails you can send in a 24-hour period. For information about your sending quota, go to the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html\">Amazon SES Developer Guide</a>.</p> </li> </ul>"]
     fn send_email(&self, input: &SendEmailRequest) -> Result<SendEmailResponse, SendEmailError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "SendEmail");
@@ -11741,7 +11741,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
     fn send_raw_email(&self,
                       input: &SendRawEmailRequest)
                       -> Result<SendRawEmailResponse, SendRawEmailError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "SendRawEmail");
@@ -11785,7 +11785,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
         (&self,
          input: &SetActiveReceiptRuleSetRequest)
          -> Result<SetActiveReceiptRuleSetResponse, SetActiveReceiptRuleSetError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "SetActiveReceiptRuleSet");
@@ -11830,7 +11830,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
         (&self,
          input: &SetIdentityDkimEnabledRequest)
          -> Result<SetIdentityDkimEnabledResponse, SetIdentityDkimEnabledError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "SetIdentityDkimEnabled");
@@ -11873,7 +11873,7 @@ fn delete_configuration_set_event_destination(&self, input: &DeleteConfiguration
 
     #[doc="<p>Given an identity (an email address or a domain), enables or disables whether Amazon SES forwards bounce and complaint notifications as email. Feedback forwarding can only be disabled when Amazon Simple Notification Service (Amazon SNS) topics are specified for both bounces and complaints.</p> <note> <p>Feedback forwarding does not apply to delivery notifications. Delivery notifications are only available through Amazon SNS.</p> </note> <p>This action is throttled at one request per second.</p> <p>For more information about using notifications with Amazon SES, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html\">Amazon SES Developer Guide</a>.</p>"]
 fn set_identity_feedback_forwarding_enabled(&self, input: &SetIdentityFeedbackForwardingEnabledRequest) -> Result<SetIdentityFeedbackForwardingEnabledResponse, SetIdentityFeedbackForwardingEnabledError>{
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "SetIdentityFeedbackForwardingEnabled");
@@ -11913,7 +11913,7 @@ fn set_identity_feedback_forwarding_enabled(&self, input: &SetIdentityFeedbackFo
 
     #[doc="<p>Given an identity (an email address or a domain), sets whether Amazon SES includes the original email headers in the Amazon Simple Notification Service (Amazon SNS) notifications of a specified type.</p> <p>This action is throttled at one request per second.</p> <p>For more information about using notifications with Amazon SES, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html\">Amazon SES Developer Guide</a>.</p>"]
 fn set_identity_headers_in_notifications_enabled(&self, input: &SetIdentityHeadersInNotificationsEnabledRequest) -> Result<SetIdentityHeadersInNotificationsEnabledResponse, SetIdentityHeadersInNotificationsEnabledError>{
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "SetIdentityHeadersInNotificationsEnabled");
@@ -11958,7 +11958,7 @@ fn set_identity_headers_in_notifications_enabled(&self, input: &SetIdentityHeade
         (&self,
          input: &SetIdentityMailFromDomainRequest)
          -> Result<SetIdentityMailFromDomainResponse, SetIdentityMailFromDomainError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "SetIdentityMailFromDomain");
@@ -12001,7 +12001,7 @@ fn set_identity_headers_in_notifications_enabled(&self, input: &SetIdentityHeade
         (&self,
          input: &SetIdentityNotificationTopicRequest)
          -> Result<SetIdentityNotificationTopicResponse, SetIdentityNotificationTopicError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "SetIdentityNotificationTopic");
@@ -12044,7 +12044,7 @@ fn set_identity_headers_in_notifications_enabled(&self, input: &SetIdentityHeade
         (&self,
          input: &SetReceiptRulePositionRequest)
          -> Result<SetReceiptRulePositionResponse, SetReceiptRulePositionError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "SetReceiptRulePosition");
@@ -12087,7 +12087,7 @@ fn set_identity_headers_in_notifications_enabled(&self, input: &SetIdentityHeade
 
     #[doc="<p>Updates the event destination of a configuration set.</p> <note> <p>When you create or update an event destination, you must provide one, and only one, destination. The destination can be either Amazon CloudWatch or Amazon Kinesis Firehose.</p> </note> <p>Event destinations are associated with configuration sets, which enable you to publish email sending events to Amazon CloudWatch or Amazon Kinesis Firehose. For information about using configuration sets, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>"]
 fn update_configuration_set_event_destination(&self, input: &UpdateConfigurationSetEventDestinationRequest) -> Result<UpdateConfigurationSetEventDestinationResponse, UpdateConfigurationSetEventDestinationError>{
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UpdateConfigurationSetEventDestination");
@@ -12129,7 +12129,7 @@ fn update_configuration_set_event_destination(&self, input: &UpdateConfiguration
     fn update_receipt_rule(&self,
                            input: &UpdateReceiptRuleRequest)
                            -> Result<UpdateReceiptRuleResponse, UpdateReceiptRuleError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UpdateReceiptRule");
@@ -12173,7 +12173,7 @@ fn update_configuration_set_event_destination(&self, input: &UpdateConfiguration
     fn verify_domain_dkim(&self,
                           input: &VerifyDomainDkimRequest)
                           -> Result<VerifyDomainDkimResponse, VerifyDomainDkimError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "VerifyDomainDkim");
@@ -12218,7 +12218,7 @@ fn update_configuration_set_event_destination(&self, input: &UpdateConfiguration
         (&self,
          input: &VerifyDomainIdentityRequest)
          -> Result<VerifyDomainIdentityResponse, VerifyDomainIdentityError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "VerifyDomainIdentity");
@@ -12263,7 +12263,7 @@ fn update_configuration_set_event_destination(&self, input: &UpdateConfiguration
     fn verify_email_address(&self,
                             input: &VerifyEmailAddressRequest)
                             -> Result<(), VerifyEmailAddressError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "VerifyEmailAddress");
@@ -12290,7 +12290,7 @@ fn update_configuration_set_event_destination(&self, input: &UpdateConfiguration
     fn verify_email_identity(&self,
                              input: &VerifyEmailIdentityRequest)
                              -> Result<VerifyEmailIdentityResponse, VerifyEmailIdentityError> {
-        let mut request = SignedRequest::new("POST", "email", self.region, "/");
+        let mut request = SignedRequest::new("POST", "email", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "VerifyEmailIdentity");

@@ -5515,7 +5515,7 @@ impl<P, D> DatabaseMigrationService for DatabaseMigrationServiceClient<P, D>
     fn add_tags_to_resource(&self,
                             input: &AddTagsToResourceMessage)
                             -> Result<AddTagsToResourceResponse, AddTagsToResourceError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.AddTagsToResource");
@@ -5542,7 +5542,7 @@ impl<P, D> DatabaseMigrationService for DatabaseMigrationServiceClient<P, D>
     fn create_endpoint(&self,
                        input: &CreateEndpointMessage)
                        -> Result<CreateEndpointResponse, CreateEndpointError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.CreateEndpoint");
@@ -5570,7 +5570,7 @@ impl<P, D> DatabaseMigrationService for DatabaseMigrationServiceClient<P, D>
         (&self,
          input: &CreateEventSubscriptionMessage)
          -> Result<CreateEventSubscriptionResponse, CreateEventSubscriptionError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.CreateEventSubscription");
@@ -5595,7 +5595,7 @@ impl<P, D> DatabaseMigrationService for DatabaseMigrationServiceClient<P, D>
         (&self,
          input: &CreateReplicationInstanceMessage)
          -> Result<CreateReplicationInstanceResponse, CreateReplicationInstanceError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5621,7 +5621,7 @@ impl<P, D> DatabaseMigrationService for DatabaseMigrationServiceClient<P, D>
         (&self,
          input: &CreateReplicationSubnetGroupMessage)
          -> Result<CreateReplicationSubnetGroupResponse, CreateReplicationSubnetGroupError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5647,7 +5647,7 @@ impl<P, D> DatabaseMigrationService for DatabaseMigrationServiceClient<P, D>
         (&self,
          input: &CreateReplicationTaskMessage)
          -> Result<CreateReplicationTaskResponse, CreateReplicationTaskError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.CreateReplicationTask");
@@ -5674,7 +5674,7 @@ impl<P, D> DatabaseMigrationService for DatabaseMigrationServiceClient<P, D>
     fn delete_certificate(&self,
                           input: &DeleteCertificateMessage)
                           -> Result<DeleteCertificateResponse, DeleteCertificateError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.DeleteCertificate");
@@ -5701,7 +5701,7 @@ impl<P, D> DatabaseMigrationService for DatabaseMigrationServiceClient<P, D>
     fn delete_endpoint(&self,
                        input: &DeleteEndpointMessage)
                        -> Result<DeleteEndpointResponse, DeleteEndpointError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.DeleteEndpoint");
@@ -5729,7 +5729,7 @@ impl<P, D> DatabaseMigrationService for DatabaseMigrationServiceClient<P, D>
         (&self,
          input: &DeleteEventSubscriptionMessage)
          -> Result<DeleteEventSubscriptionResponse, DeleteEventSubscriptionError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.DeleteEventSubscription");
@@ -5754,7 +5754,7 @@ impl<P, D> DatabaseMigrationService for DatabaseMigrationServiceClient<P, D>
         (&self,
          input: &DeleteReplicationInstanceMessage)
          -> Result<DeleteReplicationInstanceResponse, DeleteReplicationInstanceError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5780,7 +5780,7 @@ impl<P, D> DatabaseMigrationService for DatabaseMigrationServiceClient<P, D>
         (&self,
          input: &DeleteReplicationSubnetGroupMessage)
          -> Result<DeleteReplicationSubnetGroupResponse, DeleteReplicationSubnetGroupError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5806,7 +5806,7 @@ impl<P, D> DatabaseMigrationService for DatabaseMigrationServiceClient<P, D>
         (&self,
          input: &DeleteReplicationTaskMessage)
          -> Result<DeleteReplicationTaskResponse, DeleteReplicationTaskError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.DeleteReplicationTask");
@@ -5833,7 +5833,7 @@ impl<P, D> DatabaseMigrationService for DatabaseMigrationServiceClient<P, D>
     fn describe_account_attributes
         (&self)
          -> Result<DescribeAccountAttributesResponse, DescribeAccountAttributesError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5857,7 +5857,7 @@ impl<P, D> DatabaseMigrationService for DatabaseMigrationServiceClient<P, D>
     fn describe_certificates(&self,
                              input: &DescribeCertificatesMessage)
                              -> Result<DescribeCertificatesResponse, DescribeCertificatesError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.DescribeCertificates");
@@ -5884,7 +5884,7 @@ impl<P, D> DatabaseMigrationService for DatabaseMigrationServiceClient<P, D>
     fn describe_connections(&self,
                             input: &DescribeConnectionsMessage)
                             -> Result<DescribeConnectionsResponse, DescribeConnectionsError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.DescribeConnections");
@@ -5912,7 +5912,7 @@ impl<P, D> DatabaseMigrationService for DatabaseMigrationServiceClient<P, D>
         (&self,
          input: &DescribeEndpointTypesMessage)
          -> Result<DescribeEndpointTypesResponse, DescribeEndpointTypesError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.DescribeEndpointTypes");
@@ -5939,7 +5939,7 @@ impl<P, D> DatabaseMigrationService for DatabaseMigrationServiceClient<P, D>
     fn describe_endpoints(&self,
                           input: &DescribeEndpointsMessage)
                           -> Result<DescribeEndpointsResponse, DescribeEndpointsError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.DescribeEndpoints");
@@ -5967,7 +5967,7 @@ impl<P, D> DatabaseMigrationService for DatabaseMigrationServiceClient<P, D>
         (&self,
          input: &DescribeEventCategoriesMessage)
          -> Result<DescribeEventCategoriesResponse, DescribeEventCategoriesError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.DescribeEventCategories");
@@ -5992,7 +5992,7 @@ impl<P, D> DatabaseMigrationService for DatabaseMigrationServiceClient<P, D>
         (&self,
          input: &DescribeEventSubscriptionsMessage)
          -> Result<DescribeEventSubscriptionsResponse, DescribeEventSubscriptionsError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -6017,7 +6017,7 @@ impl<P, D> DatabaseMigrationService for DatabaseMigrationServiceClient<P, D>
     fn describe_events(&self,
                        input: &DescribeEventsMessage)
                        -> Result<DescribeEventsResponse, DescribeEventsError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.DescribeEvents");
@@ -6042,7 +6042,7 @@ impl<P, D> DatabaseMigrationService for DatabaseMigrationServiceClient<P, D>
 
     #[doc="<p>Returns information about the replication instance types that can be created in the specified region.</p>"]
 fn describe_orderable_replication_instances(&self, input: &DescribeOrderableReplicationInstancesMessage)  -> Result<DescribeOrderableReplicationInstancesResponse, DescribeOrderableReplicationInstancesError>{
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -6068,7 +6068,7 @@ fn describe_orderable_replication_instances(&self, input: &DescribeOrderableRepl
         (&self,
          input: &DescribeRefreshSchemasStatusMessage)
          -> Result<DescribeRefreshSchemasStatusResponse, DescribeRefreshSchemasStatusError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -6094,7 +6094,7 @@ fn describe_orderable_replication_instances(&self, input: &DescribeOrderableRepl
         (&self,
          input: &DescribeReplicationInstancesMessage)
          -> Result<DescribeReplicationInstancesResponse, DescribeReplicationInstancesError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -6120,7 +6120,7 @@ fn describe_orderable_replication_instances(&self, input: &DescribeOrderableRepl
         (&self,
          input: &DescribeReplicationSubnetGroupsMessage)
          -> Result<DescribeReplicationSubnetGroupsResponse, DescribeReplicationSubnetGroupsError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -6146,7 +6146,7 @@ fn describe_orderable_replication_instances(&self, input: &DescribeOrderableRepl
         (&self,
          input: &DescribeReplicationTasksMessage)
          -> Result<DescribeReplicationTasksResponse, DescribeReplicationTasksError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -6171,7 +6171,7 @@ fn describe_orderable_replication_instances(&self, input: &DescribeOrderableRepl
     fn describe_schemas(&self,
                         input: &DescribeSchemasMessage)
                         -> Result<DescribeSchemasResponse, DescribeSchemasError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.DescribeSchemas");
@@ -6199,7 +6199,7 @@ fn describe_orderable_replication_instances(&self, input: &DescribeOrderableRepl
         (&self,
          input: &DescribeTableStatisticsMessage)
          -> Result<DescribeTableStatisticsResponse, DescribeTableStatisticsError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.DescribeTableStatistics");
@@ -6223,7 +6223,7 @@ fn describe_orderable_replication_instances(&self, input: &DescribeOrderableRepl
     fn import_certificate(&self,
                           input: &ImportCertificateMessage)
                           -> Result<ImportCertificateResponse, ImportCertificateError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.ImportCertificate");
@@ -6250,7 +6250,7 @@ fn describe_orderable_replication_instances(&self, input: &DescribeOrderableRepl
     fn list_tags_for_resource(&self,
                               input: &ListTagsForResourceMessage)
                               -> Result<ListTagsForResourceResponse, ListTagsForResourceError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.ListTagsForResource");
@@ -6277,7 +6277,7 @@ fn describe_orderable_replication_instances(&self, input: &DescribeOrderableRepl
     fn modify_endpoint(&self,
                        input: &ModifyEndpointMessage)
                        -> Result<ModifyEndpointResponse, ModifyEndpointError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.ModifyEndpoint");
@@ -6305,7 +6305,7 @@ fn describe_orderable_replication_instances(&self, input: &DescribeOrderableRepl
         (&self,
          input: &ModifyEventSubscriptionMessage)
          -> Result<ModifyEventSubscriptionResponse, ModifyEventSubscriptionError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.ModifyEventSubscription");
@@ -6330,7 +6330,7 @@ fn describe_orderable_replication_instances(&self, input: &DescribeOrderableRepl
         (&self,
          input: &ModifyReplicationInstanceMessage)
          -> Result<ModifyReplicationInstanceResponse, ModifyReplicationInstanceError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -6356,7 +6356,7 @@ fn describe_orderable_replication_instances(&self, input: &DescribeOrderableRepl
         (&self,
          input: &ModifyReplicationSubnetGroupMessage)
          -> Result<ModifyReplicationSubnetGroupResponse, ModifyReplicationSubnetGroupError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -6382,7 +6382,7 @@ fn describe_orderable_replication_instances(&self, input: &DescribeOrderableRepl
         (&self,
          input: &ModifyReplicationTaskMessage)
          -> Result<ModifyReplicationTaskResponse, ModifyReplicationTaskError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.ModifyReplicationTask");
@@ -6409,7 +6409,7 @@ fn describe_orderable_replication_instances(&self, input: &DescribeOrderableRepl
     fn refresh_schemas(&self,
                        input: &RefreshSchemasMessage)
                        -> Result<RefreshSchemasResponse, RefreshSchemasError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.RefreshSchemas");
@@ -6436,7 +6436,7 @@ fn describe_orderable_replication_instances(&self, input: &DescribeOrderableRepl
     fn reload_tables(&self,
                      input: &ReloadTablesMessage)
                      -> Result<ReloadTablesResponse, ReloadTablesError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.ReloadTables");
@@ -6463,7 +6463,7 @@ fn describe_orderable_replication_instances(&self, input: &DescribeOrderableRepl
         (&self,
          input: &RemoveTagsFromResourceMessage)
          -> Result<RemoveTagsFromResourceResponse, RemoveTagsFromResourceError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.RemoveTagsFromResource");
@@ -6491,7 +6491,7 @@ fn describe_orderable_replication_instances(&self, input: &DescribeOrderableRepl
         (&self,
          input: &StartReplicationTaskMessage)
          -> Result<StartReplicationTaskResponse, StartReplicationTaskError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.StartReplicationTask");
@@ -6518,7 +6518,7 @@ fn describe_orderable_replication_instances(&self, input: &DescribeOrderableRepl
     fn stop_replication_task(&self,
                              input: &StopReplicationTaskMessage)
                              -> Result<StopReplicationTaskResponse, StopReplicationTaskError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.StopReplicationTask");
@@ -6545,7 +6545,7 @@ fn describe_orderable_replication_instances(&self, input: &DescribeOrderableRepl
     fn test_connection(&self,
                        input: &TestConnectionMessage)
                        -> Result<TestConnectionResponse, TestConnectionError> {
-        let mut request = SignedRequest::new("POST", "dms", self.region, "/");
+        let mut request = SignedRequest::new("POST", "dms", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonDMSv20160101.TestConnection");

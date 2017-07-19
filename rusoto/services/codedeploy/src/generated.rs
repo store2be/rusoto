@@ -5633,7 +5633,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
     fn add_tags_to_on_premises_instances(&self,
                                          input: &AddTagsToOnPremisesInstancesInput)
                                          -> Result<(), AddTagsToOnPremisesInstancesError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5657,7 +5657,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
         (&self,
          input: &BatchGetApplicationRevisionsInput)
          -> Result<BatchGetApplicationRevisionsOutput, BatchGetApplicationRevisionsError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5682,7 +5682,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
     fn batch_get_applications(&self,
                               input: &BatchGetApplicationsInput)
                               -> Result<BatchGetApplicationsOutput, BatchGetApplicationsError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeDeploy_20141006.BatchGetApplications");
@@ -5710,7 +5710,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
         (&self,
          input: &BatchGetDeploymentGroupsInput)
          -> Result<BatchGetDeploymentGroupsOutput, BatchGetDeploymentGroupsError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5736,7 +5736,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
         (&self,
          input: &BatchGetDeploymentInstancesInput)
          -> Result<BatchGetDeploymentInstancesOutput, BatchGetDeploymentInstancesError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5761,7 +5761,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
     fn batch_get_deployments(&self,
                              input: &BatchGetDeploymentsInput)
                              -> Result<BatchGetDeploymentsOutput, BatchGetDeploymentsError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeDeploy_20141006.BatchGetDeployments");
@@ -5789,7 +5789,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
         (&self,
          input: &BatchGetOnPremisesInstancesInput)
          -> Result<BatchGetOnPremisesInstancesOutput, BatchGetOnPremisesInstancesError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5814,7 +5814,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
     fn continue_deployment(&self,
                            input: &ContinueDeploymentInput)
                            -> Result<(), ContinueDeploymentError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeDeploy_20141006.ContinueDeployment");
@@ -5839,7 +5839,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
     fn create_application(&self,
                           input: &CreateApplicationInput)
                           -> Result<CreateApplicationOutput, CreateApplicationError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeDeploy_20141006.CreateApplication");
@@ -5866,7 +5866,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
     fn create_deployment(&self,
                          input: &CreateDeploymentInput)
                          -> Result<CreateDeploymentOutput, CreateDeploymentError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeDeploy_20141006.CreateDeployment");
@@ -5894,7 +5894,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
         (&self,
          input: &CreateDeploymentConfigInput)
          -> Result<CreateDeploymentConfigOutput, CreateDeploymentConfigError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeDeploy_20141006.CreateDeploymentConfig");
@@ -5922,7 +5922,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
         (&self,
          input: &CreateDeploymentGroupInput)
          -> Result<CreateDeploymentGroupOutput, CreateDeploymentGroupError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeDeploy_20141006.CreateDeploymentGroup");
@@ -5949,7 +5949,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
     fn delete_application(&self,
                           input: &DeleteApplicationInput)
                           -> Result<(), DeleteApplicationError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeDeploy_20141006.DeleteApplication");
@@ -5974,7 +5974,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
     fn delete_deployment_config(&self,
                                 input: &DeleteDeploymentConfigInput)
                                 -> Result<(), DeleteDeploymentConfigError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeDeploy_20141006.DeleteDeploymentConfig");
@@ -6000,7 +6000,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
         (&self,
          input: &DeleteDeploymentGroupInput)
          -> Result<DeleteDeploymentGroupOutput, DeleteDeploymentGroupError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeDeploy_20141006.DeleteDeploymentGroup");
@@ -6027,7 +6027,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
     fn deregister_on_premises_instance(&self,
                                        input: &DeregisterOnPremisesInstanceInput)
                                        -> Result<(), DeregisterOnPremisesInstanceError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -6050,7 +6050,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
     fn get_application(&self,
                        input: &GetApplicationInput)
                        -> Result<GetApplicationOutput, GetApplicationError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeDeploy_20141006.GetApplication");
@@ -6078,7 +6078,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
         (&self,
          input: &GetApplicationRevisionInput)
          -> Result<GetApplicationRevisionOutput, GetApplicationRevisionError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeDeploy_20141006.GetApplicationRevision");
@@ -6105,7 +6105,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
     fn get_deployment(&self,
                       input: &GetDeploymentInput)
                       -> Result<GetDeploymentOutput, GetDeploymentError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeDeploy_20141006.GetDeployment");
@@ -6131,7 +6131,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
     fn get_deployment_config(&self,
                              input: &GetDeploymentConfigInput)
                              -> Result<GetDeploymentConfigOutput, GetDeploymentConfigError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeDeploy_20141006.GetDeploymentConfig");
@@ -6158,7 +6158,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
     fn get_deployment_group(&self,
                             input: &GetDeploymentGroupInput)
                             -> Result<GetDeploymentGroupOutput, GetDeploymentGroupError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeDeploy_20141006.GetDeploymentGroup");
@@ -6186,7 +6186,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
         (&self,
          input: &GetDeploymentInstanceInput)
          -> Result<GetDeploymentInstanceOutput, GetDeploymentInstanceError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeDeploy_20141006.GetDeploymentInstance");
@@ -6214,7 +6214,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
         (&self,
          input: &GetOnPremisesInstanceInput)
          -> Result<GetOnPremisesInstanceOutput, GetOnPremisesInstanceError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeDeploy_20141006.GetOnPremisesInstance");
@@ -6242,7 +6242,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
         (&self,
          input: &ListApplicationRevisionsInput)
          -> Result<ListApplicationRevisionsOutput, ListApplicationRevisionsError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -6267,7 +6267,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
     fn list_applications(&self,
                          input: &ListApplicationsInput)
                          -> Result<ListApplicationsOutput, ListApplicationsError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeDeploy_20141006.ListApplications");
@@ -6295,7 +6295,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
         (&self,
          input: &ListDeploymentConfigsInput)
          -> Result<ListDeploymentConfigsOutput, ListDeploymentConfigsError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeDeploy_20141006.ListDeploymentConfigs");
@@ -6322,7 +6322,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
     fn list_deployment_groups(&self,
                               input: &ListDeploymentGroupsInput)
                               -> Result<ListDeploymentGroupsOutput, ListDeploymentGroupsError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeDeploy_20141006.ListDeploymentGroups");
@@ -6350,7 +6350,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
         (&self,
          input: &ListDeploymentInstancesInput)
          -> Result<ListDeploymentInstancesOutput, ListDeploymentInstancesError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -6375,7 +6375,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
     fn list_deployments(&self,
                         input: &ListDeploymentsInput)
                         -> Result<ListDeploymentsOutput, ListDeploymentsError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeDeploy_20141006.ListDeployments");
@@ -6403,7 +6403,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
         (&self,
          input: &ListGitHubAccountTokenNamesInput)
          -> Result<ListGitHubAccountTokenNamesOutput, ListGitHubAccountTokenNamesError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -6429,7 +6429,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
         (&self,
          input: &ListOnPremisesInstancesInput)
          -> Result<ListOnPremisesInstancesOutput, ListOnPremisesInstancesError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -6454,7 +6454,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
     fn register_application_revision(&self,
                                      input: &RegisterApplicationRevisionInput)
                                      -> Result<(), RegisterApplicationRevisionError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -6477,7 +6477,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
     fn register_on_premises_instance(&self,
                                      input: &RegisterOnPremisesInstanceInput)
                                      -> Result<(), RegisterOnPremisesInstanceError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -6501,7 +6501,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
         (&self,
          input: &RemoveTagsFromOnPremisesInstancesInput)
          -> Result<(), RemoveTagsFromOnPremisesInstancesError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -6525,7 +6525,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
         (&self,
          input: &SkipWaitTimeForInstanceTerminationInput)
          -> Result<(), SkipWaitTimeForInstanceTerminationError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -6548,7 +6548,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
     fn stop_deployment(&self,
                        input: &StopDeploymentInput)
                        -> Result<StopDeploymentOutput, StopDeploymentError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeDeploy_20141006.StopDeployment");
@@ -6575,7 +6575,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
     fn update_application(&self,
                           input: &UpdateApplicationInput)
                           -> Result<(), UpdateApplicationError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeDeploy_20141006.UpdateApplication");
@@ -6601,7 +6601,7 @@ impl<P, D> CodeDeploy for CodeDeployClient<P, D>
         (&self,
          input: &UpdateDeploymentGroupInput)
          -> Result<UpdateDeploymentGroupOutput, UpdateDeploymentGroupError> {
-        let mut request = SignedRequest::new("POST", "codedeploy", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codedeploy", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeDeploy_20141006.UpdateDeploymentGroup");

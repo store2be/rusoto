@@ -5179,7 +5179,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn add_ip_routes(&self,
                      input: &AddIpRoutesRequest)
                      -> Result<AddIpRoutesResult, AddIpRoutesError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "DirectoryService_20150416.AddIpRoutes");
@@ -5203,7 +5203,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn add_tags_to_resource(&self,
                             input: &AddTagsToResourceRequest)
                             -> Result<AddTagsToResourceResult, AddTagsToResourceError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5232,7 +5232,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
         (&self,
          input: &CancelSchemaExtensionRequest)
          -> Result<CancelSchemaExtensionResult, CancelSchemaExtensionError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5260,7 +5260,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn connect_directory(&self,
                          input: &ConnectDirectoryRequest)
                          -> Result<ConnectDirectoryResult, ConnectDirectoryError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "DirectoryService_20150416.ConnectDirectory");
@@ -5287,7 +5287,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn create_alias(&self,
                     input: &CreateAliasRequest)
                     -> Result<CreateAliasResult, CreateAliasError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "DirectoryService_20150416.CreateAlias");
@@ -5311,7 +5311,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn create_computer(&self,
                        input: &CreateComputerRequest)
                        -> Result<CreateComputerResult, CreateComputerError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "DirectoryService_20150416.CreateComputer");
@@ -5339,7 +5339,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
         (&self,
          input: &CreateConditionalForwarderRequest)
          -> Result<CreateConditionalForwarderResult, CreateConditionalForwarderError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5364,7 +5364,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn create_directory(&self,
                         input: &CreateDirectoryRequest)
                         -> Result<CreateDirectoryResult, CreateDirectoryError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "DirectoryService_20150416.CreateDirectory");
@@ -5391,7 +5391,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn create_microsoft_ad(&self,
                            input: &CreateMicrosoftADRequest)
                            -> Result<CreateMicrosoftADResult, CreateMicrosoftADError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5419,7 +5419,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn create_snapshot(&self,
                        input: &CreateSnapshotRequest)
                        -> Result<CreateSnapshotResult, CreateSnapshotError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "DirectoryService_20150416.CreateSnapshot");
@@ -5446,7 +5446,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn create_trust(&self,
                     input: &CreateTrustRequest)
                     -> Result<CreateTrustResult, CreateTrustError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "DirectoryService_20150416.CreateTrust");
@@ -5471,7 +5471,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
         (&self,
          input: &DeleteConditionalForwarderRequest)
          -> Result<DeleteConditionalForwarderResult, DeleteConditionalForwarderError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5496,7 +5496,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn delete_directory(&self,
                         input: &DeleteDirectoryRequest)
                         -> Result<DeleteDirectoryResult, DeleteDirectoryError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "DirectoryService_20150416.DeleteDirectory");
@@ -5523,7 +5523,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn delete_snapshot(&self,
                        input: &DeleteSnapshotRequest)
                        -> Result<DeleteSnapshotResult, DeleteSnapshotError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "DirectoryService_20150416.DeleteSnapshot");
@@ -5550,7 +5550,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn delete_trust(&self,
                     input: &DeleteTrustRequest)
                     -> Result<DeleteTrustResult, DeleteTrustError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "DirectoryService_20150416.DeleteTrust");
@@ -5574,7 +5574,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn deregister_event_topic(&self,
                               input: &DeregisterEventTopicRequest)
                               -> Result<DeregisterEventTopicResult, DeregisterEventTopicError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5603,7 +5603,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
         (&self,
          input: &DescribeConditionalForwardersRequest)
          -> Result<DescribeConditionalForwardersResult, DescribeConditionalForwardersError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5628,7 +5628,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn describe_directories(&self,
                             input: &DescribeDirectoriesRequest)
                             -> Result<DescribeDirectoriesResult, DescribeDirectoriesError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5656,7 +5656,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn describe_event_topics(&self,
                              input: &DescribeEventTopicsRequest)
                              -> Result<DescribeEventTopicsResult, DescribeEventTopicsError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5684,7 +5684,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn describe_snapshots(&self,
                           input: &DescribeSnapshotsRequest)
                           -> Result<DescribeSnapshotsResult, DescribeSnapshotsError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5712,7 +5712,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn describe_trusts(&self,
                        input: &DescribeTrustsRequest)
                        -> Result<DescribeTrustsResult, DescribeTrustsError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "DirectoryService_20150416.DescribeTrusts");
@@ -5739,7 +5739,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn disable_radius(&self,
                       input: &DisableRadiusRequest)
                       -> Result<DisableRadiusResult, DisableRadiusError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "DirectoryService_20150416.DisableRadius");
@@ -5763,7 +5763,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
 
     #[doc="<p>Disables single-sign on for a directory.</p>"]
     fn disable_sso(&self, input: &DisableSsoRequest) -> Result<DisableSsoResult, DisableSsoError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "DirectoryService_20150416.DisableSso");
@@ -5787,7 +5787,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn enable_radius(&self,
                      input: &EnableRadiusRequest)
                      -> Result<EnableRadiusResult, EnableRadiusError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "DirectoryService_20150416.EnableRadius");
@@ -5811,7 +5811,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
 
     #[doc="<p>Enables single sign-on for a directory.</p>"]
     fn enable_sso(&self, input: &EnableSsoRequest) -> Result<EnableSsoResult, EnableSsoError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "DirectoryService_20150416.EnableSso");
@@ -5835,7 +5835,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
 
     #[doc="<p>Obtains directory limit information for the current region.</p>"]
     fn get_directory_limits(&self) -> Result<GetDirectoryLimitsResult, GetDirectoryLimitsError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5862,7 +5862,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn get_snapshot_limits(&self,
                            input: &GetSnapshotLimitsRequest)
                            -> Result<GetSnapshotLimitsResult, GetSnapshotLimitsError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5890,7 +5890,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn list_ip_routes(&self,
                       input: &ListIpRoutesRequest)
                       -> Result<ListIpRoutesResult, ListIpRoutesError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "DirectoryService_20150416.ListIpRoutes");
@@ -5916,7 +5916,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn list_schema_extensions(&self,
                               input: &ListSchemaExtensionsRequest)
                               -> Result<ListSchemaExtensionsResult, ListSchemaExtensionsError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5944,7 +5944,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn list_tags_for_resource(&self,
                               input: &ListTagsForResourceRequest)
                               -> Result<ListTagsForResourceResult, ListTagsForResourceError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5972,7 +5972,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn register_event_topic(&self,
                             input: &RegisterEventTopicRequest)
                             -> Result<RegisterEventTopicResult, RegisterEventTopicError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -6000,7 +6000,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn remove_ip_routes(&self,
                         input: &RemoveIpRoutesRequest)
                         -> Result<RemoveIpRoutesResult, RemoveIpRoutesError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "DirectoryService_20150416.RemoveIpRoutes");
@@ -6028,7 +6028,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
         (&self,
          input: &RemoveTagsFromResourceRequest)
          -> Result<RemoveTagsFromResourceResult, RemoveTagsFromResourceError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -6056,7 +6056,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn restore_from_snapshot(&self,
                              input: &RestoreFromSnapshotRequest)
                              -> Result<RestoreFromSnapshotResult, RestoreFromSnapshotError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -6084,7 +6084,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn start_schema_extension(&self,
                               input: &StartSchemaExtensionRequest)
                               -> Result<StartSchemaExtensionResult, StartSchemaExtensionError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -6113,7 +6113,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
         (&self,
          input: &UpdateConditionalForwarderRequest)
          -> Result<UpdateConditionalForwarderResult, UpdateConditionalForwarderError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -6138,7 +6138,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn update_radius(&self,
                      input: &UpdateRadiusRequest)
                      -> Result<UpdateRadiusResult, UpdateRadiusError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "DirectoryService_20150416.UpdateRadius");
@@ -6164,7 +6164,7 @@ impl<P, D> DirectoryService for DirectoryServiceClient<P, D>
     fn verify_trust(&self,
                     input: &VerifyTrustRequest)
                     -> Result<VerifyTrustResult, VerifyTrustError> {
-        let mut request = SignedRequest::new("POST", "ds", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ds", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "DirectoryService_20150416.VerifyTrust");

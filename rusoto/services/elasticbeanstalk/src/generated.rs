@@ -12458,7 +12458,7 @@ impl<P, D> ElasticBeanstalk for ElasticBeanstalkClient<P, D>
     fn abort_environment_update(&self,
                                 input: &AbortEnvironmentUpdateMessage)
                                 -> Result<(), AbortEnvironmentUpdateError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AbortEnvironmentUpdate");
@@ -12486,7 +12486,7 @@ impl<P, D> ElasticBeanstalk for ElasticBeanstalkClient<P, D>
         (&self,
          input: &ApplyEnvironmentManagedActionRequest)
          -> Result<ApplyEnvironmentManagedActionResult, ApplyEnvironmentManagedActionError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ApplyEnvironmentManagedAction");
@@ -12529,7 +12529,7 @@ impl<P, D> ElasticBeanstalk for ElasticBeanstalkClient<P, D>
         (&self,
          input: &CheckDNSAvailabilityMessage)
          -> Result<CheckDNSAvailabilityResultMessage, CheckDNSAvailabilityError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CheckDNSAvailability");
@@ -12572,7 +12572,7 @@ impl<P, D> ElasticBeanstalk for ElasticBeanstalkClient<P, D>
     fn compose_environments(&self,
                             input: &ComposeEnvironmentsMessage)
                             -> Result<EnvironmentDescriptionsMessage, ComposeEnvironmentsError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ComposeEnvironments");
@@ -12617,7 +12617,7 @@ impl<P, D> ElasticBeanstalk for ElasticBeanstalkClient<P, D>
     fn create_application(&self,
                           input: &CreateApplicationMessage)
                           -> Result<ApplicationDescriptionMessage, CreateApplicationError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateApplication");
@@ -12663,7 +12663,7 @@ impl<P, D> ElasticBeanstalk for ElasticBeanstalkClient<P, D>
         (&self,
          input: &CreateApplicationVersionMessage)
          -> Result<ApplicationVersionDescriptionMessage, CreateApplicationVersionError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateApplicationVersion");
@@ -12706,7 +12706,7 @@ impl<P, D> ElasticBeanstalk for ElasticBeanstalkClient<P, D>
         (&self,
          input: &CreateConfigurationTemplateMessage)
          -> Result<ConfigurationSettingsDescription, CreateConfigurationTemplateError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateConfigurationTemplate");
@@ -12750,7 +12750,7 @@ impl<P, D> ElasticBeanstalk for ElasticBeanstalkClient<P, D>
     fn create_environment(&self,
                           input: &CreateEnvironmentMessage)
                           -> Result<EnvironmentDescription, CreateEnvironmentError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateEnvironment");
@@ -12795,7 +12795,7 @@ impl<P, D> ElasticBeanstalk for ElasticBeanstalkClient<P, D>
         (&self,
          input: &CreatePlatformVersionRequest)
          -> Result<CreatePlatformVersionResult, CreatePlatformVersionError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreatePlatformVersion");
@@ -12839,7 +12839,7 @@ impl<P, D> ElasticBeanstalk for ElasticBeanstalkClient<P, D>
     fn create_storage_location
         (&self)
          -> Result<CreateStorageLocationResultMessage, CreateStorageLocationError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateStorageLocation");
@@ -12882,7 +12882,7 @@ impl<P, D> ElasticBeanstalk for ElasticBeanstalkClient<P, D>
     fn delete_application(&self,
                           input: &DeleteApplicationMessage)
                           -> Result<(), DeleteApplicationError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteApplication");
@@ -12909,7 +12909,7 @@ impl<P, D> ElasticBeanstalk for ElasticBeanstalkClient<P, D>
     fn delete_application_version(&self,
                                   input: &DeleteApplicationVersionMessage)
                                   -> Result<(), DeleteApplicationVersionError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteApplicationVersion");
@@ -12935,7 +12935,7 @@ impl<P, D> ElasticBeanstalk for ElasticBeanstalkClient<P, D>
     fn delete_configuration_template(&self,
                                      input: &DeleteConfigurationTemplateMessage)
                                      -> Result<(), DeleteConfigurationTemplateError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteConfigurationTemplate");
@@ -12961,7 +12961,7 @@ impl<P, D> ElasticBeanstalk for ElasticBeanstalkClient<P, D>
     fn delete_environment_configuration(&self,
                                         input: &DeleteEnvironmentConfigurationMessage)
                                         -> Result<(), DeleteEnvironmentConfigurationError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteEnvironmentConfiguration");
@@ -12988,7 +12988,7 @@ impl<P, D> ElasticBeanstalk for ElasticBeanstalkClient<P, D>
         (&self,
          input: &DeletePlatformVersionRequest)
          -> Result<DeletePlatformVersionResult, DeletePlatformVersionError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeletePlatformVersion");
@@ -13033,7 +13033,7 @@ impl<P, D> ElasticBeanstalk for ElasticBeanstalkClient<P, D>
         (&self,
          input: &DescribeApplicationVersionsMessage)
          -> Result<ApplicationVersionDescriptionsMessage, DescribeApplicationVersionsError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeApplicationVersions");
@@ -13076,7 +13076,7 @@ impl<P, D> ElasticBeanstalk for ElasticBeanstalkClient<P, D>
         (&self,
          input: &DescribeApplicationsMessage)
          -> Result<ApplicationDescriptionsMessage, DescribeApplicationsError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeApplications");
@@ -13122,7 +13122,7 @@ impl<P, D> ElasticBeanstalk for ElasticBeanstalkClient<P, D>
         (&self,
          input: &DescribeConfigurationOptionsMessage)
          -> Result<ConfigurationOptionsDescription, DescribeConfigurationOptionsError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeConfigurationOptions");
@@ -13167,7 +13167,7 @@ impl<P, D> ElasticBeanstalk for ElasticBeanstalkClient<P, D>
         (&self,
          input: &DescribeConfigurationSettingsMessage)
          -> Result<ConfigurationSettingsDescriptions, DescribeConfigurationSettingsError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeConfigurationSettings");
@@ -13210,7 +13210,7 @@ impl<P, D> ElasticBeanstalk for ElasticBeanstalkClient<P, D>
         (&self,
          input: &DescribeEnvironmentHealthRequest)
          -> Result<DescribeEnvironmentHealthResult, DescribeEnvironmentHealthError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeEnvironmentHealth");
@@ -13252,7 +13252,7 @@ impl<P, D> ElasticBeanstalk for ElasticBeanstalkClient<P, D>
 
     #[doc="<p>Lists an environment's completed and failed managed actions.</p>"]
 fn describe_environment_managed_action_history(&self, input: &DescribeEnvironmentManagedActionHistoryRequest) -> Result<DescribeEnvironmentManagedActionHistoryResult, DescribeEnvironmentManagedActionHistoryError>{
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeEnvironmentManagedActionHistory");
@@ -13297,7 +13297,7 @@ fn describe_environment_managed_action_history(&self, input: &DescribeEnvironmen
         (&self,
          input: &DescribeEnvironmentManagedActionsRequest)
          -> Result<DescribeEnvironmentManagedActionsResult, DescribeEnvironmentManagedActionsError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeEnvironmentManagedActions");
@@ -13340,7 +13340,7 @@ fn describe_environment_managed_action_history(&self, input: &DescribeEnvironmen
         (&self,
          input: &DescribeEnvironmentResourcesMessage)
          -> Result<EnvironmentResourceDescriptionsMessage, DescribeEnvironmentResourcesError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeEnvironmentResources");
@@ -13383,7 +13383,7 @@ fn describe_environment_managed_action_history(&self, input: &DescribeEnvironmen
         (&self,
          input: &DescribeEnvironmentsMessage)
          -> Result<EnvironmentDescriptionsMessage, DescribeEnvironmentsError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeEnvironments");
@@ -13428,7 +13428,7 @@ fn describe_environment_managed_action_history(&self, input: &DescribeEnvironmen
     fn describe_events(&self,
                        input: &DescribeEventsMessage)
                        -> Result<EventDescriptionsMessage, DescribeEventsError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeEvents");
@@ -13473,7 +13473,7 @@ fn describe_environment_managed_action_history(&self, input: &DescribeEnvironmen
         (&self,
          input: &DescribeInstancesHealthRequest)
          -> Result<DescribeInstancesHealthResult, DescribeInstancesHealthError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeInstancesHealth");
@@ -13518,7 +13518,7 @@ fn describe_environment_managed_action_history(&self, input: &DescribeEnvironmen
         (&self,
          input: &DescribePlatformVersionRequest)
          -> Result<DescribePlatformVersionResult, DescribePlatformVersionError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribePlatformVersion");
@@ -13562,7 +13562,7 @@ fn describe_environment_managed_action_history(&self, input: &DescribeEnvironmen
     fn list_available_solution_stacks
         (&self)
          -> Result<ListAvailableSolutionStacksResultMessage, ListAvailableSolutionStacksError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListAvailableSolutionStacks");
@@ -13604,7 +13604,7 @@ fn describe_environment_managed_action_history(&self, input: &DescribeEnvironmen
     fn list_platform_versions(&self,
                               input: &ListPlatformVersionsRequest)
                               -> Result<ListPlatformVersionsResult, ListPlatformVersionsError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListPlatformVersions");
@@ -13648,7 +13648,7 @@ fn describe_environment_managed_action_history(&self, input: &DescribeEnvironmen
     fn rebuild_environment(&self,
                            input: &RebuildEnvironmentMessage)
                            -> Result<(), RebuildEnvironmentError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "RebuildEnvironment");
@@ -13675,7 +13675,7 @@ fn describe_environment_managed_action_history(&self, input: &DescribeEnvironmen
     fn request_environment_info(&self,
                                 input: &RequestEnvironmentInfoMessage)
                                 -> Result<(), RequestEnvironmentInfoError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "RequestEnvironmentInfo");
@@ -13702,7 +13702,7 @@ fn describe_environment_managed_action_history(&self, input: &DescribeEnvironmen
     fn restart_app_server(&self,
                           input: &RestartAppServerMessage)
                           -> Result<(), RestartAppServerError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "RestartAppServer");
@@ -13730,7 +13730,7 @@ fn describe_environment_managed_action_history(&self, input: &DescribeEnvironmen
         (&self,
          input: &RetrieveEnvironmentInfoMessage)
          -> Result<RetrieveEnvironmentInfoResultMessage, RetrieveEnvironmentInfoError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "RetrieveEnvironmentInfo");
@@ -13772,7 +13772,7 @@ fn describe_environment_managed_action_history(&self, input: &DescribeEnvironmen
     fn swap_environment_cnam_es(&self,
                                 input: &SwapEnvironmentCNAMEsMessage)
                                 -> Result<(), SwapEnvironmentCNAMEsError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "SwapEnvironmentCNAMEs");
@@ -13799,7 +13799,7 @@ fn describe_environment_managed_action_history(&self, input: &DescribeEnvironmen
     fn terminate_environment(&self,
                              input: &TerminateEnvironmentMessage)
                              -> Result<EnvironmentDescription, TerminateEnvironmentError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "TerminateEnvironment");
@@ -13843,7 +13843,7 @@ fn describe_environment_managed_action_history(&self, input: &DescribeEnvironmen
     fn update_application(&self,
                           input: &UpdateApplicationMessage)
                           -> Result<ApplicationDescriptionMessage, UpdateApplicationError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UpdateApplication");
@@ -13886,7 +13886,7 @@ fn describe_environment_managed_action_history(&self, input: &DescribeEnvironmen
 
     #[doc="<p>Modifies lifecycle settings for an application.</p>"]
 fn update_application_resource_lifecycle(&self, input: &UpdateApplicationResourceLifecycleMessage) -> Result<ApplicationResourceLifecycleDescriptionMessage, UpdateApplicationResourceLifecycleError>{
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UpdateApplicationResourceLifecycle");
@@ -13929,7 +13929,7 @@ fn update_application_resource_lifecycle(&self, input: &UpdateApplicationResourc
         (&self,
          input: &UpdateApplicationVersionMessage)
          -> Result<ApplicationVersionDescriptionMessage, UpdateApplicationVersionError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UpdateApplicationVersion");
@@ -13972,7 +13972,7 @@ fn update_application_resource_lifecycle(&self, input: &UpdateApplicationResourc
         (&self,
          input: &UpdateConfigurationTemplateMessage)
          -> Result<ConfigurationSettingsDescription, UpdateConfigurationTemplateError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UpdateConfigurationTemplate");
@@ -14016,7 +14016,7 @@ fn update_application_resource_lifecycle(&self, input: &UpdateApplicationResourc
     fn update_environment(&self,
                           input: &UpdateEnvironmentMessage)
                           -> Result<EnvironmentDescription, UpdateEnvironmentError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UpdateEnvironment");
@@ -14061,7 +14061,7 @@ fn update_application_resource_lifecycle(&self, input: &UpdateApplicationResourc
         (&self,
          input: &ValidateConfigurationSettingsMessage)
          -> Result<ConfigurationSettingsValidationMessages, ValidateConfigurationSettingsError> {
-        let mut request = SignedRequest::new("POST", "elasticbeanstalk", self.region, "/");
+        let mut request = SignedRequest::new("POST", "elasticbeanstalk", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ValidateConfigurationSettings");

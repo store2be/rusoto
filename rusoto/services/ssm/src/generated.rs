@@ -12033,7 +12033,7 @@ impl<P, D> Ssm for SsmClient<P, D>
     fn add_tags_to_resource(&self,
                             input: &AddTagsToResourceRequest)
                             -> Result<AddTagsToResourceResult, AddTagsToResourceError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.AddTagsToResource");
@@ -12060,7 +12060,7 @@ impl<P, D> Ssm for SsmClient<P, D>
     fn cancel_command(&self,
                       input: &CancelCommandRequest)
                       -> Result<CancelCommandResult, CancelCommandError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.CancelCommand");
@@ -12086,7 +12086,7 @@ impl<P, D> Ssm for SsmClient<P, D>
     fn create_activation(&self,
                          input: &CreateActivationRequest)
                          -> Result<CreateActivationResult, CreateActivationError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.CreateActivation");
@@ -12113,7 +12113,7 @@ impl<P, D> Ssm for SsmClient<P, D>
     fn create_association(&self,
                           input: &CreateAssociationRequest)
                           -> Result<CreateAssociationResult, CreateAssociationError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.CreateAssociation");
@@ -12141,7 +12141,7 @@ impl<P, D> Ssm for SsmClient<P, D>
         (&self,
          input: &CreateAssociationBatchRequest)
          -> Result<CreateAssociationBatchResult, CreateAssociationBatchError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.CreateAssociationBatch");
@@ -12168,7 +12168,7 @@ impl<P, D> Ssm for SsmClient<P, D>
     fn create_document(&self,
                        input: &CreateDocumentRequest)
                        -> Result<CreateDocumentResult, CreateDocumentError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.CreateDocument");
@@ -12196,7 +12196,7 @@ impl<P, D> Ssm for SsmClient<P, D>
         (&self,
          input: &CreateMaintenanceWindowRequest)
          -> Result<CreateMaintenanceWindowResult, CreateMaintenanceWindowError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.CreateMaintenanceWindow");
@@ -12220,7 +12220,7 @@ impl<P, D> Ssm for SsmClient<P, D>
     fn create_patch_baseline(&self,
                              input: &CreatePatchBaselineRequest)
                              -> Result<CreatePatchBaselineResult, CreatePatchBaselineError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.CreatePatchBaseline");
@@ -12247,7 +12247,7 @@ impl<P, D> Ssm for SsmClient<P, D>
     fn delete_activation(&self,
                          input: &DeleteActivationRequest)
                          -> Result<DeleteActivationResult, DeleteActivationError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.DeleteActivation");
@@ -12274,7 +12274,7 @@ impl<P, D> Ssm for SsmClient<P, D>
     fn delete_association(&self,
                           input: &DeleteAssociationRequest)
                           -> Result<DeleteAssociationResult, DeleteAssociationError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.DeleteAssociation");
@@ -12301,7 +12301,7 @@ impl<P, D> Ssm for SsmClient<P, D>
     fn delete_document(&self,
                        input: &DeleteDocumentRequest)
                        -> Result<DeleteDocumentResult, DeleteDocumentError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.DeleteDocument");
@@ -12329,7 +12329,7 @@ impl<P, D> Ssm for SsmClient<P, D>
         (&self,
          input: &DeleteMaintenanceWindowRequest)
          -> Result<DeleteMaintenanceWindowResult, DeleteMaintenanceWindowError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.DeleteMaintenanceWindow");
@@ -12353,7 +12353,7 @@ impl<P, D> Ssm for SsmClient<P, D>
     fn delete_parameter(&self,
                         input: &DeleteParameterRequest)
                         -> Result<DeleteParameterResult, DeleteParameterError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.DeleteParameter");
@@ -12380,7 +12380,7 @@ impl<P, D> Ssm for SsmClient<P, D>
     fn delete_parameters(&self,
                          input: &DeleteParametersRequest)
                          -> Result<DeleteParametersResult, DeleteParametersError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.DeleteParameters");
@@ -12407,7 +12407,7 @@ impl<P, D> Ssm for SsmClient<P, D>
     fn delete_patch_baseline(&self,
                              input: &DeletePatchBaselineRequest)
                              -> Result<DeletePatchBaselineResult, DeletePatchBaselineError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.DeletePatchBaseline");
@@ -12435,7 +12435,7 @@ impl<P, D> Ssm for SsmClient<P, D>
         (&self,
          input: &DeregisterManagedInstanceRequest)
          -> Result<DeregisterManagedInstanceResult, DeregisterManagedInstanceError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.DeregisterManagedInstance");
@@ -12461,7 +12461,7 @@ impl<P, D> Ssm for SsmClient<P, D>
          input: &DeregisterPatchBaselineForPatchGroupRequest)
          -> Result<DeregisterPatchBaselineForPatchGroupResult,
                    DeregisterPatchBaselineForPatchGroupError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12484,7 +12484,7 @@ impl<P, D> Ssm for SsmClient<P, D>
 
     #[doc="<p>Removes a target from a Maintenance Window.</p>"]
 fn deregister_target_from_maintenance_window(&self, input: &DeregisterTargetFromMaintenanceWindowRequest)  -> Result<DeregisterTargetFromMaintenanceWindowResult, DeregisterTargetFromMaintenanceWindowError>{
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12511,7 +12511,7 @@ fn deregister_target_from_maintenance_window(&self, input: &DeregisterTargetFrom
          input: &DeregisterTaskFromMaintenanceWindowRequest)
          -> Result<DeregisterTaskFromMaintenanceWindowResult,
                    DeregisterTaskFromMaintenanceWindowError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12536,7 +12536,7 @@ fn deregister_target_from_maintenance_window(&self, input: &DeregisterTargetFrom
     fn describe_activations(&self,
                             input: &DescribeActivationsRequest)
                             -> Result<DescribeActivationsResult, DescribeActivationsError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.DescribeActivations");
@@ -12563,7 +12563,7 @@ fn deregister_target_from_maintenance_window(&self, input: &DeregisterTargetFrom
     fn describe_association(&self,
                             input: &DescribeAssociationRequest)
                             -> Result<DescribeAssociationResult, DescribeAssociationError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.DescribeAssociation");
@@ -12591,7 +12591,7 @@ fn deregister_target_from_maintenance_window(&self, input: &DeregisterTargetFrom
         (&self,
          input: &DescribeAutomationExecutionsRequest)
          -> Result<DescribeAutomationExecutionsResult, DescribeAutomationExecutionsError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.DescribeAutomationExecutions");
@@ -12616,7 +12616,7 @@ fn deregister_target_from_maintenance_window(&self, input: &DeregisterTargetFrom
         (&self,
          input: &DescribeAvailablePatchesRequest)
          -> Result<DescribeAvailablePatchesResult, DescribeAvailablePatchesError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.DescribeAvailablePatches");
@@ -12640,7 +12640,7 @@ fn deregister_target_from_maintenance_window(&self, input: &DeregisterTargetFrom
     fn describe_document(&self,
                          input: &DescribeDocumentRequest)
                          -> Result<DescribeDocumentResult, DescribeDocumentError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.DescribeDocument");
@@ -12668,7 +12668,7 @@ fn deregister_target_from_maintenance_window(&self, input: &DeregisterTargetFrom
         (&self,
          input: &DescribeDocumentPermissionRequest)
          -> Result<DescribeDocumentPermissionResponse, DescribeDocumentPermissionError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.DescribeDocumentPermission");
@@ -12690,7 +12690,7 @@ fn deregister_target_from_maintenance_window(&self, input: &DeregisterTargetFrom
 
     #[doc="<p>All associations for the instance(s).</p>"]
 fn describe_effective_instance_associations(&self, input: &DescribeEffectiveInstanceAssociationsRequest)  -> Result<DescribeEffectiveInstanceAssociationsResult, DescribeEffectiveInstanceAssociationsError>{
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12713,7 +12713,7 @@ fn describe_effective_instance_associations(&self, input: &DescribeEffectiveInst
 
     #[doc="<p>Retrieves the current effective patches (the patch and the approval state) for the specified patch baseline.</p>"]
 fn describe_effective_patches_for_patch_baseline(&self, input: &DescribeEffectivePatchesForPatchBaselineRequest)  -> Result<DescribeEffectivePatchesForPatchBaselineResult, DescribeEffectivePatchesForPatchBaselineError>{
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12740,7 +12740,7 @@ fn describe_effective_patches_for_patch_baseline(&self, input: &DescribeEffectiv
          input: &DescribeInstanceAssociationsStatusRequest)
          -> Result<DescribeInstanceAssociationsStatusResult,
                    DescribeInstanceAssociationsStatusError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12766,7 +12766,7 @@ fn describe_effective_patches_for_patch_baseline(&self, input: &DescribeEffectiv
         (&self,
          input: &DescribeInstanceInformationRequest)
          -> Result<DescribeInstanceInformationResult, DescribeInstanceInformationError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.DescribeInstanceInformation");
@@ -12791,7 +12791,7 @@ fn describe_effective_patches_for_patch_baseline(&self, input: &DescribeEffectiv
         (&self,
          input: &DescribeInstancePatchStatesRequest)
          -> Result<DescribeInstancePatchStatesResult, DescribeInstancePatchStatesError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.DescribeInstancePatchStates");
@@ -12813,7 +12813,7 @@ fn describe_effective_patches_for_patch_baseline(&self, input: &DescribeEffectiv
 
     #[doc="<p>Retrieves the high-level patch state for the instances in the specified patch group.</p>"]
 fn describe_instance_patch_states_for_patch_group(&self, input: &DescribeInstancePatchStatesForPatchGroupRequest)  -> Result<DescribeInstancePatchStatesForPatchGroupResult, DescribeInstancePatchStatesForPatchGroupError>{
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12839,7 +12839,7 @@ fn describe_instance_patch_states_for_patch_group(&self, input: &DescribeInstanc
         (&self,
          input: &DescribeInstancePatchesRequest)
          -> Result<DescribeInstancePatchesResult, DescribeInstancePatchesError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.DescribeInstancePatches");
@@ -12861,7 +12861,7 @@ fn describe_instance_patch_states_for_patch_group(&self, input: &DescribeInstanc
 
     #[doc="<p>Retrieves the individual task executions (one per target) for a particular task executed as part of a Maintenance Window execution.</p>"]
 fn describe_maintenance_window_execution_task_invocations(&self, input: &DescribeMaintenanceWindowExecutionTaskInvocationsRequest)  -> Result<DescribeMaintenanceWindowExecutionTaskInvocationsResult, DescribeMaintenanceWindowExecutionTaskInvocationsError>{
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12884,7 +12884,7 @@ fn describe_maintenance_window_execution_task_invocations(&self, input: &Describ
 
     #[doc="<p>For a given Maintenance Window execution, lists the tasks that were executed.</p>"]
 fn describe_maintenance_window_execution_tasks(&self, input: &DescribeMaintenanceWindowExecutionTasksRequest)  -> Result<DescribeMaintenanceWindowExecutionTasksResult, DescribeMaintenanceWindowExecutionTasksError>{
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12911,7 +12911,7 @@ fn describe_maintenance_window_execution_tasks(&self, input: &DescribeMaintenanc
          input: &DescribeMaintenanceWindowExecutionsRequest)
          -> Result<DescribeMaintenanceWindowExecutionsResult,
                    DescribeMaintenanceWindowExecutionsError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12937,7 +12937,7 @@ fn describe_maintenance_window_execution_tasks(&self, input: &DescribeMaintenanc
         (&self,
          input: &DescribeMaintenanceWindowTargetsRequest)
          -> Result<DescribeMaintenanceWindowTargetsResult, DescribeMaintenanceWindowTargetsError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.DescribeMaintenanceWindowTargets");
@@ -12962,7 +12962,7 @@ fn describe_maintenance_window_execution_tasks(&self, input: &DescribeMaintenanc
         (&self,
          input: &DescribeMaintenanceWindowTasksRequest)
          -> Result<DescribeMaintenanceWindowTasksResult, DescribeMaintenanceWindowTasksError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.DescribeMaintenanceWindowTasks");
@@ -12987,7 +12987,7 @@ fn describe_maintenance_window_execution_tasks(&self, input: &DescribeMaintenanc
         (&self,
          input: &DescribeMaintenanceWindowsRequest)
          -> Result<DescribeMaintenanceWindowsResult, DescribeMaintenanceWindowsError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.DescribeMaintenanceWindows");
@@ -13011,7 +13011,7 @@ fn describe_maintenance_window_execution_tasks(&self, input: &DescribeMaintenanc
     fn describe_parameters(&self,
                            input: &DescribeParametersRequest)
                            -> Result<DescribeParametersResult, DescribeParametersError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.DescribeParameters");
@@ -13039,7 +13039,7 @@ fn describe_maintenance_window_execution_tasks(&self, input: &DescribeMaintenanc
         (&self,
          input: &DescribePatchBaselinesRequest)
          -> Result<DescribePatchBaselinesResult, DescribePatchBaselinesError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.DescribePatchBaselines");
@@ -13067,7 +13067,7 @@ fn describe_maintenance_window_execution_tasks(&self, input: &DescribeMaintenanc
         (&self,
          input: &DescribePatchGroupStateRequest)
          -> Result<DescribePatchGroupStateResult, DescribePatchGroupStateError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.DescribePatchGroupState");
@@ -13091,7 +13091,7 @@ fn describe_maintenance_window_execution_tasks(&self, input: &DescribeMaintenanc
     fn describe_patch_groups(&self,
                              input: &DescribePatchGroupsRequest)
                              -> Result<DescribePatchGroupsResult, DescribePatchGroupsError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.DescribePatchGroups");
@@ -13119,7 +13119,7 @@ fn describe_maintenance_window_execution_tasks(&self, input: &DescribeMaintenanc
         (&self,
          input: &GetAutomationExecutionRequest)
          -> Result<GetAutomationExecutionResult, GetAutomationExecutionError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.GetAutomationExecution");
@@ -13146,7 +13146,7 @@ fn describe_maintenance_window_execution_tasks(&self, input: &DescribeMaintenanc
     fn get_command_invocation(&self,
                               input: &GetCommandInvocationRequest)
                               -> Result<GetCommandInvocationResult, GetCommandInvocationError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.GetCommandInvocation");
@@ -13173,7 +13173,7 @@ fn describe_maintenance_window_execution_tasks(&self, input: &DescribeMaintenanc
     fn get_default_patch_baseline
         (&self)
          -> Result<GetDefaultPatchBaselineResult, GetDefaultPatchBaselineError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.GetDefaultPatchBaseline");
@@ -13194,7 +13194,7 @@ fn describe_maintenance_window_execution_tasks(&self, input: &DescribeMaintenanc
 
     #[doc="<p>Retrieves the current snapshot for the patch baseline the instance uses. This API is primarily used by the AWS-ApplyPatchBaseline Systems Manager document. </p>"]
 fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchSnapshotForInstanceRequest)  -> Result<GetDeployablePatchSnapshotForInstanceResult, GetDeployablePatchSnapshotForInstanceError>{
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13219,7 +13219,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
     fn get_document(&self,
                     input: &GetDocumentRequest)
                     -> Result<GetDocumentResult, GetDocumentError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.GetDocument");
@@ -13243,7 +13243,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
     fn get_inventory(&self,
                      input: &GetInventoryRequest)
                      -> Result<GetInventoryResult, GetInventoryError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.GetInventory");
@@ -13269,7 +13269,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
     fn get_inventory_schema(&self,
                             input: &GetInventorySchemaRequest)
                             -> Result<GetInventorySchemaResult, GetInventorySchemaError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.GetInventorySchema");
@@ -13296,7 +13296,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
     fn get_maintenance_window(&self,
                               input: &GetMaintenanceWindowRequest)
                               -> Result<GetMaintenanceWindowResult, GetMaintenanceWindowError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.GetMaintenanceWindow");
@@ -13324,7 +13324,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
         (&self,
          input: &GetMaintenanceWindowExecutionRequest)
          -> Result<GetMaintenanceWindowExecutionResult, GetMaintenanceWindowExecutionError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.GetMaintenanceWindowExecution");
@@ -13349,7 +13349,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
         (&self,
          input: &GetMaintenanceWindowExecutionTaskRequest)
          -> Result<GetMaintenanceWindowExecutionTaskResult, GetMaintenanceWindowExecutionTaskError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13374,7 +13374,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
     fn get_parameter(&self,
                      input: &GetParameterRequest)
                      -> Result<GetParameterResult, GetParameterError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.GetParameter");
@@ -13400,7 +13400,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
     fn get_parameter_history(&self,
                              input: &GetParameterHistoryRequest)
                              -> Result<GetParameterHistoryResult, GetParameterHistoryError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.GetParameterHistory");
@@ -13427,7 +13427,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
     fn get_parameters(&self,
                       input: &GetParametersRequest)
                       -> Result<GetParametersResult, GetParametersError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.GetParameters");
@@ -13453,7 +13453,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
     fn get_parameters_by_path(&self,
                               input: &GetParametersByPathRequest)
                               -> Result<GetParametersByPathResult, GetParametersByPathError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.GetParametersByPath");
@@ -13480,7 +13480,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
     fn get_patch_baseline(&self,
                           input: &GetPatchBaselineRequest)
                           -> Result<GetPatchBaselineResult, GetPatchBaselineError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.GetPatchBaseline");
@@ -13508,7 +13508,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
         (&self,
          input: &GetPatchBaselineForPatchGroupRequest)
          -> Result<GetPatchBaselineForPatchGroupResult, GetPatchBaselineForPatchGroupError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.GetPatchBaselineForPatchGroup");
@@ -13532,7 +13532,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
     fn list_associations(&self,
                          input: &ListAssociationsRequest)
                          -> Result<ListAssociationsResult, ListAssociationsError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.ListAssociations");
@@ -13560,7 +13560,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
         (&self,
          input: &ListCommandInvocationsRequest)
          -> Result<ListCommandInvocationsResult, ListCommandInvocationsError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.ListCommandInvocations");
@@ -13587,7 +13587,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
     fn list_commands(&self,
                      input: &ListCommandsRequest)
                      -> Result<ListCommandsResult, ListCommandsError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.ListCommands");
@@ -13613,7 +13613,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
     fn list_document_versions(&self,
                               input: &ListDocumentVersionsRequest)
                               -> Result<ListDocumentVersionsResult, ListDocumentVersionsError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.ListDocumentVersions");
@@ -13640,7 +13640,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
     fn list_documents(&self,
                       input: &ListDocumentsRequest)
                       -> Result<ListDocumentsResult, ListDocumentsError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.ListDocuments");
@@ -13666,7 +13666,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
     fn list_inventory_entries(&self,
                               input: &ListInventoryEntriesRequest)
                               -> Result<ListInventoryEntriesResult, ListInventoryEntriesError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.ListInventoryEntries");
@@ -13693,7 +13693,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
     fn list_tags_for_resource(&self,
                               input: &ListTagsForResourceRequest)
                               -> Result<ListTagsForResourceResult, ListTagsForResourceError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.ListTagsForResource");
@@ -13721,7 +13721,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
         (&self,
          input: &ModifyDocumentPermissionRequest)
          -> Result<ModifyDocumentPermissionResponse, ModifyDocumentPermissionError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.ModifyDocumentPermission");
@@ -13745,7 +13745,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
     fn put_inventory(&self,
                      input: &PutInventoryRequest)
                      -> Result<PutInventoryResult, PutInventoryError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.PutInventory");
@@ -13771,7 +13771,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
     fn put_parameter(&self,
                      input: &PutParameterRequest)
                      -> Result<PutParameterResult, PutParameterError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.PutParameter");
@@ -13798,7 +13798,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
         (&self,
          input: &RegisterDefaultPatchBaselineRequest)
          -> Result<RegisterDefaultPatchBaselineResult, RegisterDefaultPatchBaselineError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.RegisterDefaultPatchBaseline");
@@ -13824,7 +13824,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
          input: &RegisterPatchBaselineForPatchGroupRequest)
          -> Result<RegisterPatchBaselineForPatchGroupResult,
                    RegisterPatchBaselineForPatchGroupError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13851,7 +13851,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
          input: &RegisterTargetWithMaintenanceWindowRequest)
          -> Result<RegisterTargetWithMaintenanceWindowResult,
                    RegisterTargetWithMaintenanceWindowError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13877,7 +13877,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
         (&self,
          input: &RegisterTaskWithMaintenanceWindowRequest)
          -> Result<RegisterTaskWithMaintenanceWindowResult, RegisterTaskWithMaintenanceWindowError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13903,7 +13903,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
         (&self,
          input: &RemoveTagsFromResourceRequest)
          -> Result<RemoveTagsFromResourceResult, RemoveTagsFromResourceError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.RemoveTagsFromResource");
@@ -13930,7 +13930,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
     fn send_command(&self,
                     input: &SendCommandRequest)
                     -> Result<SendCommandResult, SendCommandError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.SendCommand");
@@ -13955,7 +13955,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
         (&self,
          input: &StartAutomationExecutionRequest)
          -> Result<StartAutomationExecutionResult, StartAutomationExecutionError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.StartAutomationExecution");
@@ -13980,7 +13980,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
         (&self,
          input: &StopAutomationExecutionRequest)
          -> Result<StopAutomationExecutionResult, StopAutomationExecutionError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.StopAutomationExecution");
@@ -14004,7 +14004,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
     fn update_association(&self,
                           input: &UpdateAssociationRequest)
                           -> Result<UpdateAssociationResult, UpdateAssociationError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.UpdateAssociation");
@@ -14032,7 +14032,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
         (&self,
          input: &UpdateAssociationStatusRequest)
          -> Result<UpdateAssociationStatusResult, UpdateAssociationStatusError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.UpdateAssociationStatus");
@@ -14056,7 +14056,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
     fn update_document(&self,
                        input: &UpdateDocumentRequest)
                        -> Result<UpdateDocumentResult, UpdateDocumentError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.UpdateDocument");
@@ -14084,7 +14084,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
         (&self,
          input: &UpdateDocumentDefaultVersionRequest)
          -> Result<UpdateDocumentDefaultVersionResult, UpdateDocumentDefaultVersionError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.UpdateDocumentDefaultVersion");
@@ -14109,7 +14109,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
         (&self,
          input: &UpdateMaintenanceWindowRequest)
          -> Result<UpdateMaintenanceWindowResult, UpdateMaintenanceWindowError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.UpdateMaintenanceWindow");
@@ -14134,7 +14134,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
         (&self,
          input: &UpdateManagedInstanceRoleRequest)
          -> Result<UpdateManagedInstanceRoleResult, UpdateManagedInstanceRoleError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.UpdateManagedInstanceRole");
@@ -14158,7 +14158,7 @@ fn get_deployable_patch_snapshot_for_instance(&self, input: &GetDeployablePatchS
     fn update_patch_baseline(&self,
                              input: &UpdatePatchBaselineRequest)
                              -> Result<UpdatePatchBaselineResult, UpdatePatchBaselineError> {
-        let mut request = SignedRequest::new("POST", "ssm", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ssm", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AmazonSSM.UpdatePatchBaseline");

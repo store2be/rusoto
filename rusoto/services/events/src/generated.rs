@@ -1534,7 +1534,7 @@ impl<P, D> CloudWatchEvents for CloudWatchEventsClient<P, D>
 {
     #[doc="<p>Deletes the specified rule.</p> <p>You must remove all targets from a rule using <a>RemoveTargets</a> before you can delete the rule.</p> <p>When you delete a rule, incoming events might continue to match to the deleted rule. Please allow a short period of time for changes to take effect.</p>"]
     fn delete_rule(&self, input: &DeleteRuleRequest) -> Result<(), DeleteRuleError> {
-        let mut request = SignedRequest::new("POST", "events", self.region, "/");
+        let mut request = SignedRequest::new("POST", "events", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AWSEvents.DeleteRule");
@@ -1556,7 +1556,7 @@ impl<P, D> CloudWatchEvents for CloudWatchEventsClient<P, D>
     fn describe_rule(&self,
                      input: &DescribeRuleRequest)
                      -> Result<DescribeRuleResponse, DescribeRuleError> {
-        let mut request = SignedRequest::new("POST", "events", self.region, "/");
+        let mut request = SignedRequest::new("POST", "events", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AWSEvents.DescribeRule");
@@ -1580,7 +1580,7 @@ impl<P, D> CloudWatchEvents for CloudWatchEventsClient<P, D>
 
     #[doc="<p>Disables the specified rule. A disabled rule won't match any events, and won't self-trigger if it has a schedule expression.</p> <p>When you disable a rule, incoming events might continue to match to the disabled rule. Please allow a short period of time for changes to take effect.</p>"]
     fn disable_rule(&self, input: &DisableRuleRequest) -> Result<(), DisableRuleError> {
-        let mut request = SignedRequest::new("POST", "events", self.region, "/");
+        let mut request = SignedRequest::new("POST", "events", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AWSEvents.DisableRule");
@@ -1600,7 +1600,7 @@ impl<P, D> CloudWatchEvents for CloudWatchEventsClient<P, D>
 
     #[doc="<p>Enables the specified rule. If the rule does not exist, the operation fails.</p> <p>When you enable a rule, incoming events might not immediately start matching to a newly enabled rule. Please allow a short period of time for changes to take effect.</p>"]
     fn enable_rule(&self, input: &EnableRuleRequest) -> Result<(), EnableRuleError> {
-        let mut request = SignedRequest::new("POST", "events", self.region, "/");
+        let mut request = SignedRequest::new("POST", "events", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AWSEvents.EnableRule");
@@ -1623,7 +1623,7 @@ impl<P, D> CloudWatchEvents for CloudWatchEventsClient<P, D>
         (&self,
          input: &ListRuleNamesByTargetRequest)
          -> Result<ListRuleNamesByTargetResponse, ListRuleNamesByTargetError> {
-        let mut request = SignedRequest::new("POST", "events", self.region, "/");
+        let mut request = SignedRequest::new("POST", "events", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AWSEvents.ListRuleNamesByTarget");
@@ -1648,7 +1648,7 @@ impl<P, D> CloudWatchEvents for CloudWatchEventsClient<P, D>
 
     #[doc="<p>Lists your Amazon CloudWatch Events rules. You can either list all the rules or you can provide a prefix to match to the rule names.</p>"]
     fn list_rules(&self, input: &ListRulesRequest) -> Result<ListRulesResponse, ListRulesError> {
-        let mut request = SignedRequest::new("POST", "events", self.region, "/");
+        let mut request = SignedRequest::new("POST", "events", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AWSEvents.ListRules");
@@ -1672,7 +1672,7 @@ impl<P, D> CloudWatchEvents for CloudWatchEventsClient<P, D>
     fn list_targets_by_rule(&self,
                             input: &ListTargetsByRuleRequest)
                             -> Result<ListTargetsByRuleResponse, ListTargetsByRuleError> {
-        let mut request = SignedRequest::new("POST", "events", self.region, "/");
+        let mut request = SignedRequest::new("POST", "events", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AWSEvents.ListTargetsByRule");
@@ -1697,7 +1697,7 @@ impl<P, D> CloudWatchEvents for CloudWatchEventsClient<P, D>
 
     #[doc="<p>Sends custom events to Amazon CloudWatch Events so that they can be matched to rules.</p>"]
     fn put_events(&self, input: &PutEventsRequest) -> Result<PutEventsResponse, PutEventsError> {
-        let mut request = SignedRequest::new("POST", "events", self.region, "/");
+        let mut request = SignedRequest::new("POST", "events", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AWSEvents.PutEvents");
@@ -1719,7 +1719,7 @@ impl<P, D> CloudWatchEvents for CloudWatchEventsClient<P, D>
 
     #[doc="<p>Creates or updates the specified rule. Rules are enabled by default, or based on value of the state. You can disable a rule using <a>DisableRule</a>.</p> <p>When you create or update a rule, incoming events might not immediately start matching to new or updated rules. Please allow a short period of time for changes to take effect.</p> <p>A rule must contain at least an EventPattern or ScheduleExpression. Rules with EventPatterns are triggered when a matching event is observed. Rules with ScheduleExpressions self-trigger based on the given schedule. A rule can have both an EventPattern and a ScheduleExpression, in which case the rule triggers on matching events as well as on a schedule.</p> <p>Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs). However, CloudWatch Events uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating event patterns so that they match the ARN syntax in the event you want to match.</p>"]
     fn put_rule(&self, input: &PutRuleRequest) -> Result<PutRuleResponse, PutRuleError> {
-        let mut request = SignedRequest::new("POST", "events", self.region, "/");
+        let mut request = SignedRequest::new("POST", "events", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AWSEvents.PutRule");
@@ -1745,7 +1745,7 @@ impl<P, D> CloudWatchEvents for CloudWatchEventsClient<P, D>
     fn put_targets(&self,
                    input: &PutTargetsRequest)
                    -> Result<PutTargetsResponse, PutTargetsError> {
-        let mut request = SignedRequest::new("POST", "events", self.region, "/");
+        let mut request = SignedRequest::new("POST", "events", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AWSEvents.PutTargets");
@@ -1769,7 +1769,7 @@ impl<P, D> CloudWatchEvents for CloudWatchEventsClient<P, D>
     fn remove_targets(&self,
                       input: &RemoveTargetsRequest)
                       -> Result<RemoveTargetsResponse, RemoveTargetsError> {
-        let mut request = SignedRequest::new("POST", "events", self.region, "/");
+        let mut request = SignedRequest::new("POST", "events", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AWSEvents.RemoveTargets");
@@ -1795,7 +1795,7 @@ impl<P, D> CloudWatchEvents for CloudWatchEventsClient<P, D>
     fn test_event_pattern(&self,
                           input: &TestEventPatternRequest)
                           -> Result<TestEventPatternResponse, TestEventPatternError> {
-        let mut request = SignedRequest::new("POST", "events", self.region, "/");
+        let mut request = SignedRequest::new("POST", "events", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AWSEvents.TestEventPattern");

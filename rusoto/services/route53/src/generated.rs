@@ -11822,7 +11822,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
         request_uri = request_uri.replace("{Id}", &input.hosted_zone_id.to_string());
 
-        let mut request = SignedRequest::new("POST", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "route53", &self.region, &request_uri);
 
 
 
@@ -11870,7 +11870,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
         request_uri = request_uri.replace("{Id}", &input.hosted_zone_id.to_string());
 
-        let mut request = SignedRequest::new("POST", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "route53", &self.region, &request_uri);
 
 
 
@@ -11919,7 +11919,7 @@ impl<P, D> Route53 for Route53Client<P, D>
         request_uri = request_uri.replace("{ResourceId}", &input.resource_id.to_string());
         request_uri = request_uri.replace("{ResourceType}", &input.resource_type.to_string());
 
-        let mut request = SignedRequest::new("POST", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "route53", &self.region, &request_uri);
 
 
 
@@ -11969,7 +11969,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
 
 
-        let mut request = SignedRequest::new("POST", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "route53", &self.region, &request_uri);
 
 
 
@@ -12022,7 +12022,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
 
 
-        let mut request = SignedRequest::new("POST", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "route53", &self.region, &request_uri);
 
 
 
@@ -12076,7 +12076,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
 
 
-        let mut request = SignedRequest::new("POST", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "route53", &self.region, &request_uri);
 
 
 
@@ -12124,7 +12124,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
 
 
-        let mut request = SignedRequest::new("POST", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "route53", &self.region, &request_uri);
 
 
 
@@ -12176,7 +12176,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
 
 
-        let mut request = SignedRequest::new("POST", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "route53", &self.region, &request_uri);
 
 
 
@@ -12225,7 +12225,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
         request_uri = request_uri.replace("{Id}", &input.id.to_string());
 
-        let mut request = SignedRequest::new("POST", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "route53", &self.region, &request_uri);
 
 
 
@@ -12275,7 +12275,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
         request_uri = request_uri.replace("{Id}", &input.hosted_zone_id.to_string());
 
-        let mut request = SignedRequest::new("POST", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "route53", &self.region, &request_uri);
 
 
 
@@ -12322,7 +12322,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
         request_uri = request_uri.replace("{HealthCheckId}", &input.health_check_id.to_string());
 
-        let mut request = SignedRequest::new("DELETE", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "route53", &self.region, &request_uri);
 
 
 
@@ -12374,7 +12374,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
         request_uri = request_uri.replace("{Id}", &input.id.to_string());
 
-        let mut request = SignedRequest::new("DELETE", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "route53", &self.region, &request_uri);
 
 
 
@@ -12427,7 +12427,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
         request_uri = request_uri.replace("{Id}", &input.id.to_string());
 
-        let mut request = SignedRequest::new("DELETE", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "route53", &self.region, &request_uri);
 
 
 
@@ -12475,7 +12475,7 @@ impl<P, D> Route53 for Route53Client<P, D>
         request_uri = request_uri.replace("{Id}", &input.id.to_string());
         request_uri = request_uri.replace("{Version}", &input.version.to_string());
 
-        let mut request = SignedRequest::new("DELETE", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "route53", &self.region, &request_uri);
 
 
 
@@ -12526,7 +12526,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
         request_uri = request_uri.replace("{Id}", &input.id.to_string());
 
-        let mut request = SignedRequest::new("DELETE", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "route53", &self.region, &request_uri);
 
 
 
@@ -12575,7 +12575,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
         request_uri = request_uri.replace("{Id}", &input.hosted_zone_id.to_string());
 
-        let mut request = SignedRequest::new("POST", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "route53", &self.region, &request_uri);
 
 
 
@@ -12623,7 +12623,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
         request_uri = request_uri.replace("{Id}", &input.hosted_zone_id.to_string());
 
-        let mut request = SignedRequest::new("POST", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "route53", &self.region, &request_uri);
 
 
 
@@ -12668,7 +12668,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
         request_uri = request_uri.replace("{Id}", &input.id.to_string());
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -12716,7 +12716,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
 
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -12768,7 +12768,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
 
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -12831,7 +12831,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
         request_uri = request_uri.replace("{HealthCheckId}", &input.health_check_id.to_string());
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -12883,7 +12883,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
 
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -12935,7 +12935,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
         request_uri = request_uri.replace("{HealthCheckId}", &input.health_check_id.to_string());
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -12983,7 +12983,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
         request_uri = request_uri.replace("{HealthCheckId}", &input.health_check_id.to_string());
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -13033,7 +13033,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
         request_uri = request_uri.replace("{Id}", &input.id.to_string());
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -13083,7 +13083,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
 
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -13136,7 +13136,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
         request_uri = request_uri.replace("{Id}", &input.id.to_string());
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -13184,7 +13184,7 @@ impl<P, D> Route53 for Route53Client<P, D>
         request_uri = request_uri.replace("{Id}", &input.id.to_string());
         request_uri = request_uri.replace("{Version}", &input.version.to_string());
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -13237,7 +13237,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
         request_uri = request_uri.replace("{Id}", &input.id.to_string());
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -13285,7 +13285,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
 
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -13332,7 +13332,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
 
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -13399,7 +13399,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
 
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -13458,7 +13458,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
 
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -13522,7 +13522,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
 
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -13584,7 +13584,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
         request_uri = request_uri.replace("{Id}", &input.hosted_zone_id.to_string());
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -13650,7 +13650,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
 
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -13705,7 +13705,7 @@ impl<P, D> Route53 for Route53Client<P, D>
         request_uri = request_uri.replace("{ResourceId}", &input.resource_id.to_string());
         request_uri = request_uri.replace("{ResourceType}", &input.resource_type.to_string());
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -13756,7 +13756,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
         request_uri = request_uri.replace("{ResourceType}", &input.resource_type.to_string());
 
-        let mut request = SignedRequest::new("POST", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "route53", &self.region, &request_uri);
 
 
 
@@ -13806,7 +13806,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
 
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -13864,7 +13864,7 @@ impl<P, D> Route53 for Route53Client<P, D>
 
 
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -13928,7 +13928,7 @@ fn list_traffic_policy_instances_by_hosted_zone(&self, input: &ListTrafficPolicy
 
 
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
         params.put("id", &input.hosted_zone_id);
@@ -13993,7 +13993,7 @@ fn list_traffic_policy_instances_by_hosted_zone(&self, input: &ListTrafficPolicy
 
 
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -14062,7 +14062,7 @@ fn list_traffic_policy_instances_by_hosted_zone(&self, input: &ListTrafficPolicy
 
         request_uri = request_uri.replace("{Id}", &input.id.to_string());
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -14117,7 +14117,7 @@ fn list_traffic_policy_instances_by_hosted_zone(&self, input: &ListTrafficPolicy
 
         request_uri = request_uri.replace("{Id}", &input.hosted_zone_id.to_string());
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -14171,7 +14171,7 @@ fn list_traffic_policy_instances_by_hosted_zone(&self, input: &ListTrafficPolicy
 
 
 
-        let mut request = SignedRequest::new("GET", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "route53", &self.region, &request_uri);
 
 
 
@@ -14235,7 +14235,7 @@ fn list_traffic_policy_instances_by_hosted_zone(&self, input: &ListTrafficPolicy
 
         request_uri = request_uri.replace("{HealthCheckId}", &input.health_check_id.to_string());
 
-        let mut request = SignedRequest::new("POST", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "route53", &self.region, &request_uri);
 
 
 
@@ -14288,7 +14288,7 @@ fn list_traffic_policy_instances_by_hosted_zone(&self, input: &ListTrafficPolicy
 
         request_uri = request_uri.replace("{Id}", &input.id.to_string());
 
-        let mut request = SignedRequest::new("POST", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "route53", &self.region, &request_uri);
 
 
 
@@ -14337,7 +14337,7 @@ fn list_traffic_policy_instances_by_hosted_zone(&self, input: &ListTrafficPolicy
         request_uri = request_uri.replace("{Id}", &input.id.to_string());
         request_uri = request_uri.replace("{Version}", &input.version.to_string());
 
-        let mut request = SignedRequest::new("POST", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "route53", &self.region, &request_uri);
 
 
 
@@ -14385,7 +14385,7 @@ fn list_traffic_policy_instances_by_hosted_zone(&self, input: &ListTrafficPolicy
 
         request_uri = request_uri.replace("{Id}", &input.id.to_string());
 
-        let mut request = SignedRequest::new("POST", "route53", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "route53", &self.region, &request_uri);
 
 
 

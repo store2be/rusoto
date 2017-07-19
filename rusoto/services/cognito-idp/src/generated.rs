@@ -11617,7 +11617,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn add_custom_attributes(&self,
                              input: &AddCustomAttributesRequest)
                              -> Result<AddCustomAttributesResponse, AddCustomAttributesError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -11645,7 +11645,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn admin_add_user_to_group(&self,
                                input: &AdminAddUserToGroupRequest)
                                -> Result<(), AdminAddUserToGroupError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -11671,7 +11671,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn admin_confirm_sign_up(&self,
                              input: &AdminConfirmSignUpRequest)
                              -> Result<AdminConfirmSignUpResponse, AdminConfirmSignUpError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -11699,7 +11699,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn admin_create_user(&self,
                          input: &AdminCreateUserRequest)
                          -> Result<AdminCreateUserResponse, AdminCreateUserError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -11727,7 +11727,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn admin_delete_user(&self,
                          input: &AdminDeleteUserRequest)
                          -> Result<(), AdminDeleteUserError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -11754,7 +11754,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &AdminDeleteUserAttributesRequest)
          -> Result<AdminDeleteUserAttributesResponse, AdminDeleteUserAttributesError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -11779,7 +11779,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn admin_disable_user(&self,
                           input: &AdminDisableUserRequest)
                           -> Result<AdminDisableUserResponse, AdminDisableUserError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -11807,7 +11807,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn admin_enable_user(&self,
                          input: &AdminEnableUserRequest)
                          -> Result<AdminEnableUserResponse, AdminEnableUserError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -11835,7 +11835,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn admin_forget_device(&self,
                            input: &AdminForgetDeviceRequest)
                            -> Result<(), AdminForgetDeviceError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -11861,7 +11861,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn admin_get_device(&self,
                         input: &AdminGetDeviceRequest)
                         -> Result<AdminGetDeviceResponse, AdminGetDeviceError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -11889,7 +11889,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn admin_get_user(&self,
                       input: &AdminGetUserRequest)
                       -> Result<AdminGetUserResponse, AdminGetUserError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -11916,7 +11916,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn admin_initiate_auth(&self,
                            input: &AdminInitiateAuthRequest)
                            -> Result<AdminInitiateAuthResponse, AdminInitiateAuthError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -11944,7 +11944,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn admin_list_devices(&self,
                           input: &AdminListDevicesRequest)
                           -> Result<AdminListDevicesResponse, AdminListDevicesError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -11973,7 +11973,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &AdminListGroupsForUserRequest)
          -> Result<AdminListGroupsForUserResponse, AdminListGroupsForUserError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12001,7 +12001,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn admin_remove_user_from_group(&self,
                                     input: &AdminRemoveUserFromGroupRequest)
                                     -> Result<(), AdminRemoveUserFromGroupError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12025,7 +12025,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &AdminResetUserPasswordRequest)
          -> Result<AdminResetUserPasswordResponse, AdminResetUserPasswordError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12054,7 +12054,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &AdminRespondToAuthChallengeRequest)
          -> Result<AdminRespondToAuthChallengeResponse, AdminRespondToAuthChallengeError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12080,7 +12080,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &AdminSetUserSettingsRequest)
          -> Result<AdminSetUserSettingsResponse, AdminSetUserSettingsError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12109,7 +12109,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &AdminUpdateDeviceStatusRequest)
          -> Result<AdminUpdateDeviceStatusResponse, AdminUpdateDeviceStatusError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12135,7 +12135,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &AdminUpdateUserAttributesRequest)
          -> Result<AdminUpdateUserAttributesResponse, AdminUpdateUserAttributesError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12161,7 +12161,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &AdminUserGlobalSignOutRequest)
          -> Result<AdminUserGlobalSignOutResponse, AdminUserGlobalSignOutError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12189,7 +12189,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn change_password(&self,
                        input: &ChangePasswordRequest)
                        -> Result<ChangePasswordResponse, ChangePasswordError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12217,7 +12217,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn confirm_device(&self,
                       input: &ConfirmDeviceRequest)
                       -> Result<ConfirmDeviceResponse, ConfirmDeviceError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12245,7 +12245,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &ConfirmForgotPasswordRequest)
          -> Result<ConfirmForgotPasswordResponse, ConfirmForgotPasswordError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12273,7 +12273,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn confirm_sign_up(&self,
                        input: &ConfirmSignUpRequest)
                        -> Result<ConfirmSignUpResponse, ConfirmSignUpError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12300,7 +12300,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn create_group(&self,
                     input: &CreateGroupRequest)
                     -> Result<CreateGroupResponse, CreateGroupError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12326,7 +12326,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &CreateIdentityProviderRequest)
          -> Result<CreateIdentityProviderResponse, CreateIdentityProviderError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12354,7 +12354,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn create_user_import_job(&self,
                               input: &CreateUserImportJobRequest)
                               -> Result<CreateUserImportJobResponse, CreateUserImportJobError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12382,7 +12382,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn create_user_pool(&self,
                         input: &CreateUserPoolRequest)
                         -> Result<CreateUserPoolResponse, CreateUserPoolError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12411,7 +12411,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &CreateUserPoolClientRequest)
          -> Result<CreateUserPoolClientResponse, CreateUserPoolClientError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12440,7 +12440,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &CreateUserPoolDomainRequest)
          -> Result<CreateUserPoolDomainResponse, CreateUserPoolDomainError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12466,7 +12466,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
 
     #[doc="<p>Deletes a group. Currently only groups with no members can be deleted.</p> <p>Requires developer credentials.</p>"]
     fn delete_group(&self, input: &DeleteGroupRequest) -> Result<(), DeleteGroupError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12489,7 +12489,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn delete_identity_provider(&self,
                                 input: &DeleteIdentityProviderRequest)
                                 -> Result<(), DeleteIdentityProviderError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12513,7 +12513,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
 
     #[doc="<p>Allows a user to delete one's self.</p>"]
     fn delete_user(&self, input: &DeleteUserRequest) -> Result<(), DeleteUserError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12537,7 +12537,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &DeleteUserAttributesRequest)
          -> Result<DeleteUserAttributesResponse, DeleteUserAttributesError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12563,7 +12563,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
 
     #[doc="<p>Deletes the specified Amazon Cognito user pool.</p>"]
     fn delete_user_pool(&self, input: &DeleteUserPoolRequest) -> Result<(), DeleteUserPoolError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12589,7 +12589,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn delete_user_pool_client(&self,
                                input: &DeleteUserPoolClientRequest)
                                -> Result<(), DeleteUserPoolClientError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12616,7 +12616,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &DeleteUserPoolDomainRequest)
          -> Result<DeleteUserPoolDomainResponse, DeleteUserPoolDomainError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12645,7 +12645,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &DescribeIdentityProviderRequest)
          -> Result<DescribeIdentityProviderResponse, DescribeIdentityProviderError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12671,7 +12671,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &DescribeUserImportJobRequest)
          -> Result<DescribeUserImportJobResponse, DescribeUserImportJobError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12699,7 +12699,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn describe_user_pool(&self,
                           input: &DescribeUserPoolRequest)
                           -> Result<DescribeUserPoolResponse, DescribeUserPoolError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12728,7 +12728,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &DescribeUserPoolClientRequest)
          -> Result<DescribeUserPoolClientResponse, DescribeUserPoolClientError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12757,7 +12757,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &DescribeUserPoolDomainRequest)
          -> Result<DescribeUserPoolDomainResponse, DescribeUserPoolDomainError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12783,7 +12783,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
 
     #[doc="<p>Forgets the specified device.</p>"]
     fn forget_device(&self, input: &ForgetDeviceRequest) -> Result<(), ForgetDeviceError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12808,7 +12808,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn forgot_password(&self,
                        input: &ForgotPasswordRequest)
                        -> Result<ForgotPasswordResponse, ForgotPasswordError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12836,7 +12836,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn get_csv_header(&self,
                       input: &GetCSVHeaderRequest)
                       -> Result<GetCSVHeaderResponse, GetCSVHeaderError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12861,7 +12861,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
 
     #[doc="<p>Gets the device.</p>"]
     fn get_device(&self, input: &GetDeviceRequest) -> Result<GetDeviceResponse, GetDeviceError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12884,7 +12884,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
 
     #[doc="<p>Gets a group.</p> <p>Requires developer credentials.</p>"]
     fn get_group(&self, input: &GetGroupRequest) -> Result<GetGroupResponse, GetGroupError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AWSCognitoIdentityProviderService.GetGroup");
@@ -12909,7 +12909,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &GetIdentityProviderByIdentifierRequest)
          -> Result<GetIdentityProviderByIdentifierResponse, GetIdentityProviderByIdentifierError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12932,7 +12932,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
 
     #[doc="<p>Gets the user attributes and metadata for a user.</p>"]
     fn get_user(&self, input: &GetUserRequest) -> Result<GetUserResponse, GetUserError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AWSCognitoIdentityProviderService.GetUser");
@@ -12959,7 +12959,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &GetUserAttributeVerificationCodeRequest)
          -> Result<GetUserAttributeVerificationCodeResponse, GetUserAttributeVerificationCodeError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -12984,7 +12984,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn global_sign_out(&self,
                        input: &GlobalSignOutRequest)
                        -> Result<GlobalSignOutResponse, GlobalSignOutError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13011,7 +13011,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn initiate_auth(&self,
                      input: &InitiateAuthRequest)
                      -> Result<InitiateAuthResponse, InitiateAuthError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13038,7 +13038,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn list_devices(&self,
                     input: &ListDevicesRequest)
                     -> Result<ListDevicesResponse, ListDevicesError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13063,7 +13063,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn list_groups(&self,
                    input: &ListGroupsRequest)
                    -> Result<ListGroupsResponse, ListGroupsError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13089,7 +13089,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &ListIdentityProvidersRequest)
          -> Result<ListIdentityProvidersResponse, ListIdentityProvidersError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13117,7 +13117,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn list_user_import_jobs(&self,
                              input: &ListUserImportJobsRequest)
                              -> Result<ListUserImportJobsResponse, ListUserImportJobsError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13145,7 +13145,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn list_user_pool_clients(&self,
                               input: &ListUserPoolClientsRequest)
                               -> Result<ListUserPoolClientsResponse, ListUserPoolClientsError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13173,7 +13173,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn list_user_pools(&self,
                        input: &ListUserPoolsRequest)
                        -> Result<ListUserPoolsResponse, ListUserPoolsError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13198,7 +13198,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
 
     #[doc="<p>Lists the users in the Amazon Cognito user pool.</p>"]
     fn list_users(&self, input: &ListUsersRequest) -> Result<ListUsersResponse, ListUsersError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13223,7 +13223,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn list_users_in_group(&self,
                            input: &ListUsersInGroupRequest)
                            -> Result<ListUsersInGroupResponse, ListUsersInGroupError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13252,7 +13252,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &ResendConfirmationCodeRequest)
          -> Result<ResendConfirmationCodeResponse, ResendConfirmationCodeError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13281,7 +13281,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &RespondToAuthChallengeRequest)
          -> Result<RespondToAuthChallengeResponse, RespondToAuthChallengeError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13309,7 +13309,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn set_user_settings(&self,
                          input: &SetUserSettingsRequest)
                          -> Result<SetUserSettingsResponse, SetUserSettingsError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13335,7 +13335,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
 
     #[doc="<p>Registers the user in the specified user pool and creates a user name, password, and user attributes.</p>"]
     fn sign_up(&self, input: &SignUpRequest) -> Result<SignUpResponse, SignUpError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AWSCognitoIdentityProviderService.SignUp");
@@ -13361,7 +13361,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn start_user_import_job(&self,
                              input: &StartUserImportJobRequest)
                              -> Result<StartUserImportJobResponse, StartUserImportJobError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13389,7 +13389,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn stop_user_import_job(&self,
                             input: &StopUserImportJobRequest)
                             -> Result<StopUserImportJobResponse, StopUserImportJobError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13417,7 +13417,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn update_device_status(&self,
                             input: &UpdateDeviceStatusRequest)
                             -> Result<UpdateDeviceStatusResponse, UpdateDeviceStatusError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13445,7 +13445,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn update_group(&self,
                     input: &UpdateGroupRequest)
                     -> Result<UpdateGroupResponse, UpdateGroupError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13471,7 +13471,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &UpdateIdentityProviderRequest)
          -> Result<UpdateIdentityProviderResponse, UpdateIdentityProviderError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13500,7 +13500,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &UpdateUserAttributesRequest)
          -> Result<UpdateUserAttributesResponse, UpdateUserAttributesError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13528,7 +13528,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn update_user_pool(&self,
                         input: &UpdateUserPoolRequest)
                         -> Result<UpdateUserPoolResponse, UpdateUserPoolError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13557,7 +13557,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
         (&self,
          input: &UpdateUserPoolClientRequest)
          -> Result<UpdateUserPoolClientResponse, UpdateUserPoolClientError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -13585,7 +13585,7 @@ impl<P, D> CognitoIdentityProvider for CognitoIdentityProviderClient<P, D>
     fn verify_user_attribute(&self,
                              input: &VerifyUserAttributeRequest)
                              -> Result<VerifyUserAttributeResponse, VerifyUserAttributeError> {
-        let mut request = SignedRequest::new("POST", "cognito-idp", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cognito-idp", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",

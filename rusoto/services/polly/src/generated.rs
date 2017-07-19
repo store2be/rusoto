@@ -832,7 +832,7 @@ impl<P, D> Polly for PollyClient<P, D>
 
         let request_uri = format!("/v1/lexicons/{lexicon_name}", lexicon_name = input.name);
 
-        let mut request = SignedRequest::new("DELETE", "polly", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "polly", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -875,7 +875,7 @@ impl<P, D> Polly for PollyClient<P, D>
 
         let request_uri = "/v1/voices";
 
-        let mut request = SignedRequest::new("GET", "polly", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "polly", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -924,7 +924,7 @@ impl<P, D> Polly for PollyClient<P, D>
 
         let request_uri = format!("/v1/lexicons/{lexicon_name}", lexicon_name = input.name);
 
-        let mut request = SignedRequest::new("GET", "polly", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "polly", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -965,7 +965,7 @@ impl<P, D> Polly for PollyClient<P, D>
 
         let request_uri = "/v1/lexicons";
 
-        let mut request = SignedRequest::new("GET", "polly", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "polly", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -1010,7 +1010,7 @@ impl<P, D> Polly for PollyClient<P, D>
 
         let request_uri = format!("/v1/lexicons/{lexicon_name}", lexicon_name = input.name);
 
-        let mut request = SignedRequest::new("PUT", "polly", self.region, &request_uri);
+        let mut request = SignedRequest::new("PUT", "polly", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -1051,7 +1051,7 @@ impl<P, D> Polly for PollyClient<P, D>
 
         let request_uri = "/v1/speech";
 
-        let mut request = SignedRequest::new("POST", "polly", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "polly", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 

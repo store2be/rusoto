@@ -4465,7 +4465,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
         (&self,
          input: &AddAttributesToFindingsRequest)
          -> Result<AddAttributesToFindingsResponse, AddAttributesToFindingsError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.AddAttributesToFindings");
@@ -4490,7 +4490,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
         (&self,
          input: &CreateAssessmentTargetRequest)
          -> Result<CreateAssessmentTargetResponse, CreateAssessmentTargetError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.CreateAssessmentTarget");
@@ -4518,7 +4518,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
         (&self,
          input: &CreateAssessmentTemplateRequest)
          -> Result<CreateAssessmentTemplateResponse, CreateAssessmentTemplateError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.CreateAssessmentTemplate");
@@ -4542,7 +4542,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
     fn create_resource_group(&self,
                              input: &CreateResourceGroupRequest)
                              -> Result<CreateResourceGroupResponse, CreateResourceGroupError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.CreateResourceGroup");
@@ -4569,7 +4569,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
     fn delete_assessment_run(&self,
                              input: &DeleteAssessmentRunRequest)
                              -> Result<(), DeleteAssessmentRunError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.DeleteAssessmentRun");
@@ -4594,7 +4594,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
     fn delete_assessment_target(&self,
                                 input: &DeleteAssessmentTargetRequest)
                                 -> Result<(), DeleteAssessmentTargetError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.DeleteAssessmentTarget");
@@ -4619,7 +4619,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
     fn delete_assessment_template(&self,
                                   input: &DeleteAssessmentTemplateRequest)
                                   -> Result<(), DeleteAssessmentTemplateError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.DeleteAssessmentTemplate");
@@ -4642,7 +4642,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
         (&self,
          input: &DescribeAssessmentRunsRequest)
          -> Result<DescribeAssessmentRunsResponse, DescribeAssessmentRunsError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.DescribeAssessmentRuns");
@@ -4670,7 +4670,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
         (&self,
          input: &DescribeAssessmentTargetsRequest)
          -> Result<DescribeAssessmentTargetsResponse, DescribeAssessmentTargetsError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.DescribeAssessmentTargets");
@@ -4695,7 +4695,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
         (&self,
          input: &DescribeAssessmentTemplatesRequest)
          -> Result<DescribeAssessmentTemplatesResponse, DescribeAssessmentTemplatesError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -4720,7 +4720,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
     fn describe_cross_account_access_role
         (&self)
          -> Result<DescribeCrossAccountAccessRoleResponse, DescribeCrossAccountAccessRoleError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -4744,7 +4744,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
     fn describe_findings(&self,
                          input: &DescribeFindingsRequest)
                          -> Result<DescribeFindingsResponse, DescribeFindingsError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.DescribeFindings");
@@ -4772,7 +4772,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
         (&self,
          input: &DescribeResourceGroupsRequest)
          -> Result<DescribeResourceGroupsResponse, DescribeResourceGroupsError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.DescribeResourceGroups");
@@ -4800,7 +4800,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
         (&self,
          input: &DescribeRulesPackagesRequest)
          -> Result<DescribeRulesPackagesResponse, DescribeRulesPackagesError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.DescribeRulesPackages");
@@ -4827,7 +4827,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
     fn get_assessment_report(&self,
                              input: &GetAssessmentReportRequest)
                              -> Result<GetAssessmentReportResponse, GetAssessmentReportError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.GetAssessmentReport");
@@ -4855,7 +4855,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
         (&self,
          input: &GetTelemetryMetadataRequest)
          -> Result<GetTelemetryMetadataResponse, GetTelemetryMetadataError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.GetTelemetryMetadata");
@@ -4883,7 +4883,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
         (&self,
          input: &ListAssessmentRunAgentsRequest)
          -> Result<ListAssessmentRunAgentsResponse, ListAssessmentRunAgentsError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.ListAssessmentRunAgents");
@@ -4907,7 +4907,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
     fn list_assessment_runs(&self,
                             input: &ListAssessmentRunsRequest)
                             -> Result<ListAssessmentRunsResponse, ListAssessmentRunsError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.ListAssessmentRuns");
@@ -4935,7 +4935,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
         (&self,
          input: &ListAssessmentTargetsRequest)
          -> Result<ListAssessmentTargetsResponse, ListAssessmentTargetsError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.ListAssessmentTargets");
@@ -4963,7 +4963,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
         (&self,
          input: &ListAssessmentTemplatesRequest)
          -> Result<ListAssessmentTemplatesResponse, ListAssessmentTemplatesError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.ListAssessmentTemplates");
@@ -4988,7 +4988,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
         (&self,
          input: &ListEventSubscriptionsRequest)
          -> Result<ListEventSubscriptionsResponse, ListEventSubscriptionsError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.ListEventSubscriptions");
@@ -5015,7 +5015,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
     fn list_findings(&self,
                      input: &ListFindingsRequest)
                      -> Result<ListFindingsResponse, ListFindingsError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.ListFindings");
@@ -5041,7 +5041,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
     fn list_rules_packages(&self,
                            input: &ListRulesPackagesRequest)
                            -> Result<ListRulesPackagesResponse, ListRulesPackagesError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.ListRulesPackages");
@@ -5068,7 +5068,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
     fn list_tags_for_resource(&self,
                               input: &ListTagsForResourceRequest)
                               -> Result<ListTagsForResourceResponse, ListTagsForResourceError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.ListTagsForResource");
@@ -5095,7 +5095,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
     fn preview_agents(&self,
                       input: &PreviewAgentsRequest)
                       -> Result<PreviewAgentsResponse, PreviewAgentsError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.PreviewAgents");
@@ -5121,7 +5121,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
     fn register_cross_account_access_role(&self,
                                           input: &RegisterCrossAccountAccessRoleRequest)
                                           -> Result<(), RegisterCrossAccountAccessRoleError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5145,7 +5145,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
         (&self,
          input: &RemoveAttributesFromFindingsRequest)
          -> Result<RemoveAttributesFromFindingsResponse, RemoveAttributesFromFindingsError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -5170,7 +5170,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
     fn set_tags_for_resource(&self,
                              input: &SetTagsForResourceRequest)
                              -> Result<(), SetTagsForResourceError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.SetTagsForResource");
@@ -5195,7 +5195,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
     fn start_assessment_run(&self,
                             input: &StartAssessmentRunRequest)
                             -> Result<StartAssessmentRunResponse, StartAssessmentRunError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.StartAssessmentRun");
@@ -5222,7 +5222,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
     fn stop_assessment_run(&self,
                            input: &StopAssessmentRunRequest)
                            -> Result<(), StopAssessmentRunError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.StopAssessmentRun");
@@ -5247,7 +5247,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
     fn subscribe_to_event(&self,
                           input: &SubscribeToEventRequest)
                           -> Result<(), SubscribeToEventError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.SubscribeToEvent");
@@ -5272,7 +5272,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
     fn unsubscribe_from_event(&self,
                               input: &UnsubscribeFromEventRequest)
                               -> Result<(), UnsubscribeFromEventError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.UnsubscribeFromEvent");
@@ -5297,7 +5297,7 @@ impl<P, D> Inspector for InspectorClient<P, D>
     fn update_assessment_target(&self,
                                 input: &UpdateAssessmentTargetRequest)
                                 -> Result<(), UpdateAssessmentTargetError> {
-        let mut request = SignedRequest::new("POST", "inspector", self.region, "/");
+        let mut request = SignedRequest::new("POST", "inspector", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "InspectorService.UpdateAssessmentTarget");

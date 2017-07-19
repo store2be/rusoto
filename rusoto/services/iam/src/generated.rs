@@ -22286,7 +22286,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &AddClientIDToOpenIDConnectProviderRequest)
          -> Result<(), AddClientIDToOpenIDConnectProviderError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AddClientIDToOpenIDConnectProvider");
@@ -22312,7 +22312,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn add_role_to_instance_profile(&self,
                                     input: &AddRoleToInstanceProfileRequest)
                                     -> Result<(), AddRoleToInstanceProfileError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AddRoleToInstanceProfile");
@@ -22336,7 +22336,7 @@ impl<P, D> Iam for IamClient<P, D>
 
     #[doc="<p>Adds the specified user to the specified group.</p>"]
     fn add_user_to_group(&self, input: &AddUserToGroupRequest) -> Result<(), AddUserToGroupError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AddUserToGroup");
@@ -22363,7 +22363,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn attach_group_policy(&self,
                            input: &AttachGroupPolicyRequest)
                            -> Result<(), AttachGroupPolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AttachGroupPolicy");
@@ -22390,7 +22390,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn attach_role_policy(&self,
                           input: &AttachRolePolicyRequest)
                           -> Result<(), AttachRolePolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AttachRolePolicy");
@@ -22417,7 +22417,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn attach_user_policy(&self,
                           input: &AttachUserPolicyRequest)
                           -> Result<(), AttachUserPolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AttachUserPolicy");
@@ -22442,7 +22442,7 @@ impl<P, D> Iam for IamClient<P, D>
 
     #[doc="<p>Changes the password of the IAM user who is calling this action. The root account password is not affected by this action.</p> <p>To change the password for a different user, see <a>UpdateLoginProfile</a>. For more information about modifying passwords, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html\">Managing Passwords</a> in the <i>IAM User Guide</i>.</p>"]
     fn change_password(&self, input: &ChangePasswordRequest) -> Result<(), ChangePasswordError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ChangePassword");
@@ -22469,7 +22469,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn create_access_key(&self,
                          input: &CreateAccessKeyRequest)
                          -> Result<CreateAccessKeyResponse, CreateAccessKeyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateAccessKey");
@@ -22513,7 +22513,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn create_account_alias(&self,
                             input: &CreateAccountAliasRequest)
                             -> Result<(), CreateAccountAliasError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateAccountAlias");
@@ -22540,7 +22540,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn create_group(&self,
                     input: &CreateGroupRequest)
                     -> Result<CreateGroupResponse, CreateGroupError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateGroup");
@@ -22582,7 +22582,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &CreateInstanceProfileRequest)
          -> Result<CreateInstanceProfileResponse, CreateInstanceProfileError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateInstanceProfile");
@@ -22627,7 +22627,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn create_login_profile(&self,
                             input: &CreateLoginProfileRequest)
                             -> Result<CreateLoginProfileResponse, CreateLoginProfileError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateLoginProfile");
@@ -22672,7 +22672,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &CreateOpenIDConnectProviderRequest)
          -> Result<CreateOpenIDConnectProviderResponse, CreateOpenIDConnectProviderError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateOpenIDConnectProvider");
@@ -22714,7 +22714,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn create_policy(&self,
                      input: &CreatePolicyRequest)
                      -> Result<CreatePolicyResponse, CreatePolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreatePolicy");
@@ -22757,7 +22757,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn create_policy_version(&self,
                              input: &CreatePolicyVersionRequest)
                              -> Result<CreatePolicyVersionResponse, CreatePolicyVersionError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreatePolicyVersion");
@@ -22801,7 +22801,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn create_role(&self,
                    input: &CreateRoleRequest)
                    -> Result<CreateRoleResponse, CreateRoleError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateRole");
@@ -22842,7 +22842,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn create_saml_provider(&self,
                             input: &CreateSAMLProviderRequest)
                             -> Result<CreateSAMLProviderResponse, CreateSAMLProviderError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateSAMLProvider");
@@ -22887,7 +22887,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &CreateServiceLinkedRoleRequest)
          -> Result<CreateServiceLinkedRoleResponse, CreateServiceLinkedRoleError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateServiceLinkedRole");
@@ -22932,7 +22932,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &CreateServiceSpecificCredentialRequest)
          -> Result<CreateServiceSpecificCredentialResponse, CreateServiceSpecificCredentialError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateServiceSpecificCredential");
@@ -22974,7 +22974,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn create_user(&self,
                    input: &CreateUserRequest)
                    -> Result<CreateUserResponse, CreateUserError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateUser");
@@ -23016,7 +23016,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &CreateVirtualMFADeviceRequest)
          -> Result<CreateVirtualMFADeviceResponse, CreateVirtualMFADeviceError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateVirtualMFADevice");
@@ -23061,7 +23061,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn deactivate_mfa_device(&self,
                              input: &DeactivateMFADeviceRequest)
                              -> Result<(), DeactivateMFADeviceError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeactivateMFADevice");
@@ -23088,7 +23088,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn delete_access_key(&self,
                          input: &DeleteAccessKeyRequest)
                          -> Result<(), DeleteAccessKeyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteAccessKey");
@@ -23115,7 +23115,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn delete_account_alias(&self,
                             input: &DeleteAccountAliasRequest)
                             -> Result<(), DeleteAccountAliasError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteAccountAlias");
@@ -23140,7 +23140,7 @@ impl<P, D> Iam for IamClient<P, D>
 
     #[doc="<p>Deletes the password policy for the AWS account. There are no parameters.</p>"]
     fn delete_account_password_policy(&self) -> Result<(), DeleteAccountPasswordPolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteAccountPasswordPolicy");
@@ -23164,7 +23164,7 @@ impl<P, D> Iam for IamClient<P, D>
 
     #[doc="<p>Deletes the specified IAM group. The group must not contain any users or have any attached policies.</p>"]
     fn delete_group(&self, input: &DeleteGroupRequest) -> Result<(), DeleteGroupError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteGroup");
@@ -23188,7 +23188,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn delete_group_policy(&self,
                            input: &DeleteGroupPolicyRequest)
                            -> Result<(), DeleteGroupPolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteGroupPolicy");
@@ -23215,7 +23215,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn delete_instance_profile(&self,
                                input: &DeleteInstanceProfileRequest)
                                -> Result<(), DeleteInstanceProfileError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteInstanceProfile");
@@ -23242,7 +23242,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn delete_login_profile(&self,
                             input: &DeleteLoginProfileRequest)
                             -> Result<(), DeleteLoginProfileError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteLoginProfile");
@@ -23269,7 +23269,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn delete_open_id_connect_provider(&self,
                                        input: &DeleteOpenIDConnectProviderRequest)
                                        -> Result<(), DeleteOpenIDConnectProviderError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteOpenIDConnectProvider");
@@ -23293,7 +23293,7 @@ impl<P, D> Iam for IamClient<P, D>
 
     #[doc="<p>Deletes the specified managed policy.</p> <p>Before you can delete a managed policy, you must first detach the policy from all users, groups, and roles that it is attached to, and you must delete all of the policy's versions. The following steps describe the process for deleting a managed policy:</p> <ul> <li> <p>Detach the policy from all users, groups, and roles that the policy is attached to, using the <a>DetachUserPolicy</a>, <a>DetachGroupPolicy</a>, or <a>DetachRolePolicy</a> APIs. To list all the users, groups, and roles that a policy is attached to, use <a>ListEntitiesForPolicy</a>.</p> </li> <li> <p>Delete all versions of the policy using <a>DeletePolicyVersion</a>. To list the policy's versions, use <a>ListPolicyVersions</a>. You cannot use <a>DeletePolicyVersion</a> to delete the version that is marked as the default version. You delete the policy's default version in the next step of the process.</p> </li> <li> <p>Delete the policy (this automatically deletes the policy's default version) using this API.</p> </li> </ul> <p>For information about managed policies, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>"]
     fn delete_policy(&self, input: &DeletePolicyRequest) -> Result<(), DeletePolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeletePolicy");
@@ -23319,7 +23319,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn delete_policy_version(&self,
                              input: &DeletePolicyVersionRequest)
                              -> Result<(), DeletePolicyVersionError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeletePolicyVersion");
@@ -23344,7 +23344,7 @@ impl<P, D> Iam for IamClient<P, D>
 
     #[doc="<p>Deletes the specified role. The role must not have any policies attached. For more information about roles, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html\">Working with Roles</a>.</p> <important> <p>Make sure you do not have any Amazon EC2 instances running with the role you are about to delete. Deleting a role or instance profile that is associated with a running instance will break any applications running on the instance.</p> </important>"]
     fn delete_role(&self, input: &DeleteRoleRequest) -> Result<(), DeleteRoleError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteRole");
@@ -23368,7 +23368,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn delete_role_policy(&self,
                           input: &DeleteRolePolicyRequest)
                           -> Result<(), DeleteRolePolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteRolePolicy");
@@ -23395,7 +23395,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn delete_saml_provider(&self,
                             input: &DeleteSAMLProviderRequest)
                             -> Result<(), DeleteSAMLProviderError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteSAMLProvider");
@@ -23422,7 +23422,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn delete_ssh_public_key(&self,
                              input: &DeleteSSHPublicKeyRequest)
                              -> Result<(), DeleteSSHPublicKeyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteSSHPublicKey");
@@ -23449,7 +23449,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn delete_server_certificate(&self,
                                  input: &DeleteServerCertificateRequest)
                                  -> Result<(), DeleteServerCertificateError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteServerCertificate");
@@ -23475,7 +23475,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn delete_service_specific_credential(&self,
                                           input: &DeleteServiceSpecificCredentialRequest)
                                           -> Result<(), DeleteServiceSpecificCredentialError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteServiceSpecificCredential");
@@ -23501,7 +23501,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn delete_signing_certificate(&self,
                                   input: &DeleteSigningCertificateRequest)
                                   -> Result<(), DeleteSigningCertificateError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteSigningCertificate");
@@ -23525,7 +23525,7 @@ impl<P, D> Iam for IamClient<P, D>
 
     #[doc="<p>Deletes the specified IAM user. The user must not belong to any groups or have any access keys, signing certificates, or attached policies.</p>"]
     fn delete_user(&self, input: &DeleteUserRequest) -> Result<(), DeleteUserError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteUser");
@@ -23549,7 +23549,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn delete_user_policy(&self,
                           input: &DeleteUserPolicyRequest)
                           -> Result<(), DeleteUserPolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteUserPolicy");
@@ -23576,7 +23576,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn delete_virtual_mfa_device(&self,
                                  input: &DeleteVirtualMFADeviceRequest)
                                  -> Result<(), DeleteVirtualMFADeviceError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteVirtualMFADevice");
@@ -23603,7 +23603,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn detach_group_policy(&self,
                            input: &DetachGroupPolicyRequest)
                            -> Result<(), DetachGroupPolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DetachGroupPolicy");
@@ -23630,7 +23630,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn detach_role_policy(&self,
                           input: &DetachRolePolicyRequest)
                           -> Result<(), DetachRolePolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DetachRolePolicy");
@@ -23657,7 +23657,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn detach_user_policy(&self,
                           input: &DetachUserPolicyRequest)
                           -> Result<(), DetachUserPolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DetachUserPolicy");
@@ -23684,7 +23684,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn enable_mfa_device(&self,
                          input: &EnableMFADeviceRequest)
                          -> Result<(), EnableMFADeviceError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "EnableMFADevice");
@@ -23711,7 +23711,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn generate_credential_report
         (&self)
          -> Result<GenerateCredentialReportResponse, GenerateCredentialReportError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GenerateCredentialReport");
@@ -23756,7 +23756,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &GetAccessKeyLastUsedRequest)
          -> Result<GetAccessKeyLastUsedResponse, GetAccessKeyLastUsedError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetAccessKeyLastUsed");
@@ -23802,7 +23802,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &GetAccountAuthorizationDetailsRequest)
          -> Result<GetAccountAuthorizationDetailsResponse, GetAccountAuthorizationDetailsError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetAccountAuthorizationDetails");
@@ -23844,7 +23844,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn get_account_password_policy
         (&self)
          -> Result<GetAccountPasswordPolicyResponse, GetAccountPasswordPolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetAccountPasswordPolicy");
@@ -23886,7 +23886,7 @@ impl<P, D> Iam for IamClient<P, D>
 
     #[doc="<p>Retrieves information about IAM entity usage and IAM quotas in the AWS account.</p> <p> For information about limitations on IAM entities, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html\">Limitations on IAM Entities</a> in the <i>IAM User Guide</i>.</p>"]
     fn get_account_summary(&self) -> Result<GetAccountSummaryResponse, GetAccountSummaryError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetAccountSummary");
@@ -23931,7 +23931,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &GetContextKeysForCustomPolicyRequest)
          -> Result<GetContextKeysForPolicyResponse, GetContextKeysForCustomPolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetContextKeysForCustomPolicy");
@@ -23976,7 +23976,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &GetContextKeysForPrincipalPolicyRequest)
          -> Result<GetContextKeysForPolicyResponse, GetContextKeysForPrincipalPolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetContextKeysForPrincipalPolicy");
@@ -24019,7 +24019,7 @@ impl<P, D> Iam for IamClient<P, D>
     #[doc="<p> Retrieves a credential report for the AWS account. For more information about the credential report, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html\">Getting Credential Reports</a> in the <i>IAM User Guide</i>.</p>"]
     fn get_credential_report(&self)
                              -> Result<GetCredentialReportResponse, GetCredentialReportError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetCredentialReport");
@@ -24061,7 +24061,7 @@ impl<P, D> Iam for IamClient<P, D>
 
     #[doc="<p> Returns a list of IAM users that are in the specified IAM group. You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>"]
     fn get_group(&self, input: &GetGroupRequest) -> Result<GetGroupResponse, GetGroupError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetGroup");
@@ -24102,7 +24102,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn get_group_policy(&self,
                         input: &GetGroupPolicyRequest)
                         -> Result<GetGroupPolicyResponse, GetGroupPolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetGroupPolicy");
@@ -24146,7 +24146,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn get_instance_profile(&self,
                             input: &GetInstanceProfileRequest)
                             -> Result<GetInstanceProfileResponse, GetInstanceProfileError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetInstanceProfile");
@@ -24190,7 +24190,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn get_login_profile(&self,
                          input: &GetLoginProfileRequest)
                          -> Result<GetLoginProfileResponse, GetLoginProfileError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetLoginProfile");
@@ -24235,7 +24235,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &GetOpenIDConnectProviderRequest)
          -> Result<GetOpenIDConnectProviderResponse, GetOpenIDConnectProviderError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetOpenIDConnectProvider");
@@ -24277,7 +24277,7 @@ impl<P, D> Iam for IamClient<P, D>
 
     #[doc="<p>Retrieves information about the specified managed policy, including the policy's default version and the total number of IAM users, groups, and roles to which the policy is attached. To retrieve the list of the specific users, groups, and roles that the policy is attached to, use the <a>ListEntitiesForPolicy</a> API. This API returns metadata about the policy. To retrieve the actual policy document for a specific version of the policy, use <a>GetPolicyVersion</a>.</p> <p>This API retrieves information about managed policies. To retrieve information about an inline policy that is embedded with an IAM user, group, or role, use the <a>GetUserPolicy</a>, <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API.</p> <p>For more information about policies, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>"]
     fn get_policy(&self, input: &GetPolicyRequest) -> Result<GetPolicyResponse, GetPolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetPolicy");
@@ -24318,7 +24318,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn get_policy_version(&self,
                           input: &GetPolicyVersionRequest)
                           -> Result<GetPolicyVersionResponse, GetPolicyVersionError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetPolicyVersion");
@@ -24360,7 +24360,7 @@ impl<P, D> Iam for IamClient<P, D>
 
     #[doc="<p>Retrieves information about the specified role, including the role's path, GUID, ARN, and the role's trust policy that grants permission to assume the role. For more information about roles, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html\">Working with Roles</a>.</p> <note> <p>Policies returned by this API are URL-encoded compliant with <a href=\"https://tools.ietf.org/html/rfc3986\">RFC 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON text. For example, if you use Java, you can use the <code>decode</code> method of the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages and SDKs provide similar functionality.</p> </note>"]
     fn get_role(&self, input: &GetRoleRequest) -> Result<GetRoleResponse, GetRoleError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetRole");
@@ -24401,7 +24401,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn get_role_policy(&self,
                        input: &GetRolePolicyRequest)
                        -> Result<GetRolePolicyResponse, GetRolePolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetRolePolicy");
@@ -24444,7 +24444,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn get_saml_provider(&self,
                          input: &GetSAMLProviderRequest)
                          -> Result<GetSAMLProviderResponse, GetSAMLProviderError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetSAMLProvider");
@@ -24488,7 +24488,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn get_ssh_public_key(&self,
                           input: &GetSSHPublicKeyRequest)
                           -> Result<GetSSHPublicKeyResponse, GetSSHPublicKeyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetSSHPublicKey");
@@ -24533,7 +24533,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &GetServerCertificateRequest)
          -> Result<GetServerCertificateResponse, GetServerCertificateError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetServerCertificate");
@@ -24576,7 +24576,7 @@ impl<P, D> Iam for IamClient<P, D>
 
     #[doc="<p>Retrieves information about the specified IAM user, including the user's creation date, path, unique ID, and ARN.</p> <p>If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID used to sign the request to this API.</p>"]
     fn get_user(&self, input: &GetUserRequest) -> Result<GetUserResponse, GetUserError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetUser");
@@ -24617,7 +24617,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn get_user_policy(&self,
                        input: &GetUserPolicyRequest)
                        -> Result<GetUserPolicyResponse, GetUserPolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetUserPolicy");
@@ -24660,7 +24660,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn list_access_keys(&self,
                         input: &ListAccessKeysRequest)
                         -> Result<ListAccessKeysResponse, ListAccessKeysError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListAccessKeys");
@@ -24704,7 +24704,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn list_account_aliases(&self,
                             input: &ListAccountAliasesRequest)
                             -> Result<ListAccountAliasesResponse, ListAccountAliasesError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListAccountAliases");
@@ -24749,7 +24749,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &ListAttachedGroupPoliciesRequest)
          -> Result<ListAttachedGroupPoliciesResponse, ListAttachedGroupPoliciesError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListAttachedGroupPolicies");
@@ -24792,7 +24792,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &ListAttachedRolePoliciesRequest)
          -> Result<ListAttachedRolePoliciesResponse, ListAttachedRolePoliciesError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListAttachedRolePolicies");
@@ -24837,7 +24837,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &ListAttachedUserPoliciesRequest)
          -> Result<ListAttachedUserPoliciesResponse, ListAttachedUserPoliciesError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListAttachedUserPolicies");
@@ -24882,7 +24882,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &ListEntitiesForPolicyRequest)
          -> Result<ListEntitiesForPolicyResponse, ListEntitiesForPolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListEntitiesForPolicy");
@@ -24927,7 +24927,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn list_group_policies(&self,
                            input: &ListGroupPoliciesRequest)
                            -> Result<ListGroupPoliciesResponse, ListGroupPoliciesError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListGroupPolicies");
@@ -24971,7 +24971,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn list_groups(&self,
                    input: &ListGroupsRequest)
                    -> Result<ListGroupsResponse, ListGroupsError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListGroups");
@@ -25012,7 +25012,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn list_groups_for_user(&self,
                             input: &ListGroupsForUserRequest)
                             -> Result<ListGroupsForUserResponse, ListGroupsForUserError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListGroupsForUser");
@@ -25057,7 +25057,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &ListInstanceProfilesRequest)
          -> Result<ListInstanceProfilesResponse, ListInstanceProfilesError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListInstanceProfiles");
@@ -25103,7 +25103,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &ListInstanceProfilesForRoleRequest)
          -> Result<ListInstanceProfilesForRoleResponse, ListInstanceProfilesForRoleError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListInstanceProfilesForRole");
@@ -25145,7 +25145,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn list_mfa_devices(&self,
                         input: &ListMFADevicesRequest)
                         -> Result<ListMFADevicesResponse, ListMFADevicesError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListMFADevices");
@@ -25190,7 +25190,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &ListOpenIDConnectProvidersRequest)
          -> Result<ListOpenIDConnectProvidersResponse, ListOpenIDConnectProvidersError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListOpenIDConnectProviders");
@@ -25232,7 +25232,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn list_policies(&self,
                      input: &ListPoliciesRequest)
                      -> Result<ListPoliciesResponse, ListPoliciesError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListPolicies");
@@ -25275,7 +25275,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn list_policy_versions(&self,
                             input: &ListPolicyVersionsRequest)
                             -> Result<ListPolicyVersionsResponse, ListPolicyVersionsError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListPolicyVersions");
@@ -25319,7 +25319,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn list_role_policies(&self,
                           input: &ListRolePoliciesRequest)
                           -> Result<ListRolePoliciesResponse, ListRolePoliciesError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListRolePolicies");
@@ -25361,7 +25361,7 @@ impl<P, D> Iam for IamClient<P, D>
 
     #[doc="<p>Lists the IAM roles that have the specified path prefix. If there are none, the action returns an empty list. For more information about roles, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html\">Working with Roles</a>.</p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>"]
     fn list_roles(&self, input: &ListRolesRequest) -> Result<ListRolesResponse, ListRolesError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListRoles");
@@ -25402,7 +25402,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn list_saml_providers(&self,
                            input: &ListSAMLProvidersRequest)
                            -> Result<ListSAMLProvidersResponse, ListSAMLProvidersError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListSAMLProviders");
@@ -25446,7 +25446,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn list_ssh_public_keys(&self,
                             input: &ListSSHPublicKeysRequest)
                             -> Result<ListSSHPublicKeysResponse, ListSSHPublicKeysError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListSSHPublicKeys");
@@ -25491,7 +25491,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &ListServerCertificatesRequest)
          -> Result<ListServerCertificatesResponse, ListServerCertificatesError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListServerCertificates");
@@ -25537,7 +25537,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &ListServiceSpecificCredentialsRequest)
          -> Result<ListServiceSpecificCredentialsResponse, ListServiceSpecificCredentialsError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListServiceSpecificCredentials");
@@ -25580,7 +25580,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &ListSigningCertificatesRequest)
          -> Result<ListSigningCertificatesResponse, ListSigningCertificatesError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListSigningCertificates");
@@ -25624,7 +25624,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn list_user_policies(&self,
                           input: &ListUserPoliciesRequest)
                           -> Result<ListUserPoliciesResponse, ListUserPoliciesError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListUserPolicies");
@@ -25666,7 +25666,7 @@ impl<P, D> Iam for IamClient<P, D>
 
     #[doc="<p>Lists the IAM users that have the specified path prefix. If no path prefix is specified, the action returns all users in the AWS account. If there are none, the action returns an empty list.</p> <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>"]
     fn list_users(&self, input: &ListUsersRequest) -> Result<ListUsersResponse, ListUsersError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListUsers");
@@ -25708,7 +25708,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &ListVirtualMFADevicesRequest)
          -> Result<ListVirtualMFADevicesResponse, ListVirtualMFADevicesError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListVirtualMFADevices");
@@ -25751,7 +25751,7 @@ impl<P, D> Iam for IamClient<P, D>
 
     #[doc="<p>Adds or updates an inline policy document that is embedded in the specified IAM group.</p> <p>A user can also have managed policies attached to it. To attach a managed policy to a group, use <a>AttachGroupPolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>. For information about policies, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>For information about limits on the number of inline policies that you can embed in a group, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html\">Limitations on IAM Entities</a> in the <i>IAM User Guide</i>.</p> <note> <p>Because policy documents can be large, you should use POST rather than GET when calling <code>PutGroupPolicy</code>. For general information about using the Query API with IAM, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html\">Making Query Requests</a> in the <i>IAM User Guide</i>.</p> </note>"]
     fn put_group_policy(&self, input: &PutGroupPolicyRequest) -> Result<(), PutGroupPolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "PutGroupPolicy");
@@ -25776,7 +25776,7 @@ impl<P, D> Iam for IamClient<P, D>
 
     #[doc="<p>Adds or updates an inline policy document that is embedded in the specified IAM role.</p> <p>When you embed an inline policy in a role, the inline policy is used as part of the role's access (permissions) policy. The role's trust policy is created at the same time as the role, using <a>CreateRole</a>. You can update a role's trust policy using <a>UpdateAssumeRolePolicy</a>. For more information about IAM roles, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html\">Using Roles to Delegate Permissions and Federate Identities</a>.</p> <p>A role can also have a managed policy attached to it. To attach a managed policy to a role, use <a>AttachRolePolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>. For information about policies, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>For information about limits on the number of inline policies that you can embed with a role, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html\">Limitations on IAM Entities</a> in the <i>IAM User Guide</i>.</p> <note> <p>Because policy documents can be large, you should use POST rather than GET when calling <code>PutRolePolicy</code>. For general information about using the Query API with IAM, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html\">Making Query Requests</a> in the <i>IAM User Guide</i>.</p> </note>"]
     fn put_role_policy(&self, input: &PutRolePolicyRequest) -> Result<(), PutRolePolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "PutRolePolicy");
@@ -25800,7 +25800,7 @@ impl<P, D> Iam for IamClient<P, D>
 
     #[doc="<p>Adds or updates an inline policy document that is embedded in the specified IAM user.</p> <p>An IAM user can also have a managed policy attached to it. To attach a managed policy to a user, use <a>AttachUserPolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>. For information about policies, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html\">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>For information about limits on the number of inline policies that you can embed in a user, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html\">Limitations on IAM Entities</a> in the <i>IAM User Guide</i>.</p> <note> <p>Because policy documents can be large, you should use POST rather than GET when calling <code>PutUserPolicy</code>. For general information about using the Query API with IAM, go to <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html\">Making Query Requests</a> in the <i>IAM User Guide</i>.</p> </note>"]
     fn put_user_policy(&self, input: &PutUserPolicyRequest) -> Result<(), PutUserPolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "PutUserPolicy");
@@ -25827,7 +25827,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &RemoveClientIDFromOpenIDConnectProviderRequest)
          -> Result<(), RemoveClientIDFromOpenIDConnectProviderError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "RemoveClientIDFromOpenIDConnectProvider");
@@ -25855,7 +25855,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn remove_role_from_instance_profile(&self,
                                          input: &RemoveRoleFromInstanceProfileRequest)
                                          -> Result<(), RemoveRoleFromInstanceProfileError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "RemoveRoleFromInstanceProfile");
@@ -25881,7 +25881,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn remove_user_from_group(&self,
                               input: &RemoveUserFromGroupRequest)
                               -> Result<(), RemoveUserFromGroupError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "RemoveUserFromGroup");
@@ -25909,7 +25909,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &ResetServiceSpecificCredentialRequest)
          -> Result<ResetServiceSpecificCredentialResponse, ResetServiceSpecificCredentialError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ResetServiceSpecificCredential");
@@ -25951,7 +25951,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn resync_mfa_device(&self,
                          input: &ResyncMFADeviceRequest)
                          -> Result<(), ResyncMFADeviceError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ResyncMFADevice");
@@ -25978,7 +25978,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn set_default_policy_version(&self,
                                   input: &SetDefaultPolicyVersionRequest)
                                   -> Result<(), SetDefaultPolicyVersionError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "SetDefaultPolicyVersion");
@@ -26004,7 +26004,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn simulate_custom_policy(&self,
                               input: &SimulateCustomPolicyRequest)
                               -> Result<SimulatePolicyResponse, SimulateCustomPolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "SimulateCustomPolicy");
@@ -26049,7 +26049,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &SimulatePrincipalPolicyRequest)
          -> Result<SimulatePolicyResponse, SimulatePrincipalPolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "SimulatePrincipalPolicy");
@@ -26092,7 +26092,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn update_access_key(&self,
                          input: &UpdateAccessKeyRequest)
                          -> Result<(), UpdateAccessKeyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UpdateAccessKey");
@@ -26119,7 +26119,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn update_account_password_policy(&self,
                                       input: &UpdateAccountPasswordPolicyRequest)
                                       -> Result<(), UpdateAccountPasswordPolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UpdateAccountPasswordPolicy");
@@ -26145,7 +26145,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn update_assume_role_policy(&self,
                                  input: &UpdateAssumeRolePolicyRequest)
                                  -> Result<(), UpdateAssumeRolePolicyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UpdateAssumeRolePolicy");
@@ -26170,7 +26170,7 @@ impl<P, D> Iam for IamClient<P, D>
 
     #[doc="<p>Updates the name and/or the path of the specified IAM group.</p> <important> <p> You should understand the implications of changing a group's path or name. For more information, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html\">Renaming Users and Groups</a> in the <i>IAM User Guide</i>.</p> </important> <note> <p>To change an IAM group name the requester must have appropriate permissions on both the source object and the target object. For example, to change \"Managers\" to \"MGRs\", the entity making the request must have permission on both \"Managers\" and \"MGRs\", or must have permission on all (*). For more information about permissions, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html\">Permissions and Policies</a>. </p> </note>"]
     fn update_group(&self, input: &UpdateGroupRequest) -> Result<(), UpdateGroupError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UpdateGroup");
@@ -26194,7 +26194,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn update_login_profile(&self,
                             input: &UpdateLoginProfileRequest)
                             -> Result<(), UpdateLoginProfileError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UpdateLoginProfile");
@@ -26222,7 +26222,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &UpdateOpenIDConnectProviderThumbprintRequest)
          -> Result<(), UpdateOpenIDConnectProviderThumbprintError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UpdateOpenIDConnectProviderThumbprint");
@@ -26249,7 +26249,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &UpdateRoleDescriptionRequest)
          -> Result<UpdateRoleDescriptionResponse, UpdateRoleDescriptionError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UpdateRoleDescription");
@@ -26294,7 +26294,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn update_saml_provider(&self,
                             input: &UpdateSAMLProviderRequest)
                             -> Result<UpdateSAMLProviderResponse, UpdateSAMLProviderError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UpdateSAMLProvider");
@@ -26338,7 +26338,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn update_ssh_public_key(&self,
                              input: &UpdateSSHPublicKeyRequest)
                              -> Result<(), UpdateSSHPublicKeyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UpdateSSHPublicKey");
@@ -26365,7 +26365,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn update_server_certificate(&self,
                                  input: &UpdateServerCertificateRequest)
                                  -> Result<(), UpdateServerCertificateError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UpdateServerCertificate");
@@ -26391,7 +26391,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn update_service_specific_credential(&self,
                                           input: &UpdateServiceSpecificCredentialRequest)
                                           -> Result<(), UpdateServiceSpecificCredentialError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UpdateServiceSpecificCredential");
@@ -26417,7 +26417,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn update_signing_certificate(&self,
                                   input: &UpdateSigningCertificateRequest)
                                   -> Result<(), UpdateSigningCertificateError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UpdateSigningCertificate");
@@ -26441,7 +26441,7 @@ impl<P, D> Iam for IamClient<P, D>
 
     #[doc="<p>Updates the name and/or the path of the specified IAM user.</p> <important> <p> You should understand the implications of changing an IAM user's path or name. For more information, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_renaming\">Renaming an IAM User</a> and <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups_manage_rename.html\">Renaming an IAM Group</a> in the <i>IAM User Guide</i>.</p> </important> <note> <p> To change a user name the requester must have appropriate permissions on both the source object and the target object. For example, to change Bob to Robert, the entity making the request must have permission on Bob and Robert, or must have permission on all (*). For more information about permissions, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html\">Permissions and Policies</a>. </p> </note>"]
     fn update_user(&self, input: &UpdateUserRequest) -> Result<(), UpdateUserError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UpdateUser");
@@ -26465,7 +26465,7 @@ impl<P, D> Iam for IamClient<P, D>
     fn upload_ssh_public_key(&self,
                              input: &UploadSSHPublicKeyRequest)
                              -> Result<UploadSSHPublicKeyResponse, UploadSSHPublicKeyError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UploadSSHPublicKey");
@@ -26510,7 +26510,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &UploadServerCertificateRequest)
          -> Result<UploadServerCertificateResponse, UploadServerCertificateError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UploadServerCertificate");
@@ -26555,7 +26555,7 @@ impl<P, D> Iam for IamClient<P, D>
         (&self,
          input: &UploadSigningCertificateRequest)
          -> Result<UploadSigningCertificateResponse, UploadSigningCertificateError> {
-        let mut request = SignedRequest::new("POST", "iam", self.region, "/");
+        let mut request = SignedRequest::new("POST", "iam", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UploadSigningCertificate");

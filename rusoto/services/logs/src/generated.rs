@@ -3618,7 +3618,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
     fn cancel_export_task(&self,
                           input: &CancelExportTaskRequest)
                           -> Result<(), CancelExportTaskError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.CancelExportTask");
@@ -3643,7 +3643,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
     fn create_export_task(&self,
                           input: &CreateExportTaskRequest)
                           -> Result<CreateExportTaskResponse, CreateExportTaskError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.CreateExportTask");
@@ -3668,7 +3668,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
 
     #[doc="<p>Creates a log group with the specified name.</p> <p>You can create up to 5000 log groups per account.</p> <p>You must use the following guidelines when naming a log group:</p> <ul> <li> <p>Log group names must be unique within a region for an AWS account.</p> </li> <li> <p>Log group names can be between 1 and 512 characters long.</p> </li> <li> <p>Log group names consist of the following characters: a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), and '.' (period).</p> </li> </ul>"]
     fn create_log_group(&self, input: &CreateLogGroupRequest) -> Result<(), CreateLogGroupError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.CreateLogGroup");
@@ -3693,7 +3693,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
     fn create_log_stream(&self,
                          input: &CreateLogStreamRequest)
                          -> Result<(), CreateLogStreamError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.CreateLogStream");
@@ -3718,7 +3718,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
     fn delete_destination(&self,
                           input: &DeleteDestinationRequest)
                           -> Result<(), DeleteDestinationError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.DeleteDestination");
@@ -3741,7 +3741,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
 
     #[doc="<p>Deletes the specified log group and permanently deletes all the archived log events associated with the log group.</p>"]
     fn delete_log_group(&self, input: &DeleteLogGroupRequest) -> Result<(), DeleteLogGroupError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.DeleteLogGroup");
@@ -3766,7 +3766,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
     fn delete_log_stream(&self,
                          input: &DeleteLogStreamRequest)
                          -> Result<(), DeleteLogStreamError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.DeleteLogStream");
@@ -3791,7 +3791,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
     fn delete_metric_filter(&self,
                             input: &DeleteMetricFilterRequest)
                             -> Result<(), DeleteMetricFilterError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.DeleteMetricFilter");
@@ -3816,7 +3816,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
     fn delete_retention_policy(&self,
                                input: &DeleteRetentionPolicyRequest)
                                -> Result<(), DeleteRetentionPolicyError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.DeleteRetentionPolicy");
@@ -3841,7 +3841,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
     fn delete_subscription_filter(&self,
                                   input: &DeleteSubscriptionFilterRequest)
                                   -> Result<(), DeleteSubscriptionFilterError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.DeleteSubscriptionFilter");
@@ -3863,7 +3863,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
     fn describe_destinations(&self,
                              input: &DescribeDestinationsRequest)
                              -> Result<DescribeDestinationsResponse, DescribeDestinationsError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.DescribeDestinations");
@@ -3890,7 +3890,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
     fn describe_export_tasks(&self,
                              input: &DescribeExportTasksRequest)
                              -> Result<DescribeExportTasksResponse, DescribeExportTasksError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.DescribeExportTasks");
@@ -3917,7 +3917,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
     fn describe_log_groups(&self,
                            input: &DescribeLogGroupsRequest)
                            -> Result<DescribeLogGroupsResponse, DescribeLogGroupsError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.DescribeLogGroups");
@@ -3944,7 +3944,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
     fn describe_log_streams(&self,
                             input: &DescribeLogStreamsRequest)
                             -> Result<DescribeLogStreamsResponse, DescribeLogStreamsError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.DescribeLogStreams");
@@ -3972,7 +3972,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
         (&self,
          input: &DescribeMetricFiltersRequest)
          -> Result<DescribeMetricFiltersResponse, DescribeMetricFiltersError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.DescribeMetricFilters");
@@ -4000,7 +4000,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
         (&self,
          input: &DescribeSubscriptionFiltersRequest)
          -> Result<DescribeSubscriptionFiltersResponse, DescribeSubscriptionFiltersError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.DescribeSubscriptionFilters");
@@ -4024,7 +4024,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
     fn filter_log_events(&self,
                          input: &FilterLogEventsRequest)
                          -> Result<FilterLogEventsResponse, FilterLogEventsError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.FilterLogEvents");
@@ -4051,7 +4051,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
     fn get_log_events(&self,
                       input: &GetLogEventsRequest)
                       -> Result<GetLogEventsResponse, GetLogEventsError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.GetLogEvents");
@@ -4077,7 +4077,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
     fn list_tags_log_group(&self,
                            input: &ListTagsLogGroupRequest)
                            -> Result<ListTagsLogGroupResponse, ListTagsLogGroupError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.ListTagsLogGroup");
@@ -4104,7 +4104,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
     fn put_destination(&self,
                        input: &PutDestinationRequest)
                        -> Result<PutDestinationResponse, PutDestinationError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.PutDestination");
@@ -4131,7 +4131,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
     fn put_destination_policy(&self,
                               input: &PutDestinationPolicyRequest)
                               -> Result<(), PutDestinationPolicyError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.PutDestinationPolicy");
@@ -4156,7 +4156,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
     fn put_log_events(&self,
                       input: &PutLogEventsRequest)
                       -> Result<PutLogEventsResponse, PutLogEventsError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.PutLogEvents");
@@ -4182,7 +4182,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
     fn put_metric_filter(&self,
                          input: &PutMetricFilterRequest)
                          -> Result<(), PutMetricFilterError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.PutMetricFilter");
@@ -4207,7 +4207,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
     fn put_retention_policy(&self,
                             input: &PutRetentionPolicyRequest)
                             -> Result<(), PutRetentionPolicyError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.PutRetentionPolicy");
@@ -4232,7 +4232,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
     fn put_subscription_filter(&self,
                                input: &PutSubscriptionFilterRequest)
                                -> Result<(), PutSubscriptionFilterError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.PutSubscriptionFilter");
@@ -4255,7 +4255,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
 
     #[doc="<p>Adds or updates the specified tags for the specified log group.</p> <p>To list the tags for a log group, use <a>ListTagsLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.</p> <p>For more information about tags, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/log-group-tagging.html\">Tag Log Groups in Amazon CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User Guide</i>.</p>"]
     fn tag_log_group(&self, input: &TagLogGroupRequest) -> Result<(), TagLogGroupError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.TagLogGroup");
@@ -4277,7 +4277,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
     fn test_metric_filter(&self,
                           input: &TestMetricFilterRequest)
                           -> Result<TestMetricFilterResponse, TestMetricFilterError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.TestMetricFilter");
@@ -4302,7 +4302,7 @@ impl<P, D> CloudWatchLogs for CloudWatchLogsClient<P, D>
 
     #[doc="<p>Removes the specified tags from the specified log group.</p> <p>To list the tags for a log group, use <a>ListTagsLogGroup</a>. To add tags, use <a>UntagLogGroup</a>.</p>"]
     fn untag_log_group(&self, input: &UntagLogGroupRequest) -> Result<(), UntagLogGroupError> {
-        let mut request = SignedRequest::new("POST", "logs", self.region, "/");
+        let mut request = SignedRequest::new("POST", "logs", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "Logs_20140328.UntagLogGroup");

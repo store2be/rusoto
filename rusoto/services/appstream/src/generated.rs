@@ -2421,7 +2421,7 @@ impl<P, D> AppStream for AppStreamClient<P, D>
     fn associate_fleet(&self,
                        input: &AssociateFleetRequest)
                        -> Result<AssociateFleetResult, AssociateFleetError> {
-        let mut request = SignedRequest::new("POST", "appstream", self.region, "/");
+        let mut request = SignedRequest::new("POST", "appstream", &self.region, "/");
         request.set_endpoint_prefix("appstream2".to_string());
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "PhotonAdminProxyService.AssociateFleet");
@@ -2448,7 +2448,7 @@ impl<P, D> AppStream for AppStreamClient<P, D>
     fn create_fleet(&self,
                     input: &CreateFleetRequest)
                     -> Result<CreateFleetResult, CreateFleetError> {
-        let mut request = SignedRequest::new("POST", "appstream", self.region, "/");
+        let mut request = SignedRequest::new("POST", "appstream", &self.region, "/");
         request.set_endpoint_prefix("appstream2".to_string());
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "PhotonAdminProxyService.CreateFleet");
@@ -2472,7 +2472,7 @@ impl<P, D> AppStream for AppStreamClient<P, D>
     fn create_stack(&self,
                     input: &CreateStackRequest)
                     -> Result<CreateStackResult, CreateStackError> {
-        let mut request = SignedRequest::new("POST", "appstream", self.region, "/");
+        let mut request = SignedRequest::new("POST", "appstream", &self.region, "/");
         request.set_endpoint_prefix("appstream2".to_string());
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "PhotonAdminProxyService.CreateStack");
@@ -2496,7 +2496,7 @@ impl<P, D> AppStream for AppStreamClient<P, D>
     fn create_streaming_url(&self,
                             input: &CreateStreamingURLRequest)
                             -> Result<CreateStreamingURLResult, CreateStreamingURLError> {
-        let mut request = SignedRequest::new("POST", "appstream", self.region, "/");
+        let mut request = SignedRequest::new("POST", "appstream", &self.region, "/");
         request.set_endpoint_prefix("appstream2".to_string());
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "PhotonAdminProxyService.CreateStreamingURL");
@@ -2523,7 +2523,7 @@ impl<P, D> AppStream for AppStreamClient<P, D>
     fn delete_fleet(&self,
                     input: &DeleteFleetRequest)
                     -> Result<DeleteFleetResult, DeleteFleetError> {
-        let mut request = SignedRequest::new("POST", "appstream", self.region, "/");
+        let mut request = SignedRequest::new("POST", "appstream", &self.region, "/");
         request.set_endpoint_prefix("appstream2".to_string());
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "PhotonAdminProxyService.DeleteFleet");
@@ -2547,7 +2547,7 @@ impl<P, D> AppStream for AppStreamClient<P, D>
     fn delete_stack(&self,
                     input: &DeleteStackRequest)
                     -> Result<DeleteStackResult, DeleteStackError> {
-        let mut request = SignedRequest::new("POST", "appstream", self.region, "/");
+        let mut request = SignedRequest::new("POST", "appstream", &self.region, "/");
         request.set_endpoint_prefix("appstream2".to_string());
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "PhotonAdminProxyService.DeleteStack");
@@ -2571,7 +2571,7 @@ impl<P, D> AppStream for AppStreamClient<P, D>
     fn describe_fleets(&self,
                        input: &DescribeFleetsRequest)
                        -> Result<DescribeFleetsResult, DescribeFleetsError> {
-        let mut request = SignedRequest::new("POST", "appstream", self.region, "/");
+        let mut request = SignedRequest::new("POST", "appstream", &self.region, "/");
         request.set_endpoint_prefix("appstream2".to_string());
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "PhotonAdminProxyService.DescribeFleets");
@@ -2598,7 +2598,7 @@ impl<P, D> AppStream for AppStreamClient<P, D>
     fn describe_images(&self,
                        input: &DescribeImagesRequest)
                        -> Result<DescribeImagesResult, DescribeImagesError> {
-        let mut request = SignedRequest::new("POST", "appstream", self.region, "/");
+        let mut request = SignedRequest::new("POST", "appstream", &self.region, "/");
         request.set_endpoint_prefix("appstream2".to_string());
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "PhotonAdminProxyService.DescribeImages");
@@ -2625,7 +2625,7 @@ impl<P, D> AppStream for AppStreamClient<P, D>
     fn describe_sessions(&self,
                          input: &DescribeSessionsRequest)
                          -> Result<DescribeSessionsResult, DescribeSessionsError> {
-        let mut request = SignedRequest::new("POST", "appstream", self.region, "/");
+        let mut request = SignedRequest::new("POST", "appstream", &self.region, "/");
         request.set_endpoint_prefix("appstream2".to_string());
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "PhotonAdminProxyService.DescribeSessions");
@@ -2652,7 +2652,7 @@ impl<P, D> AppStream for AppStreamClient<P, D>
     fn describe_stacks(&self,
                        input: &DescribeStacksRequest)
                        -> Result<DescribeStacksResult, DescribeStacksError> {
-        let mut request = SignedRequest::new("POST", "appstream", self.region, "/");
+        let mut request = SignedRequest::new("POST", "appstream", &self.region, "/");
         request.set_endpoint_prefix("appstream2".to_string());
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "PhotonAdminProxyService.DescribeStacks");
@@ -2679,7 +2679,7 @@ impl<P, D> AppStream for AppStreamClient<P, D>
     fn disassociate_fleet(&self,
                           input: &DisassociateFleetRequest)
                           -> Result<DisassociateFleetResult, DisassociateFleetError> {
-        let mut request = SignedRequest::new("POST", "appstream", self.region, "/");
+        let mut request = SignedRequest::new("POST", "appstream", &self.region, "/");
         request.set_endpoint_prefix("appstream2".to_string());
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "PhotonAdminProxyService.DisassociateFleet");
@@ -2706,7 +2706,7 @@ impl<P, D> AppStream for AppStreamClient<P, D>
     fn expire_session(&self,
                       input: &ExpireSessionRequest)
                       -> Result<ExpireSessionResult, ExpireSessionError> {
-        let mut request = SignedRequest::new("POST", "appstream", self.region, "/");
+        let mut request = SignedRequest::new("POST", "appstream", &self.region, "/");
         request.set_endpoint_prefix("appstream2".to_string());
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "PhotonAdminProxyService.ExpireSession");
@@ -2732,7 +2732,7 @@ impl<P, D> AppStream for AppStreamClient<P, D>
     fn list_associated_fleets(&self,
                               input: &ListAssociatedFleetsRequest)
                               -> Result<ListAssociatedFleetsResult, ListAssociatedFleetsError> {
-        let mut request = SignedRequest::new("POST", "appstream", self.region, "/");
+        let mut request = SignedRequest::new("POST", "appstream", &self.region, "/");
         request.set_endpoint_prefix("appstream2".to_string());
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2760,7 +2760,7 @@ impl<P, D> AppStream for AppStreamClient<P, D>
     fn list_associated_stacks(&self,
                               input: &ListAssociatedStacksRequest)
                               -> Result<ListAssociatedStacksResult, ListAssociatedStacksError> {
-        let mut request = SignedRequest::new("POST", "appstream", self.region, "/");
+        let mut request = SignedRequest::new("POST", "appstream", &self.region, "/");
         request.set_endpoint_prefix("appstream2".to_string());
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2786,7 +2786,7 @@ impl<P, D> AppStream for AppStreamClient<P, D>
 
     #[doc="<p>Starts a fleet.</p>"]
     fn start_fleet(&self, input: &StartFleetRequest) -> Result<StartFleetResult, StartFleetError> {
-        let mut request = SignedRequest::new("POST", "appstream", self.region, "/");
+        let mut request = SignedRequest::new("POST", "appstream", &self.region, "/");
         request.set_endpoint_prefix("appstream2".to_string());
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "PhotonAdminProxyService.StartFleet");
@@ -2808,7 +2808,7 @@ impl<P, D> AppStream for AppStreamClient<P, D>
 
     #[doc="<p>Stops a fleet.</p>"]
     fn stop_fleet(&self, input: &StopFleetRequest) -> Result<StopFleetResult, StopFleetError> {
-        let mut request = SignedRequest::new("POST", "appstream", self.region, "/");
+        let mut request = SignedRequest::new("POST", "appstream", &self.region, "/");
         request.set_endpoint_prefix("appstream2".to_string());
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "PhotonAdminProxyService.StopFleet");
@@ -2834,7 +2834,7 @@ impl<P, D> AppStream for AppStreamClient<P, D>
     fn update_fleet(&self,
                     input: &UpdateFleetRequest)
                     -> Result<UpdateFleetResult, UpdateFleetError> {
-        let mut request = SignedRequest::new("POST", "appstream", self.region, "/");
+        let mut request = SignedRequest::new("POST", "appstream", &self.region, "/");
         request.set_endpoint_prefix("appstream2".to_string());
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "PhotonAdminProxyService.UpdateFleet");
@@ -2858,7 +2858,7 @@ impl<P, D> AppStream for AppStreamClient<P, D>
     fn update_stack(&self,
                     input: &UpdateStackRequest)
                     -> Result<UpdateStackResult, UpdateStackError> {
-        let mut request = SignedRequest::new("POST", "appstream", self.region, "/");
+        let mut request = SignedRequest::new("POST", "appstream", &self.region, "/");
         request.set_endpoint_prefix("appstream2".to_string());
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "PhotonAdminProxyService.UpdateStack");

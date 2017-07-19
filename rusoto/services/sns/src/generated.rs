@@ -5240,7 +5240,7 @@ impl<P, D> Sns for SnsClient<P, D>
 {
     #[doc="<p>Adds a statement to a topic's access control policy, granting access for the specified AWS accounts to the specified actions.</p>"]
     fn add_permission(&self, input: &AddPermissionInput) -> Result<(), AddPermissionError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AddPermission");
@@ -5267,7 +5267,7 @@ impl<P, D> Sns for SnsClient<P, D>
         (&self,
          input: &CheckIfPhoneNumberIsOptedOutInput)
          -> Result<CheckIfPhoneNumberIsOptedOutResponse, CheckIfPhoneNumberIsOptedOutError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CheckIfPhoneNumberIsOptedOut");
@@ -5309,7 +5309,7 @@ impl<P, D> Sns for SnsClient<P, D>
     fn confirm_subscription(&self,
                             input: &ConfirmSubscriptionInput)
                             -> Result<ConfirmSubscriptionResponse, ConfirmSubscriptionError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ConfirmSubscription");
@@ -5354,7 +5354,7 @@ impl<P, D> Sns for SnsClient<P, D>
         (&self,
          input: &CreatePlatformApplicationInput)
          -> Result<CreatePlatformApplicationResponse, CreatePlatformApplicationError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreatePlatformApplication");
@@ -5396,7 +5396,7 @@ impl<P, D> Sns for SnsClient<P, D>
     fn create_platform_endpoint(&self,
                                 input: &CreatePlatformEndpointInput)
                                 -> Result<CreateEndpointResponse, CreatePlatformEndpointError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreatePlatformEndpoint");
@@ -5440,7 +5440,7 @@ impl<P, D> Sns for SnsClient<P, D>
     fn create_topic(&self,
                     input: &CreateTopicInput)
                     -> Result<CreateTopicResponse, CreateTopicError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateTopic");
@@ -5479,7 +5479,7 @@ impl<P, D> Sns for SnsClient<P, D>
 
     #[doc="<p>Deletes the endpoint for a device and mobile app from Amazon SNS. This action is idempotent. For more information, see <a href=\"http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html\">Using Amazon SNS Mobile Push Notifications</a>. </p> <p>When you delete an endpoint that is also subscribed to a topic, then you must also unsubscribe the endpoint from the topic.</p>"]
     fn delete_endpoint(&self, input: &DeleteEndpointInput) -> Result<(), DeleteEndpointError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteEndpoint");
@@ -5506,7 +5506,7 @@ impl<P, D> Sns for SnsClient<P, D>
     fn delete_platform_application(&self,
                                    input: &DeletePlatformApplicationInput)
                                    -> Result<(), DeletePlatformApplicationError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeletePlatformApplication");
@@ -5530,7 +5530,7 @@ impl<P, D> Sns for SnsClient<P, D>
 
     #[doc="<p>Deletes a topic and all its subscriptions. Deleting a topic might prevent some messages previously sent to the topic from being delivered to subscribers. This action is idempotent, so deleting a topic that does not exist does not result in an error.</p>"]
     fn delete_topic(&self, input: &DeleteTopicInput) -> Result<(), DeleteTopicError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteTopic");
@@ -5555,7 +5555,7 @@ impl<P, D> Sns for SnsClient<P, D>
         (&self,
          input: &GetEndpointAttributesInput)
          -> Result<GetEndpointAttributesResponse, GetEndpointAttributesError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetEndpointAttributes");
@@ -5601,7 +5601,7 @@ impl<P, D> Sns for SnsClient<P, D>
         (&self,
          input: &GetPlatformApplicationAttributesInput)
          -> Result<GetPlatformApplicationAttributesResponse, GetPlatformApplicationAttributesError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetPlatformApplicationAttributes");
@@ -5643,7 +5643,7 @@ impl<P, D> Sns for SnsClient<P, D>
     fn get_sms_attributes(&self,
                           input: &GetSMSAttributesInput)
                           -> Result<GetSMSAttributesResponse, GetSMSAttributesError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetSMSAttributes");
@@ -5688,7 +5688,7 @@ impl<P, D> Sns for SnsClient<P, D>
         (&self,
          input: &GetSubscriptionAttributesInput)
          -> Result<GetSubscriptionAttributesResponse, GetSubscriptionAttributesError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetSubscriptionAttributes");
@@ -5730,7 +5730,7 @@ impl<P, D> Sns for SnsClient<P, D>
     fn get_topic_attributes(&self,
                             input: &GetTopicAttributesInput)
                             -> Result<GetTopicAttributesResponse, GetTopicAttributesError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetTopicAttributes");
@@ -5776,7 +5776,7 @@ impl<P, D> Sns for SnsClient<P, D>
          input: &ListEndpointsByPlatformApplicationInput)
          -> Result<ListEndpointsByPlatformApplicationResponse,
                    ListEndpointsByPlatformApplicationError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListEndpointsByPlatformApplication");
@@ -5819,7 +5819,7 @@ impl<P, D> Sns for SnsClient<P, D>
         (&self,
          input: &ListPhoneNumbersOptedOutInput)
          -> Result<ListPhoneNumbersOptedOutResponse, ListPhoneNumbersOptedOutError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListPhoneNumbersOptedOut");
@@ -5864,7 +5864,7 @@ impl<P, D> Sns for SnsClient<P, D>
         (&self,
          input: &ListPlatformApplicationsInput)
          -> Result<ListPlatformApplicationsResponse, ListPlatformApplicationsError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListPlatformApplications");
@@ -5908,7 +5908,7 @@ impl<P, D> Sns for SnsClient<P, D>
     fn list_subscriptions(&self,
                           input: &ListSubscriptionsInput)
                           -> Result<ListSubscriptionsResponse, ListSubscriptionsError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListSubscriptions");
@@ -5953,7 +5953,7 @@ impl<P, D> Sns for SnsClient<P, D>
         (&self,
          input: &ListSubscriptionsByTopicInput)
          -> Result<ListSubscriptionsByTopicResponse, ListSubscriptionsByTopicError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListSubscriptionsByTopic");
@@ -5995,7 +5995,7 @@ impl<P, D> Sns for SnsClient<P, D>
 
     #[doc="<p>Returns a list of the requester's topics. Each call returns a limited list of topics, up to 100. If there are more topics, a <code>NextToken</code> is also returned. Use the <code>NextToken</code> parameter in a new <code>ListTopics</code> call to get further results.</p>"]
     fn list_topics(&self, input: &ListTopicsInput) -> Result<ListTopicsResponse, ListTopicsError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ListTopics");
@@ -6036,7 +6036,7 @@ impl<P, D> Sns for SnsClient<P, D>
     fn opt_in_phone_number(&self,
                            input: &OptInPhoneNumberInput)
                            -> Result<OptInPhoneNumberResponse, OptInPhoneNumberError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "OptInPhoneNumber");
@@ -6078,7 +6078,7 @@ impl<P, D> Sns for SnsClient<P, D>
 
     #[doc="<p>Sends a message to all of a topic's subscribed endpoints. When a <code>messageId</code> is returned, the message has been saved and Amazon SNS will attempt to deliver it to the topic's subscribers shortly. The format of the outgoing message to each subscribed endpoint depends on the notification protocol.</p> <p>To use the <code>Publish</code> action for sending a message to a mobile endpoint, such as an app on a Kindle device or mobile phone, you must specify the EndpointArn for the TargetArn parameter. The EndpointArn is returned when making a call with the <code>CreatePlatformEndpoint</code> action. </p> <p>For more information about formatting messages, see <a href=\"http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html\">Send Custom Platform-Specific Payloads in Messages to Mobile Devices</a>. </p>"]
     fn publish(&self, input: &PublishInput) -> Result<PublishResponse, PublishError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "Publish");
@@ -6119,7 +6119,7 @@ impl<P, D> Sns for SnsClient<P, D>
     fn remove_permission(&self,
                          input: &RemovePermissionInput)
                          -> Result<(), RemovePermissionError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "RemovePermission");
@@ -6146,7 +6146,7 @@ impl<P, D> Sns for SnsClient<P, D>
     fn set_endpoint_attributes(&self,
                                input: &SetEndpointAttributesInput)
                                -> Result<(), SetEndpointAttributesError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "SetEndpointAttributes");
@@ -6173,7 +6173,7 @@ impl<P, D> Sns for SnsClient<P, D>
     fn set_platform_application_attributes(&self,
                                            input: &SetPlatformApplicationAttributesInput)
                                            -> Result<(), SetPlatformApplicationAttributesError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "SetPlatformApplicationAttributes");
@@ -6199,7 +6199,7 @@ impl<P, D> Sns for SnsClient<P, D>
     fn set_sms_attributes(&self,
                           input: &SetSMSAttributesInput)
                           -> Result<SetSMSAttributesResponse, SetSMSAttributesError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "SetSMSAttributes");
@@ -6243,7 +6243,7 @@ impl<P, D> Sns for SnsClient<P, D>
     fn set_subscription_attributes(&self,
                                    input: &SetSubscriptionAttributesInput)
                                    -> Result<(), SetSubscriptionAttributesError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "SetSubscriptionAttributes");
@@ -6269,7 +6269,7 @@ impl<P, D> Sns for SnsClient<P, D>
     fn set_topic_attributes(&self,
                             input: &SetTopicAttributesInput)
                             -> Result<(), SetTopicAttributesError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "SetTopicAttributes");
@@ -6294,7 +6294,7 @@ impl<P, D> Sns for SnsClient<P, D>
 
     #[doc="<p>Prepares to subscribe an endpoint by sending the endpoint a confirmation message. To actually create a subscription, the endpoint owner must call the <code>ConfirmSubscription</code> action with the token from the confirmation message. Confirmation tokens are valid for three days.</p>"]
     fn subscribe(&self, input: &SubscribeInput) -> Result<SubscribeResponse, SubscribeError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "Subscribe");
@@ -6333,7 +6333,7 @@ impl<P, D> Sns for SnsClient<P, D>
 
     #[doc="<p>Deletes a subscription. If the subscription requires authentication for deletion, only the owner of the subscription or the topic's owner can unsubscribe, and an AWS signature is required. If the <code>Unsubscribe</code> call does not require authentication and the requester is not the subscription owner, a final cancellation message is delivered to the endpoint, so that the endpoint owner can easily resubscribe to the topic if the <code>Unsubscribe</code> request was unintended.</p>"]
     fn unsubscribe(&self, input: &UnsubscribeInput) -> Result<(), UnsubscribeError> {
-        let mut request = SignedRequest::new("POST", "sns", self.region, "/");
+        let mut request = SignedRequest::new("POST", "sns", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "Unsubscribe");

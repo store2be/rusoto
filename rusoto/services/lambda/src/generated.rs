@@ -3821,7 +3821,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
         let request_uri = format!("/2015-03-31/functions/{function_name}/policy",
                                   function_name = input.function_name);
 
-        let mut request = SignedRequest::new("POST", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -3869,7 +3869,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
         let request_uri = format!("/2015-03-31/functions/{function_name}/aliases",
                                   function_name = input.function_name);
 
-        let mut request = SignedRequest::new("POST", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -3911,7 +3911,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
 
         let request_uri = "/2015-03-31/event-source-mappings/";
 
-        let mut request = SignedRequest::new("POST", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -3953,7 +3953,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
 
         let request_uri = "/2015-03-31/functions";
 
-        let mut request = SignedRequest::new("POST", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -3997,7 +3997,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
                                   function_name = input.function_name,
                                   name = input.name);
 
-        let mut request = SignedRequest::new("DELETE", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -4030,7 +4030,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
         let request_uri = format!("/2015-03-31/event-source-mappings/{uuid}",
                                   uuid = input.uuid);
 
-        let mut request = SignedRequest::new("DELETE", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -4071,7 +4071,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
         let request_uri = format!("/2015-03-31/functions/{function_name}",
                                   function_name = input.function_name);
 
-        let mut request = SignedRequest::new("DELETE", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -4107,7 +4107,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
 
         let request_uri = "/2016-08-19/account-settings/";
 
-        let mut request = SignedRequest::new("GET", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -4151,7 +4151,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
                                   function_name = input.function_name,
                                   name = input.name);
 
-        let mut request = SignedRequest::new("GET", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -4194,7 +4194,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
         let request_uri = format!("/2015-03-31/event-source-mappings/{uuid}",
                                   uuid = input.uuid);
 
-        let mut request = SignedRequest::new("GET", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -4240,7 +4240,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
         let request_uri = format!("/2015-03-31/functions/{function_name}",
                                   function_name = input.function_name);
 
-        let mut request = SignedRequest::new("GET", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -4287,7 +4287,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
         let request_uri = format!("/2015-03-31/functions/{function_name}/configuration",
                                   function_name = input.function_name);
 
-        let mut request = SignedRequest::new("GET", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -4331,7 +4331,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
         let request_uri = format!("/2015-03-31/functions/{function_name}/policy",
                                   function_name = input.function_name);
 
-        let mut request = SignedRequest::new("GET", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -4375,7 +4375,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
         let request_uri = format!("/2015-03-31/functions/{function_name}/invocations",
                                   function_name = input.function_name);
 
-        let mut request = SignedRequest::new("POST", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -4421,7 +4421,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
         let request_uri = format!("/2014-11-13/functions/{function_name}/invoke-async/",
                                   function_name = input.function_name);
 
-        let mut request = SignedRequest::new("POST", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -4463,7 +4463,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
         let request_uri = format!("/2015-03-31/functions/{function_name}/aliases",
                                   function_name = input.function_name);
 
-        let mut request = SignedRequest::new("GET", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -4515,7 +4515,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
 
         let request_uri = "/2015-03-31/event-source-mappings/";
 
-        let mut request = SignedRequest::new("GET", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -4570,7 +4570,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
 
         let request_uri = "/2015-03-31/functions/";
 
-        let mut request = SignedRequest::new("GET", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -4618,7 +4618,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
 
         let request_uri = format!("/2017-03-31/tags/{arn}", arn = input.resource);
 
-        let mut request = SignedRequest::new("GET", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -4661,7 +4661,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
         let request_uri = format!("/2015-03-31/functions/{function_name}/versions",
                                   function_name = input.function_name);
 
-        let mut request = SignedRequest::new("GET", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -4714,7 +4714,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
         let request_uri = format!("/2015-03-31/functions/{function_name}/versions",
                                   function_name = input.function_name);
 
-        let mut request = SignedRequest::new("POST", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -4760,7 +4760,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
                                   function_name = input.function_name,
                                   statement_id = input.statement_id);
 
-        let mut request = SignedRequest::new("DELETE", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -4796,7 +4796,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
 
         let request_uri = format!("/2017-03-31/tags/{arn}", arn = input.resource);
 
-        let mut request = SignedRequest::new("POST", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -4825,7 +4825,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
 
         let request_uri = format!("/2017-03-31/tags/{arn}", arn = input.resource);
 
-        let mut request = SignedRequest::new("DELETE", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -4864,7 +4864,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
                                   function_name = input.function_name,
                                   name = input.name);
 
-        let mut request = SignedRequest::new("PUT", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("PUT", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -4907,7 +4907,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
         let request_uri = format!("/2015-03-31/event-source-mappings/{uuid}",
                                   uuid = input.uuid);
 
-        let mut request = SignedRequest::new("PUT", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("PUT", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -4950,7 +4950,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
         let request_uri = format!("/2015-03-31/functions/{function_name}/code",
                                   function_name = input.function_name);
 
-        let mut request = SignedRequest::new("PUT", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("PUT", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -4996,7 +4996,7 @@ impl<P, D> Lambda for LambdaClient<P, D>
         let request_uri = format!("/2015-03-31/functions/{function_name}/configuration",
                                   function_name = input.function_name);
 
-        let mut request = SignedRequest::new("PUT", "lambda", self.region, &request_uri);
+        let mut request = SignedRequest::new("PUT", "lambda", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 

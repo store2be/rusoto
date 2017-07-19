@@ -57476,7 +57476,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
          input: &AcceptReservedInstancesExchangeQuoteRequest)
          -> Result<AcceptReservedInstancesExchangeQuoteResult,
                    AcceptReservedInstancesExchangeQuoteError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AcceptReservedInstancesExchangeQuote");
@@ -57516,7 +57516,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &AcceptVpcPeeringConnectionRequest)
          -> Result<AcceptVpcPeeringConnectionResult, AcceptVpcPeeringConnectionError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AcceptVpcPeeringConnection");
@@ -57555,7 +57555,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn allocate_address(&self,
                         input: &AllocateAddressRequest)
                         -> Result<AllocateAddressResult, AllocateAddressError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AllocateAddress");
@@ -57596,7 +57596,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn allocate_hosts(&self,
                       input: &AllocateHostsRequest)
                       -> Result<AllocateHostsResult, AllocateHostsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AllocateHosts");
@@ -57636,7 +57636,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn assign_ipv_6_addresses(&self,
                               input: &AssignIpv6AddressesRequest)
                               -> Result<AssignIpv6AddressesResult, AssignIpv6AddressesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AssignIpv6Addresses");
@@ -57678,7 +57678,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn assign_private_ip_addresses(&self,
                                    input: &AssignPrivateIpAddressesRequest)
                                    -> Result<(), AssignPrivateIpAddressesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AssignPrivateIpAddresses");
@@ -57704,7 +57704,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn associate_address(&self,
                          input: &AssociateAddressRequest)
                          -> Result<AssociateAddressResult, AssociateAddressError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AssociateAddress");
@@ -57746,7 +57746,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn associate_dhcp_options(&self,
                               input: &AssociateDhcpOptionsRequest)
                               -> Result<(), AssociateDhcpOptionsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AssociateDhcpOptions");
@@ -57774,7 +57774,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &AssociateIamInstanceProfileRequest)
          -> Result<AssociateIamInstanceProfileResult, AssociateIamInstanceProfileError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AssociateIamInstanceProfile");
@@ -57813,7 +57813,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn associate_route_table(&self,
                              input: &AssociateRouteTableRequest)
                              -> Result<AssociateRouteTableResult, AssociateRouteTableError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AssociateRouteTable");
@@ -57856,7 +57856,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &AssociateSubnetCidrBlockRequest)
          -> Result<AssociateSubnetCidrBlockResult, AssociateSubnetCidrBlockError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AssociateSubnetCidrBlock");
@@ -57896,7 +57896,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &AssociateVpcCidrBlockRequest)
          -> Result<AssociateVpcCidrBlockResult, AssociateVpcCidrBlockError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AssociateVpcCidrBlock");
@@ -57936,7 +57936,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn attach_classic_link_vpc(&self,
                                input: &AttachClassicLinkVpcRequest)
                                -> Result<AttachClassicLinkVpcResult, AttachClassicLinkVpcError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AttachClassicLinkVpc");
@@ -57978,7 +57978,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn attach_internet_gateway(&self,
                                input: &AttachInternetGatewayRequest)
                                -> Result<(), AttachInternetGatewayError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AttachInternetGateway");
@@ -58006,7 +58006,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &AttachNetworkInterfaceRequest)
          -> Result<AttachNetworkInterfaceResult, AttachNetworkInterfaceError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AttachNetworkInterface");
@@ -58046,7 +58046,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn attach_volume(&self,
                      input: &AttachVolumeRequest)
                      -> Result<VolumeAttachment, AttachVolumeError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AttachVolume");
@@ -58086,7 +58086,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn attach_vpn_gateway(&self,
                           input: &AttachVpnGatewayRequest)
                           -> Result<AttachVpnGatewayResult, AttachVpnGatewayError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AttachVpnGateway");
@@ -58128,7 +58128,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn authorize_security_group_egress(&self,
                                        input: &AuthorizeSecurityGroupEgressRequest)
                                        -> Result<(), AuthorizeSecurityGroupEgressError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AuthorizeSecurityGroupEgress");
@@ -58154,7 +58154,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn authorize_security_group_ingress(&self,
                                         input: &AuthorizeSecurityGroupIngressRequest)
                                         -> Result<(), AuthorizeSecurityGroupIngressError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "AuthorizeSecurityGroupIngress");
@@ -58180,7 +58180,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn bundle_instance(&self,
                        input: &BundleInstanceRequest)
                        -> Result<BundleInstanceResult, BundleInstanceError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "BundleInstance");
@@ -58221,7 +58221,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn cancel_bundle_task(&self,
                           input: &CancelBundleTaskRequest)
                           -> Result<CancelBundleTaskResult, CancelBundleTaskError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CancelBundleTask");
@@ -58263,7 +58263,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn cancel_conversion_task(&self,
                               input: &CancelConversionRequest)
                               -> Result<(), CancelConversionTaskError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CancelConversionTask");
@@ -58290,7 +58290,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn cancel_export_task(&self,
                           input: &CancelExportTaskRequest)
                           -> Result<(), CancelExportTaskError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CancelExportTask");
@@ -58317,7 +58317,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn cancel_import_task(&self,
                           input: &CancelImportTaskRequest)
                           -> Result<CancelImportTaskResult, CancelImportTaskError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CancelImportTask");
@@ -58360,7 +58360,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &CancelReservedInstancesListingRequest)
          -> Result<CancelReservedInstancesListingResult, CancelReservedInstancesListingError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CancelReservedInstancesListing");
@@ -58400,7 +58400,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &CancelSpotFleetRequestsRequest)
          -> Result<CancelSpotFleetRequestsResponse, EC2CancelSpotFleetRequestsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CancelSpotFleetRequests");
@@ -58440,7 +58440,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &CancelSpotInstanceRequestsRequest)
          -> Result<CancelSpotInstanceRequestsResult, CancelSpotInstanceRequestsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CancelSpotInstanceRequests");
@@ -58480,7 +58480,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &ConfirmProductInstanceRequest)
          -> Result<ConfirmProductInstanceResult, ConfirmProductInstanceError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ConfirmProductInstance");
@@ -58518,7 +58518,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
 
     #[doc="<p>Initiates the copy of an AMI from the specified source region to the current region. You specify the destination region by using its endpoint when making the request.</p> <p>For more information about the prerequisites and limits when copying an AMI, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html\">Copying an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>"]
     fn copy_image(&self, input: &CopyImageRequest) -> Result<CopyImageResult, CopyImageError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CopyImage");
@@ -58556,7 +58556,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn copy_snapshot(&self,
                      input: &CopySnapshotRequest)
                      -> Result<CopySnapshotResult, CopySnapshotError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CopySnapshot");
@@ -58597,7 +58597,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &CreateCustomerGatewayRequest)
          -> Result<CreateCustomerGatewayResult, CreateCustomerGatewayError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateCustomerGateway");
@@ -58637,7 +58637,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn create_dhcp_options(&self,
                            input: &CreateDhcpOptionsRequest)
                            -> Result<CreateDhcpOptionsResult, CreateDhcpOptionsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateDhcpOptions");
@@ -58680,7 +58680,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &CreateEgressOnlyInternetGatewayRequest)
          -> Result<CreateEgressOnlyInternetGatewayResult, CreateEgressOnlyInternetGatewayError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateEgressOnlyInternetGateway");
@@ -58719,7 +58719,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn create_flow_logs(&self,
                         input: &CreateFlowLogsRequest)
                         -> Result<CreateFlowLogsResult, CreateFlowLogsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateFlowLogs");
@@ -58760,7 +58760,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn create_fpga_image(&self,
                          input: &CreateFpgaImageRequest)
                          -> Result<CreateFpgaImageResult, CreateFpgaImageError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateFpgaImage");
@@ -58801,7 +58801,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn create_image(&self,
                     input: &CreateImageRequest)
                     -> Result<CreateImageResult, CreateImageError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateImage");
@@ -58840,7 +58840,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &CreateInstanceExportTaskRequest)
          -> Result<CreateInstanceExportTaskResult, CreateInstanceExportTaskError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateInstanceExportTask");
@@ -58880,7 +58880,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &CreateInternetGatewayRequest)
          -> Result<CreateInternetGatewayResult, CreateInternetGatewayError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateInternetGateway");
@@ -58918,7 +58918,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
 
     #[doc="<p>Creates a 2048-bit RSA key pair with the specified name. Amazon EC2 stores the public key and displays the private key for you to save to a file. The private key is returned as an unencrypted PEM encoded PKCS#8 private key. If a key with the specified name already exists, Amazon EC2 returns an error.</p> <p>You can have up to five thousand key pairs per region.</p> <p>The key pair returned to you is available only in the region in which you create it. To create a key pair that is available in all regions, use <a>ImportKeyPair</a>.</p> <p>For more information about key pairs, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html\">Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>"]
     fn create_key_pair(&self, input: &CreateKeyPairRequest) -> Result<KeyPair, CreateKeyPairError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateKeyPair");
@@ -58957,7 +58957,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn create_nat_gateway(&self,
                           input: &CreateNatGatewayRequest)
                           -> Result<CreateNatGatewayResult, CreateNatGatewayError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateNatGateway");
@@ -58999,7 +58999,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn create_network_acl(&self,
                           input: &CreateNetworkAclRequest)
                           -> Result<CreateNetworkAclResult, CreateNetworkAclError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateNetworkAcl");
@@ -59041,7 +59041,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn create_network_acl_entry(&self,
                                 input: &CreateNetworkAclEntryRequest)
                                 -> Result<(), CreateNetworkAclEntryError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateNetworkAclEntry");
@@ -59069,7 +59069,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &CreateNetworkInterfaceRequest)
          -> Result<CreateNetworkInterfaceResult, CreateNetworkInterfaceError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateNetworkInterface");
@@ -59109,7 +59109,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn create_placement_group(&self,
                               input: &CreatePlacementGroupRequest)
                               -> Result<(), CreatePlacementGroupError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreatePlacementGroup");
@@ -59137,7 +59137,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &CreateReservedInstancesListingRequest)
          -> Result<CreateReservedInstancesListingResult, CreateReservedInstancesListingError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateReservedInstancesListing");
@@ -59176,7 +59176,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn create_route(&self,
                     input: &CreateRouteRequest)
                     -> Result<CreateRouteResult, CreateRouteError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateRoute");
@@ -59214,7 +59214,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn create_route_table(&self,
                           input: &CreateRouteTableRequest)
                           -> Result<CreateRouteTableResult, CreateRouteTableError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateRouteTable");
@@ -59256,7 +59256,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn create_security_group(&self,
                              input: &CreateSecurityGroupRequest)
                              -> Result<CreateSecurityGroupResult, CreateSecurityGroupError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateSecurityGroup");
@@ -59298,7 +59298,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn create_snapshot(&self,
                        input: &CreateSnapshotRequest)
                        -> Result<Snapshot, CreateSnapshotError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateSnapshot");
@@ -59339,7 +59339,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &CreateSpotDatafeedSubscriptionRequest)
          -> Result<CreateSpotDatafeedSubscriptionResult, CreateSpotDatafeedSubscriptionError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateSpotDatafeedSubscription");
@@ -59378,7 +59378,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn create_subnet(&self,
                      input: &CreateSubnetRequest)
                      -> Result<CreateSubnetResult, CreateSubnetError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateSubnet");
@@ -59416,7 +59416,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
 
     #[doc="<p>Adds or overwrites one or more tags for the specified Amazon EC2 resource or resources. Each resource can have a maximum of 50 tags. Each tag consists of a key and optional value. Tag keys must be unique per resource.</p> <p>For more information about tags, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html\">Tagging Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information about creating IAM policies that control users' access to resources based on tags, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-iam-actions-resources.html\">Supported Resource-Level Permissions for Amazon EC2 API Actions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>"]
     fn create_tags(&self, input: &CreateTagsRequest) -> Result<(), CreateTagsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateTags");
@@ -59438,7 +59438,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
 
     #[doc="<p>Creates an EBS volume that can be attached to an instance in the same Availability Zone. The volume is created in the regional endpoint that you send the HTTP request to. For more information see <a href=\"http://docs.aws.amazon.com/general/latest/gr/rande.html\">Regions and Endpoints</a>.</p> <p>You can create a new empty volume or restore a volume from an EBS snapshot. Any AWS Marketplace product codes from the snapshot are propagated to the volume.</p> <p>You can create encrypted volumes with the <code>Encrypted</code> parameter. Encrypted volumes may only be attached to instances that support Amazon EBS encryption. Volumes that are created from encrypted snapshots are also automatically encrypted. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html\">Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>You can tag your volumes during creation. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html\">Tagging Your Amazon EC2 Resources</a>.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html\">Creating an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>"]
     fn create_volume(&self, input: &CreateVolumeRequest) -> Result<Volume, CreateVolumeError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateVolume");
@@ -59475,7 +59475,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
 
     #[doc="<p>Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can create uses a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536 IPv4 addresses). To help you decide how big to make your VPC, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html\">Your VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>You can optionally request an Amazon-provided IPv6 CIDR block for the VPC. The IPv6 CIDR block uses a /56 prefix length, and is allocated from Amazon's pool of IPv6 addresses. You cannot choose the IPv6 range for your VPC.</p> <p>By default, each instance you launch in the VPC has the default DHCP options, which includes only a default DNS server that we provide (AmazonProvidedDNS). For more information about DHCP options, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html\">DHCP Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>You can specify the instance tenancy value for the VPC when you create it. You can't change this value for the VPC after you create it. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html\">Dedicated Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>"]
     fn create_vpc(&self, input: &CreateVpcRequest) -> Result<CreateVpcResult, CreateVpcError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateVpc");
@@ -59513,7 +59513,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn create_vpc_endpoint(&self,
                            input: &CreateVpcEndpointRequest)
                            -> Result<CreateVpcEndpointResult, CreateVpcEndpointError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateVpcEndpoint");
@@ -59556,7 +59556,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &CreateVpcPeeringConnectionRequest)
          -> Result<CreateVpcPeeringConnectionResult, CreateVpcPeeringConnectionError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateVpcPeeringConnection");
@@ -59595,7 +59595,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn create_vpn_connection(&self,
                              input: &CreateVpnConnectionRequest)
                              -> Result<CreateVpnConnectionResult, CreateVpnConnectionError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateVpnConnection");
@@ -59637,7 +59637,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn create_vpn_connection_route(&self,
                                    input: &CreateVpnConnectionRouteRequest)
                                    -> Result<(), CreateVpnConnectionRouteError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateVpnConnectionRoute");
@@ -59663,7 +59663,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn create_vpn_gateway(&self,
                           input: &CreateVpnGatewayRequest)
                           -> Result<CreateVpnGatewayResult, CreateVpnGatewayError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "CreateVpnGateway");
@@ -59705,7 +59705,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn delete_customer_gateway(&self,
                                input: &DeleteCustomerGatewayRequest)
                                -> Result<(), DeleteCustomerGatewayError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteCustomerGateway");
@@ -59732,7 +59732,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn delete_dhcp_options(&self,
                            input: &DeleteDhcpOptionsRequest)
                            -> Result<(), DeleteDhcpOptionsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteDhcpOptions");
@@ -59760,7 +59760,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &DeleteEgressOnlyInternetGatewayRequest)
          -> Result<DeleteEgressOnlyInternetGatewayResult, DeleteEgressOnlyInternetGatewayError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteEgressOnlyInternetGateway");
@@ -59799,7 +59799,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn delete_flow_logs(&self,
                         input: &DeleteFlowLogsRequest)
                         -> Result<DeleteFlowLogsResult, DeleteFlowLogsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteFlowLogs");
@@ -59840,7 +59840,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn delete_internet_gateway(&self,
                                input: &DeleteInternetGatewayRequest)
                                -> Result<(), DeleteInternetGatewayError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteInternetGateway");
@@ -59865,7 +59865,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
 
     #[doc="<p>Deletes the specified key pair, by removing the public key from Amazon EC2.</p>"]
     fn delete_key_pair(&self, input: &DeleteKeyPairRequest) -> Result<(), DeleteKeyPairError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteKeyPair");
@@ -59891,7 +59891,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn delete_nat_gateway(&self,
                           input: &DeleteNatGatewayRequest)
                           -> Result<DeleteNatGatewayResult, DeleteNatGatewayError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteNatGateway");
@@ -59933,7 +59933,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn delete_network_acl(&self,
                           input: &DeleteNetworkAclRequest)
                           -> Result<(), DeleteNetworkAclError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteNetworkAcl");
@@ -59960,7 +59960,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn delete_network_acl_entry(&self,
                                 input: &DeleteNetworkAclEntryRequest)
                                 -> Result<(), DeleteNetworkAclEntryError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteNetworkAclEntry");
@@ -59987,7 +59987,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn delete_network_interface(&self,
                                 input: &DeleteNetworkInterfaceRequest)
                                 -> Result<(), DeleteNetworkInterfaceError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteNetworkInterface");
@@ -60014,7 +60014,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn delete_placement_group(&self,
                               input: &DeletePlacementGroupRequest)
                               -> Result<(), DeletePlacementGroupError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeletePlacementGroup");
@@ -60039,7 +60039,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
 
     #[doc="<p>Deletes the specified route from the specified route table.</p>"]
     fn delete_route(&self, input: &DeleteRouteRequest) -> Result<(), DeleteRouteError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteRoute");
@@ -60063,7 +60063,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn delete_route_table(&self,
                           input: &DeleteRouteTableRequest)
                           -> Result<(), DeleteRouteTableError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteRouteTable");
@@ -60090,7 +60090,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn delete_security_group(&self,
                              input: &DeleteSecurityGroupRequest)
                              -> Result<(), DeleteSecurityGroupError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteSecurityGroup");
@@ -60115,7 +60115,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
 
     #[doc="<p>Deletes the specified snapshot.</p> <p>When you make periodic snapshots of a volume, the snapshots are incremental, and only the blocks on the device that have changed since your last snapshot are saved in the new snapshot. When you delete a snapshot, only the data not needed for any other snapshot is removed. So regardless of which prior snapshots have been deleted, all active snapshots will have access to all the information needed to restore the volume.</p> <p>You cannot delete a snapshot of the root device of an EBS volume used by a registered AMI. You must first de-register the AMI before you can delete the snapshot.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html\">Deleting an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>"]
     fn delete_snapshot(&self, input: &DeleteSnapshotRequest) -> Result<(), DeleteSnapshotError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteSnapshot");
@@ -60142,7 +60142,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn delete_spot_datafeed_subscription(&self,
                                          input: &DeleteSpotDatafeedSubscriptionRequest)
                                          -> Result<(), DeleteSpotDatafeedSubscriptionError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteSpotDatafeedSubscription");
@@ -60166,7 +60166,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
 
     #[doc="<p>Deletes the specified subnet. You must terminate all running instances in the subnet before you can delete the subnet.</p>"]
     fn delete_subnet(&self, input: &DeleteSubnetRequest) -> Result<(), DeleteSubnetError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteSubnet");
@@ -60190,7 +60190,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
 
     #[doc="<p>Deletes the specified set of tags from the specified set of resources. This call is designed to follow a <code>DescribeTags</code> request.</p> <p>For more information about tags, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html\">Tagging Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>"]
     fn delete_tags(&self, input: &DeleteTagsRequest) -> Result<(), DeleteTagsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteTags");
@@ -60212,7 +60212,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
 
     #[doc="<p>Deletes the specified EBS volume. The volume must be in the <code>available</code> state (not attached to an instance).</p> <note> <p>The volume may remain in the <code>deleting</code> state for several minutes.</p> </note> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html\">Deleting an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>"]
     fn delete_volume(&self, input: &DeleteVolumeRequest) -> Result<(), DeleteVolumeError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteVolume");
@@ -60236,7 +60236,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
 
     #[doc="<p>Deletes the specified VPC. You must detach or delete all gateways and resources that are associated with the VPC before you can delete it. For example, you must terminate all instances running in the VPC, delete all security groups associated with the VPC (except the default one), delete all route tables associated with the VPC (except the default one), and so on.</p>"]
     fn delete_vpc(&self, input: &DeleteVpcRequest) -> Result<(), DeleteVpcError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteVpc");
@@ -60260,7 +60260,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn delete_vpc_endpoints(&self,
                             input: &DeleteVpcEndpointsRequest)
                             -> Result<DeleteVpcEndpointsResult, DeleteVpcEndpointsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteVpcEndpoints");
@@ -60303,7 +60303,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &DeleteVpcPeeringConnectionRequest)
          -> Result<DeleteVpcPeeringConnectionResult, DeleteVpcPeeringConnectionError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteVpcPeeringConnection");
@@ -60342,7 +60342,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn delete_vpn_connection(&self,
                              input: &DeleteVpnConnectionRequest)
                              -> Result<(), DeleteVpnConnectionError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteVpnConnection");
@@ -60369,7 +60369,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn delete_vpn_connection_route(&self,
                                    input: &DeleteVpnConnectionRouteRequest)
                                    -> Result<(), DeleteVpnConnectionRouteError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteVpnConnectionRoute");
@@ -60395,7 +60395,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn delete_vpn_gateway(&self,
                           input: &DeleteVpnGatewayRequest)
                           -> Result<(), DeleteVpnGatewayError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeleteVpnGateway");
@@ -60420,7 +60420,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
 
     #[doc="<p>Deregisters the specified AMI. After you deregister an AMI, it can't be used to launch new instances.</p> <p>This command does not delete the AMI.</p>"]
     fn deregister_image(&self, input: &DeregisterImageRequest) -> Result<(), DeregisterImageError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DeregisterImage");
@@ -60448,7 +60448,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &DescribeAccountAttributesRequest)
          -> Result<DescribeAccountAttributesResult, DescribeAccountAttributesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeAccountAttributes");
@@ -60487,7 +60487,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn describe_addresses(&self,
                           input: &DescribeAddressesRequest)
                           -> Result<DescribeAddressesResult, DescribeAddressesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeAddresses");
@@ -60530,7 +60530,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &DescribeAvailabilityZonesRequest)
          -> Result<DescribeAvailabilityZonesResult, DescribeAvailabilityZonesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeAvailabilityZones");
@@ -60569,7 +60569,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn describe_bundle_tasks(&self,
                              input: &DescribeBundleTasksRequest)
                              -> Result<DescribeBundleTasksResult, DescribeBundleTasksError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeBundleTasks");
@@ -60612,7 +60612,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &DescribeClassicLinkInstancesRequest)
          -> Result<DescribeClassicLinkInstancesResult, DescribeClassicLinkInstancesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeClassicLinkInstances");
@@ -60652,7 +60652,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &DescribeConversionTasksRequest)
          -> Result<DescribeConversionTasksResult, DescribeConversionTasksError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeConversionTasks");
@@ -60692,7 +60692,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &DescribeCustomerGatewaysRequest)
          -> Result<DescribeCustomerGatewaysResult, DescribeCustomerGatewaysError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeCustomerGateways");
@@ -60731,7 +60731,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn describe_dhcp_options(&self,
                              input: &DescribeDhcpOptionsRequest)
                              -> Result<DescribeDhcpOptionsResult, DescribeDhcpOptionsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeDhcpOptions");
@@ -60775,7 +60775,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
          input: &DescribeEgressOnlyInternetGatewaysRequest)
          -> Result<DescribeEgressOnlyInternetGatewaysResult,
                    DescribeEgressOnlyInternetGatewaysError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeEgressOnlyInternetGateways");
@@ -60814,7 +60814,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn describe_export_tasks(&self,
                              input: &DescribeExportTasksRequest)
                              -> Result<DescribeExportTasksResult, DescribeExportTasksError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeExportTasks");
@@ -60856,7 +60856,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn describe_flow_logs(&self,
                           input: &DescribeFlowLogsRequest)
                           -> Result<DescribeFlowLogsResult, DescribeFlowLogsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeFlowLogs");
@@ -60898,7 +60898,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn describe_fpga_images(&self,
                             input: &DescribeFpgaImagesRequest)
                             -> Result<DescribeFpgaImagesResult, DescribeFpgaImagesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeFpgaImages");
@@ -60941,7 +60941,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &DescribeHostReservationOfferingsRequest)
          -> Result<DescribeHostReservationOfferingsResult, DescribeHostReservationOfferingsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeHostReservationOfferings");
@@ -60981,7 +60981,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
         (&self,
          input: &DescribeHostReservationsRequest)
          -> Result<DescribeHostReservationsResult, DescribeHostReservationsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeHostReservations");
@@ -61020,7 +61020,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
     fn describe_hosts(&self,
                       input: &DescribeHostsRequest)
                       -> Result<DescribeHostsResult, DescribeHostsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeHosts");
@@ -61058,7 +61058,7 @@ impl<P, D> Ec2 for Ec2Client<P, D>
 
     #[doc="<p>Describes your IAM instance profile associations.</p>"]
 fn describe_iam_instance_profile_associations(&self, input: &DescribeIamInstanceProfileAssociationsRequest) -> Result<DescribeIamInstanceProfileAssociationsResult, DescribeIamInstanceProfileAssociationsError>{
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeIamInstanceProfileAssociations");
@@ -61097,7 +61097,7 @@ fn describe_iam_instance_profile_associations(&self, input: &DescribeIamInstance
     fn describe_id_format(&self,
                           input: &DescribeIdFormatRequest)
                           -> Result<DescribeIdFormatResult, DescribeIdFormatError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeIdFormat");
@@ -61140,7 +61140,7 @@ fn describe_iam_instance_profile_associations(&self, input: &DescribeIamInstance
         (&self,
          input: &DescribeIdentityIdFormatRequest)
          -> Result<DescribeIdentityIdFormatResult, DescribeIdentityIdFormatError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeIdentityIdFormat");
@@ -61179,7 +61179,7 @@ fn describe_iam_instance_profile_associations(&self, input: &DescribeIamInstance
     fn describe_image_attribute(&self,
                                 input: &DescribeImageAttributeRequest)
                                 -> Result<ImageAttribute, DescribeImageAttributeError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeImageAttribute");
@@ -61220,7 +61220,7 @@ fn describe_iam_instance_profile_associations(&self, input: &DescribeIamInstance
     fn describe_images(&self,
                        input: &DescribeImagesRequest)
                        -> Result<DescribeImagesResult, DescribeImagesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeImages");
@@ -61262,7 +61262,7 @@ fn describe_iam_instance_profile_associations(&self, input: &DescribeIamInstance
         (&self,
          input: &DescribeImportImageTasksRequest)
          -> Result<DescribeImportImageTasksResult, DescribeImportImageTasksError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeImportImageTasks");
@@ -61302,7 +61302,7 @@ fn describe_iam_instance_profile_associations(&self, input: &DescribeIamInstance
         (&self,
          input: &DescribeImportSnapshotTasksRequest)
          -> Result<DescribeImportSnapshotTasksResult, DescribeImportSnapshotTasksError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeImportSnapshotTasks");
@@ -61341,7 +61341,7 @@ fn describe_iam_instance_profile_associations(&self, input: &DescribeIamInstance
     fn describe_instance_attribute(&self,
                                    input: &DescribeInstanceAttributeRequest)
                                    -> Result<InstanceAttribute, DescribeInstanceAttributeError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeInstanceAttribute");
@@ -61382,7 +61382,7 @@ fn describe_iam_instance_profile_associations(&self, input: &DescribeIamInstance
         (&self,
          input: &DescribeInstanceStatusRequest)
          -> Result<DescribeInstanceStatusResult, DescribeInstanceStatusError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeInstanceStatus");
@@ -61422,7 +61422,7 @@ fn describe_iam_instance_profile_associations(&self, input: &DescribeIamInstance
     fn describe_instances(&self,
                           input: &DescribeInstancesRequest)
                           -> Result<DescribeInstancesResult, DescribeInstancesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeInstances");
@@ -61465,7 +61465,7 @@ fn describe_iam_instance_profile_associations(&self, input: &DescribeIamInstance
         (&self,
          input: &DescribeInternetGatewaysRequest)
          -> Result<DescribeInternetGatewaysResult, DescribeInternetGatewaysError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeInternetGateways");
@@ -61504,7 +61504,7 @@ fn describe_iam_instance_profile_associations(&self, input: &DescribeIamInstance
     fn describe_key_pairs(&self,
                           input: &DescribeKeyPairsRequest)
                           -> Result<DescribeKeyPairsResult, DescribeKeyPairsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeKeyPairs");
@@ -61547,7 +61547,7 @@ fn describe_iam_instance_profile_associations(&self, input: &DescribeIamInstance
         (&self,
          input: &DescribeMovingAddressesRequest)
          -> Result<DescribeMovingAddressesResult, DescribeMovingAddressesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeMovingAddresses");
@@ -61586,7 +61586,7 @@ fn describe_iam_instance_profile_associations(&self, input: &DescribeIamInstance
     fn describe_nat_gateways(&self,
                              input: &DescribeNatGatewaysRequest)
                              -> Result<DescribeNatGatewaysResult, DescribeNatGatewaysError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeNatGateways");
@@ -61628,7 +61628,7 @@ fn describe_iam_instance_profile_associations(&self, input: &DescribeIamInstance
     fn describe_network_acls(&self,
                              input: &DescribeNetworkAclsRequest)
                              -> Result<DescribeNetworkAclsResult, DescribeNetworkAclsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeNetworkAcls");
@@ -61671,7 +61671,7 @@ fn describe_iam_instance_profile_associations(&self, input: &DescribeIamInstance
         (&self,
          input: &DescribeNetworkInterfaceAttributeRequest)
          -> Result<DescribeNetworkInterfaceAttributeResult, DescribeNetworkInterfaceAttributeError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeNetworkInterfaceAttribute");
@@ -61711,7 +61711,7 @@ fn describe_iam_instance_profile_associations(&self, input: &DescribeIamInstance
         (&self,
          input: &DescribeNetworkInterfacesRequest)
          -> Result<DescribeNetworkInterfacesResult, DescribeNetworkInterfacesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeNetworkInterfaces");
@@ -61751,7 +61751,7 @@ fn describe_iam_instance_profile_associations(&self, input: &DescribeIamInstance
         (&self,
          input: &DescribePlacementGroupsRequest)
          -> Result<DescribePlacementGroupsResult, DescribePlacementGroupsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribePlacementGroups");
@@ -61790,7 +61790,7 @@ fn describe_iam_instance_profile_associations(&self, input: &DescribeIamInstance
     fn describe_prefix_lists(&self,
                              input: &DescribePrefixListsRequest)
                              -> Result<DescribePrefixListsResult, DescribePrefixListsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribePrefixLists");
@@ -61832,7 +61832,7 @@ fn describe_iam_instance_profile_associations(&self, input: &DescribeIamInstance
     fn describe_regions(&self,
                         input: &DescribeRegionsRequest)
                         -> Result<DescribeRegionsResult, DescribeRegionsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeRegions");
@@ -61874,7 +61874,7 @@ fn describe_iam_instance_profile_associations(&self, input: &DescribeIamInstance
         (&self,
          input: &DescribeReservedInstancesRequest)
          -> Result<DescribeReservedInstancesResult, DescribeReservedInstancesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeReservedInstances");
@@ -61914,7 +61914,7 @@ fn describe_iam_instance_profile_associations(&self, input: &DescribeIamInstance
         (&self,
          input: &DescribeReservedInstancesListingsRequest)
          -> Result<DescribeReservedInstancesListingsResult, DescribeReservedInstancesListingsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeReservedInstancesListings");
@@ -61951,7 +61951,7 @@ fn describe_iam_instance_profile_associations(&self, input: &DescribeIamInstance
 
     #[doc="<p>Describes the modifications made to your Reserved Instances. If no parameter is specified, information about all your Reserved Instances modification requests is returned. If a modification ID is specified, only information about the specific modification is returned.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html\">Modifying Reserved Instances</a> in the Amazon Elastic Compute Cloud User Guide.</p>"]
 fn describe_reserved_instances_modifications(&self, input: &DescribeReservedInstancesModificationsRequest) -> Result<DescribeReservedInstancesModificationsResult, DescribeReservedInstancesModificationsError>{
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeReservedInstancesModifications");
@@ -61992,7 +61992,7 @@ fn describe_reserved_instances_modifications(&self, input: &DescribeReservedInst
          input: &DescribeReservedInstancesOfferingsRequest)
          -> Result<DescribeReservedInstancesOfferingsResult,
                    DescribeReservedInstancesOfferingsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeReservedInstancesOfferings");
@@ -62031,7 +62031,7 @@ fn describe_reserved_instances_modifications(&self, input: &DescribeReservedInst
     fn describe_route_tables(&self,
                              input: &DescribeRouteTablesRequest)
                              -> Result<DescribeRouteTablesResult, DescribeRouteTablesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeRouteTables");
@@ -62071,7 +62071,7 @@ fn describe_reserved_instances_modifications(&self, input: &DescribeReservedInst
 
     #[doc="<p>Finds available schedules that meet the specified criteria.</p> <p>You can search for an available schedule no more than 3 months in advance. You must meet the minimum required duration of 1,200 hours per year. For example, the minimum daily schedule is 4 hours, the minimum weekly schedule is 24 hours, and the minimum monthly schedule is 100 hours.</p> <p>After you find a schedule that meets your needs, call <a>PurchaseScheduledInstances</a> to purchase Scheduled Instances with that schedule.</p>"]
 fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInstanceAvailabilityRequest) -> Result<DescribeScheduledInstanceAvailabilityResult, DescribeScheduledInstanceAvailabilityError>{
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeScheduledInstanceAvailability");
@@ -62111,7 +62111,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &DescribeScheduledInstancesRequest)
          -> Result<DescribeScheduledInstancesResult, DescribeScheduledInstancesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeScheduledInstances");
@@ -62151,7 +62151,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &DescribeSecurityGroupReferencesRequest)
          -> Result<DescribeSecurityGroupReferencesResult, DescribeSecurityGroupReferencesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeSecurityGroupReferences");
@@ -62191,7 +62191,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &DescribeSecurityGroupsRequest)
          -> Result<DescribeSecurityGroupsResult, DescribeSecurityGroupsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeSecurityGroups");
@@ -62232,7 +62232,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &DescribeSnapshotAttributeRequest)
          -> Result<DescribeSnapshotAttributeResult, DescribeSnapshotAttributeError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeSnapshotAttribute");
@@ -62271,7 +62271,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn describe_snapshots(&self,
                           input: &DescribeSnapshotsRequest)
                           -> Result<DescribeSnapshotsResult, DescribeSnapshotsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeSnapshots");
@@ -62314,7 +62314,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &DescribeSpotDatafeedSubscriptionRequest)
          -> Result<DescribeSpotDatafeedSubscriptionResult, DescribeSpotDatafeedSubscriptionError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeSpotDatafeedSubscription");
@@ -62354,7 +62354,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &DescribeSpotFleetInstancesRequest)
          -> Result<DescribeSpotFleetInstancesResponse, DescribeSpotFleetInstancesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeSpotFleetInstances");
@@ -62394,7 +62394,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &DescribeSpotFleetRequestHistoryRequest)
          -> Result<DescribeSpotFleetRequestHistoryResponse, DescribeSpotFleetRequestHistoryError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeSpotFleetRequestHistory");
@@ -62434,7 +62434,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &DescribeSpotFleetRequestsRequest)
          -> Result<DescribeSpotFleetRequestsResponse, DescribeSpotFleetRequestsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeSpotFleetRequests");
@@ -62474,7 +62474,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &DescribeSpotInstanceRequestsRequest)
          -> Result<DescribeSpotInstanceRequestsResult, DescribeSpotInstanceRequestsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeSpotInstanceRequests");
@@ -62514,7 +62514,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &DescribeSpotPriceHistoryRequest)
          -> Result<DescribeSpotPriceHistoryResult, DescribeSpotPriceHistoryError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeSpotPriceHistory");
@@ -62554,7 +62554,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &DescribeStaleSecurityGroupsRequest)
          -> Result<DescribeStaleSecurityGroupsResult, DescribeStaleSecurityGroupsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeStaleSecurityGroups");
@@ -62593,7 +62593,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn describe_subnets(&self,
                         input: &DescribeSubnetsRequest)
                         -> Result<DescribeSubnetsResult, DescribeSubnetsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeSubnets");
@@ -62634,7 +62634,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn describe_tags(&self,
                      input: &DescribeTagsRequest)
                      -> Result<DescribeTagsResult, DescribeTagsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeTags");
@@ -62675,7 +62675,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &DescribeVolumeAttributeRequest)
          -> Result<DescribeVolumeAttributeResult, DescribeVolumeAttributeError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeVolumeAttribute");
@@ -62714,7 +62714,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn describe_volume_status(&self,
                               input: &DescribeVolumeStatusRequest)
                               -> Result<DescribeVolumeStatusResult, DescribeVolumeStatusError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeVolumeStatus");
@@ -62756,7 +62756,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn describe_volumes(&self,
                         input: &DescribeVolumesRequest)
                         -> Result<DescribeVolumesResult, DescribeVolumesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeVolumes");
@@ -62798,7 +62798,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &DescribeVolumesModificationsRequest)
          -> Result<DescribeVolumesModificationsResult, DescribeVolumesModificationsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeVolumesModifications");
@@ -62837,7 +62837,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn describe_vpc_attribute(&self,
                               input: &DescribeVpcAttributeRequest)
                               -> Result<DescribeVpcAttributeResult, DescribeVpcAttributeError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeVpcAttribute");
@@ -62880,7 +62880,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &DescribeVpcClassicLinkRequest)
          -> Result<DescribeVpcClassicLinkResult, DescribeVpcClassicLinkError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeVpcClassicLink");
@@ -62921,7 +62921,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &DescribeVpcClassicLinkDnsSupportRequest)
          -> Result<DescribeVpcClassicLinkDnsSupportResult, DescribeVpcClassicLinkDnsSupportError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeVpcClassicLinkDnsSupport");
@@ -62961,7 +62961,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &DescribeVpcEndpointServicesRequest)
          -> Result<DescribeVpcEndpointServicesResult, DescribeVpcEndpointServicesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeVpcEndpointServices");
@@ -63000,7 +63000,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn describe_vpc_endpoints(&self,
                               input: &DescribeVpcEndpointsRequest)
                               -> Result<DescribeVpcEndpointsResult, DescribeVpcEndpointsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeVpcEndpoints");
@@ -63043,7 +63043,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &DescribeVpcPeeringConnectionsRequest)
          -> Result<DescribeVpcPeeringConnectionsResult, DescribeVpcPeeringConnectionsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeVpcPeeringConnections");
@@ -63082,7 +63082,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn describe_vpcs(&self,
                      input: &DescribeVpcsRequest)
                      -> Result<DescribeVpcsResult, DescribeVpcsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeVpcs");
@@ -63123,7 +63123,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &DescribeVpnConnectionsRequest)
          -> Result<DescribeVpnConnectionsResult, DescribeVpnConnectionsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeVpnConnections");
@@ -63163,7 +63163,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn describe_vpn_gateways(&self,
                              input: &DescribeVpnGatewaysRequest)
                              -> Result<DescribeVpnGatewaysResult, DescribeVpnGatewaysError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DescribeVpnGateways");
@@ -63205,7 +63205,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn detach_classic_link_vpc(&self,
                                input: &DetachClassicLinkVpcRequest)
                                -> Result<DetachClassicLinkVpcResult, DetachClassicLinkVpcError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DetachClassicLinkVpc");
@@ -63247,7 +63247,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn detach_internet_gateway(&self,
                                input: &DetachInternetGatewayRequest)
                                -> Result<(), DetachInternetGatewayError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DetachInternetGateway");
@@ -63274,7 +63274,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn detach_network_interface(&self,
                                 input: &DetachNetworkInterfaceRequest)
                                 -> Result<(), DetachNetworkInterfaceError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DetachNetworkInterface");
@@ -63301,7 +63301,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn detach_volume(&self,
                      input: &DetachVolumeRequest)
                      -> Result<VolumeAttachment, DetachVolumeError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DetachVolume");
@@ -63341,7 +63341,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn detach_vpn_gateway(&self,
                           input: &DetachVpnGatewayRequest)
                           -> Result<(), DetachVpnGatewayError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DetachVpnGateway");
@@ -63368,7 +63368,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn disable_vgw_route_propagation(&self,
                                      input: &DisableVgwRoutePropagationRequest)
                                      -> Result<(), DisableVgwRoutePropagationError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DisableVgwRoutePropagation");
@@ -63395,7 +63395,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &DisableVpcClassicLinkRequest)
          -> Result<DisableVpcClassicLinkResult, DisableVpcClassicLinkError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DisableVpcClassicLink");
@@ -63436,7 +63436,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &DisableVpcClassicLinkDnsSupportRequest)
          -> Result<DisableVpcClassicLinkDnsSupportResult, DisableVpcClassicLinkDnsSupportError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DisableVpcClassicLinkDnsSupport");
@@ -63475,7 +63475,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn disassociate_address(&self,
                             input: &DisassociateAddressRequest)
                             -> Result<(), DisassociateAddressError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DisassociateAddress");
@@ -63503,7 +63503,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &DisassociateIamInstanceProfileRequest)
          -> Result<DisassociateIamInstanceProfileResult, DisassociateIamInstanceProfileError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DisassociateIamInstanceProfile");
@@ -63542,7 +63542,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn disassociate_route_table(&self,
                                 input: &DisassociateRouteTableRequest)
                                 -> Result<(), DisassociateRouteTableError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DisassociateRouteTable");
@@ -63570,7 +63570,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &DisassociateSubnetCidrBlockRequest)
          -> Result<DisassociateSubnetCidrBlockResult, DisassociateSubnetCidrBlockError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DisassociateSubnetCidrBlock");
@@ -63610,7 +63610,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &DisassociateVpcCidrBlockRequest)
          -> Result<DisassociateVpcCidrBlockResult, DisassociateVpcCidrBlockError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "DisassociateVpcCidrBlock");
@@ -63649,7 +63649,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn enable_vgw_route_propagation(&self,
                                     input: &EnableVgwRoutePropagationRequest)
                                     -> Result<(), EnableVgwRoutePropagationError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "EnableVgwRoutePropagation");
@@ -63673,7 +63673,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
 
     #[doc="<p>Enables I/O operations for a volume that had I/O operations disabled because the data on the volume was potentially inconsistent.</p>"]
     fn enable_volume_io(&self, input: &EnableVolumeIORequest) -> Result<(), EnableVolumeIOError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "EnableVolumeIO");
@@ -63700,7 +63700,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn enable_vpc_classic_link(&self,
                                input: &EnableVpcClassicLinkRequest)
                                -> Result<EnableVpcClassicLinkResult, EnableVpcClassicLinkError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "EnableVpcClassicLink");
@@ -63743,7 +63743,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &EnableVpcClassicLinkDnsSupportRequest)
          -> Result<EnableVpcClassicLinkDnsSupportResult, EnableVpcClassicLinkDnsSupportError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "EnableVpcClassicLinkDnsSupport");
@@ -63782,7 +63782,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn get_console_output(&self,
                           input: &GetConsoleOutputRequest)
                           -> Result<GetConsoleOutputResult, GetConsoleOutputError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetConsoleOutput");
@@ -63824,7 +63824,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn get_console_screenshot(&self,
                               input: &GetConsoleScreenshotRequest)
                               -> Result<GetConsoleScreenshotResult, GetConsoleScreenshotError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetConsoleScreenshot");
@@ -63867,7 +63867,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &GetHostReservationPurchasePreviewRequest)
          -> Result<GetHostReservationPurchasePreviewResult, GetHostReservationPurchasePreviewError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetHostReservationPurchasePreview");
@@ -63906,7 +63906,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn get_password_data(&self,
                          input: &GetPasswordDataRequest)
                          -> Result<GetPasswordDataResult, GetPasswordDataError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetPasswordData");
@@ -63948,7 +63948,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &GetReservedInstancesExchangeQuoteRequest)
          -> Result<GetReservedInstancesExchangeQuoteResult, GetReservedInstancesExchangeQuoteError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "GetReservedInstancesExchangeQuote");
@@ -63987,7 +63987,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn import_image(&self,
                     input: &ImportImageRequest)
                     -> Result<ImportImageResult, ImportImageError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ImportImage");
@@ -64025,7 +64025,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn import_instance(&self,
                        input: &ImportInstanceRequest)
                        -> Result<ImportInstanceResult, ImportInstanceError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ImportInstance");
@@ -64066,7 +64066,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn import_key_pair(&self,
                        input: &ImportKeyPairRequest)
                        -> Result<ImportKeyPairResult, ImportKeyPairError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ImportKeyPair");
@@ -64106,7 +64106,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn import_snapshot(&self,
                        input: &ImportSnapshotRequest)
                        -> Result<ImportSnapshotResult, ImportSnapshotError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ImportSnapshot");
@@ -64147,7 +64147,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn import_volume(&self,
                      input: &ImportVolumeRequest)
                      -> Result<ImportVolumeResult, ImportVolumeError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ImportVolume");
@@ -64187,7 +64187,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn modify_hosts(&self,
                     input: &ModifyHostsRequest)
                     -> Result<ModifyHostsResult, ModifyHostsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ModifyHosts");
@@ -64223,7 +64223,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
 
     #[doc="<p>Modifies the ID format for the specified resource on a per-region basis. You can specify that resources should receive longer IDs (17-character IDs) when they are created. The following resource types support longer IDs: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> | <code>volume</code>.</p> <p>This setting applies to the IAM user who makes the request; it does not apply to the entire AWS account. By default, an IAM user defaults to the same settings as the root user. If you're using this action as the root user, then these settings apply to the entire account, unless an IAM user explicitly overrides these settings for themselves. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html\">Resource IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>Resources created with longer IDs are visible to all IAM roles and users, regardless of these settings and provided that they have permission to use the relevant <code>Describe</code> command for the resource type.</p>"]
     fn modify_id_format(&self, input: &ModifyIdFormatRequest) -> Result<(), ModifyIdFormatError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ModifyIdFormat");
@@ -64250,7 +64250,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn modify_identity_id_format(&self,
                                  input: &ModifyIdentityIdFormatRequest)
                                  -> Result<(), ModifyIdentityIdFormatError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ModifyIdentityIdFormat");
@@ -64277,7 +64277,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn modify_image_attribute(&self,
                               input: &ModifyImageAttributeRequest)
                               -> Result<(), ModifyImageAttributeError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ModifyImageAttribute");
@@ -64304,7 +64304,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn modify_instance_attribute(&self,
                                  input: &ModifyInstanceAttributeRequest)
                                  -> Result<(), ModifyInstanceAttributeError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ModifyInstanceAttribute");
@@ -64331,7 +64331,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &ModifyInstancePlacementRequest)
          -> Result<ModifyInstancePlacementResult, ModifyInstancePlacementError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ModifyInstancePlacement");
@@ -64370,7 +64370,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn modify_network_interface_attribute(&self,
                                           input: &ModifyNetworkInterfaceAttributeRequest)
                                           -> Result<(), ModifyNetworkInterfaceAttributeError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ModifyNetworkInterfaceAttribute");
@@ -64397,7 +64397,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &ModifyReservedInstancesRequest)
          -> Result<ModifyReservedInstancesResult, ModifyReservedInstancesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ModifyReservedInstances");
@@ -64436,7 +64436,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn modify_snapshot_attribute(&self,
                                  input: &ModifySnapshotAttributeRequest)
                                  -> Result<(), ModifySnapshotAttributeError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ModifySnapshotAttribute");
@@ -64463,7 +64463,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &ModifySpotFleetRequestRequest)
          -> Result<ModifySpotFleetRequestResponse, ModifySpotFleetRequestError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ModifySpotFleetRequest");
@@ -64503,7 +64503,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn modify_subnet_attribute(&self,
                                input: &ModifySubnetAttributeRequest)
                                -> Result<(), ModifySubnetAttributeError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ModifySubnetAttribute");
@@ -64530,7 +64530,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn modify_volume(&self,
                      input: &ModifyVolumeRequest)
                      -> Result<ModifyVolumeResult, ModifyVolumeError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ModifyVolume");
@@ -64570,7 +64570,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn modify_volume_attribute(&self,
                                input: &ModifyVolumeAttributeRequest)
                                -> Result<(), ModifyVolumeAttributeError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ModifyVolumeAttribute");
@@ -64597,7 +64597,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn modify_vpc_attribute(&self,
                             input: &ModifyVpcAttributeRequest)
                             -> Result<(), ModifyVpcAttributeError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ModifyVpcAttribute");
@@ -64624,7 +64624,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn modify_vpc_endpoint(&self,
                            input: &ModifyVpcEndpointRequest)
                            -> Result<ModifyVpcEndpointResult, ModifyVpcEndpointError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ModifyVpcEndpoint");
@@ -64667,7 +64667,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &ModifyVpcPeeringConnectionOptionsRequest)
          -> Result<ModifyVpcPeeringConnectionOptionsResult, ModifyVpcPeeringConnectionOptionsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ModifyVpcPeeringConnectionOptions");
@@ -64706,7 +64706,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn monitor_instances(&self,
                          input: &MonitorInstancesRequest)
                          -> Result<MonitorInstancesResult, MonitorInstancesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "MonitorInstances");
@@ -64748,7 +64748,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn move_address_to_vpc(&self,
                            input: &MoveAddressToVpcRequest)
                            -> Result<MoveAddressToVpcResult, MoveAddressToVpcError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "MoveAddressToVpc");
@@ -64791,7 +64791,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &PurchaseHostReservationRequest)
          -> Result<PurchaseHostReservationResult, PurchaseHostReservationError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "PurchaseHostReservation");
@@ -64831,7 +64831,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &PurchaseReservedInstancesOfferingRequest)
          -> Result<PurchaseReservedInstancesOfferingResult, PurchaseReservedInstancesOfferingError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "PurchaseReservedInstancesOffering");
@@ -64871,7 +64871,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &PurchaseScheduledInstancesRequest)
          -> Result<PurchaseScheduledInstancesResult, PurchaseScheduledInstancesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "PurchaseScheduledInstances");
@@ -64908,7 +64908,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
 
     #[doc="<p>Requests a reboot of one or more instances. This operation is asynchronous; it only queues a request to reboot the specified instances. The operation succeeds if the instances are valid and belong to you. Requests to reboot terminated instances are ignored.</p> <p>If an instance does not cleanly shut down within four minutes, Amazon EC2 performs a hard reboot.</p> <p>For more information about troubleshooting, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html\">Getting Console Output and Rebooting Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>"]
     fn reboot_instances(&self, input: &RebootInstancesRequest) -> Result<(), RebootInstancesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "RebootInstances");
@@ -64935,7 +64935,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn register_image(&self,
                       input: &RegisterImageRequest)
                       -> Result<RegisterImageResult, RegisterImageError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "RegisterImage");
@@ -64976,7 +64976,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &RejectVpcPeeringConnectionRequest)
          -> Result<RejectVpcPeeringConnectionResult, RejectVpcPeeringConnectionError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "RejectVpcPeeringConnection");
@@ -65013,7 +65013,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
 
     #[doc="<p>Releases the specified Elastic IP address.</p> <p>After releasing an Elastic IP address, it is released to the IP address pool and might be unavailable to you. Be sure to update your DNS records and any servers or devices that communicate with the address. If you attempt to release an Elastic IP address that you already released, you'll get an <code>AuthFailure</code> error if the address is already allocated to another AWS account.</p> <p>[EC2-Classic, default VPC] Releasing an Elastic IP address automatically disassociates it from any instance that it's associated with. To disassociate an Elastic IP address without releasing it, use <a>DisassociateAddress</a>.</p> <p>[Nondefault VPC] You must use <a>DisassociateAddress</a> to disassociate the Elastic IP address before you try to release it. Otherwise, Amazon EC2 returns an error (<code>InvalidIPAddress.InUse</code>).</p>"]
     fn release_address(&self, input: &ReleaseAddressRequest) -> Result<(), ReleaseAddressError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ReleaseAddress");
@@ -65040,7 +65040,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn release_hosts(&self,
                      input: &ReleaseHostsRequest)
                      -> Result<ReleaseHostsResult, ReleaseHostsError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ReleaseHosts");
@@ -65082,7 +65082,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
          input: &ReplaceIamInstanceProfileAssociationRequest)
          -> Result<ReplaceIamInstanceProfileAssociationResult,
                    ReplaceIamInstanceProfileAssociationError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ReplaceIamInstanceProfileAssociation");
@@ -65122,7 +65122,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &ReplaceNetworkAclAssociationRequest)
          -> Result<ReplaceNetworkAclAssociationResult, ReplaceNetworkAclAssociationError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ReplaceNetworkAclAssociation");
@@ -65161,7 +65161,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn replace_network_acl_entry(&self,
                                  input: &ReplaceNetworkAclEntryRequest)
                                  -> Result<(), ReplaceNetworkAclEntryError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ReplaceNetworkAclEntry");
@@ -65186,7 +65186,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
 
     #[doc="<p>Replaces an existing route within a route table in a VPC. You must provide only one of the following: Internet gateway or virtual private gateway, NAT instance, NAT gateway, VPC peering connection, network interface, or egress-only Internet gateway.</p> <p>For more information about route tables, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html\">Route Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>"]
     fn replace_route(&self, input: &ReplaceRouteRequest) -> Result<(), ReplaceRouteError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ReplaceRoute");
@@ -65213,7 +65213,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &ReplaceRouteTableAssociationRequest)
          -> Result<ReplaceRouteTableAssociationResult, ReplaceRouteTableAssociationError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ReplaceRouteTableAssociation");
@@ -65252,7 +65252,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn report_instance_status(&self,
                               input: &ReportInstanceStatusRequest)
                               -> Result<(), ReportInstanceStatusError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ReportInstanceStatus");
@@ -65279,7 +65279,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn request_spot_fleet(&self,
                           input: &RequestSpotFleetRequest)
                           -> Result<RequestSpotFleetResponse, RequestSpotFleetError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "RequestSpotFleet");
@@ -65321,7 +65321,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn request_spot_instances(&self,
                               input: &RequestSpotInstancesRequest)
                               -> Result<RequestSpotInstancesResult, RequestSpotInstancesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "RequestSpotInstances");
@@ -65363,7 +65363,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn reset_image_attribute(&self,
                              input: &ResetImageAttributeRequest)
                              -> Result<(), ResetImageAttributeError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ResetImageAttribute");
@@ -65390,7 +65390,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn reset_instance_attribute(&self,
                                 input: &ResetInstanceAttributeRequest)
                                 -> Result<(), ResetInstanceAttributeError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ResetInstanceAttribute");
@@ -65417,7 +65417,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn reset_network_interface_attribute(&self,
                                          input: &ResetNetworkInterfaceAttributeRequest)
                                          -> Result<(), ResetNetworkInterfaceAttributeError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ResetNetworkInterfaceAttribute");
@@ -65443,7 +65443,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn reset_snapshot_attribute(&self,
                                 input: &ResetSnapshotAttributeRequest)
                                 -> Result<(), ResetSnapshotAttributeError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "ResetSnapshotAttribute");
@@ -65471,7 +65471,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &RestoreAddressToClassicRequest)
          -> Result<RestoreAddressToClassicResult, RestoreAddressToClassicError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "RestoreAddressToClassic");
@@ -65510,7 +65510,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn revoke_security_group_egress(&self,
                                     input: &RevokeSecurityGroupEgressRequest)
                                     -> Result<(), RevokeSecurityGroupEgressError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "RevokeSecurityGroupEgress");
@@ -65536,7 +65536,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn revoke_security_group_ingress(&self,
                                      input: &RevokeSecurityGroupIngressRequest)
                                      -> Result<(), RevokeSecurityGroupIngressError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "RevokeSecurityGroupIngress");
@@ -65560,7 +65560,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
 
     #[doc="<p>Launches the specified number of instances using an AMI for which you have permissions. </p> <p>You can specify a number of options, or leave the default options. The following rules apply:</p> <ul> <li> <p>[EC2-VPC] If you don't specify a subnet ID, we choose a default subnet from your default VPC for you. If you don't have a default VPC, you must specify a subnet ID in the request.</p> </li> <li> <p>[EC2-Classic] If don't specify an Availability Zone, we choose one for you.</p> </li> <li> <p>Some instance types must be launched into a VPC. If you do not have a default VPC, or if you do not specify a subnet ID, the request fails. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types\">Instance Types Available Only in a VPC</a>.</p> </li> <li> <p>[EC2-VPC] All instances have a network interface with a primary private IPv4 address. If you don't specify this address, we choose one from the IPv4 range of your subnet.</p> </li> <li> <p>Not all instance types support IPv6 addresses. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html\">Instance Types</a>.</p> </li> <li> <p>If you don't specify a security group ID, we use the default security group. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html\">Security Groups</a>.</p> </li> <li> <p>If any of the AMIs have a product code attached for which the user has not subscribed, the request fails.</p> </li> </ul> <p>To ensure faster instance launches, break up large requests into smaller batches. For example, create 5 separate launch requests for 100 instances each instead of 1 launch request for 500 instances.</p> <p>An instance is ready for you to use when it's in the <code>running</code> state. You can check the state of your instance using <a>DescribeInstances</a>. You can tag instances and EBS volumes during launch, after launch, or both. For more information, see <a>CreateTags</a> and <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html\">Tagging Your Amazon EC2 Resources</a>.</p> <p>Linux instances have access to the public key of the key pair at boot. You can use this key to provide secure access to the instance. Amazon EC2 public images use this feature to provide secure access without passwords. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html\">Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For troubleshooting, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html\">What To Do If An Instance Immediately Terminates</a>, and <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html\">Troubleshooting Connecting to Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>"]
     fn run_instances(&self, input: &RunInstancesRequest) -> Result<Reservation, RunInstancesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "RunInstances");
@@ -65601,7 +65601,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &RunScheduledInstancesRequest)
          -> Result<RunScheduledInstancesResult, RunScheduledInstancesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "RunScheduledInstances");
@@ -65641,7 +65641,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn start_instances(&self,
                        input: &StartInstancesRequest)
                        -> Result<StartInstancesResult, StartInstancesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "StartInstances");
@@ -65682,7 +65682,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn stop_instances(&self,
                       input: &StopInstancesRequest)
                       -> Result<StopInstancesResult, StopInstancesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "StopInstances");
@@ -65722,7 +65722,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn terminate_instances(&self,
                            input: &TerminateInstancesRequest)
                            -> Result<TerminateInstancesResult, TerminateInstancesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "TerminateInstances");
@@ -65765,7 +65765,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
         (&self,
          input: &UnassignIpv6AddressesRequest)
          -> Result<UnassignIpv6AddressesResult, UnassignIpv6AddressesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UnassignIpv6Addresses");
@@ -65805,7 +65805,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn unassign_private_ip_addresses(&self,
                                      input: &UnassignPrivateIpAddressesRequest)
                                      -> Result<(), UnassignPrivateIpAddressesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UnassignPrivateIpAddresses");
@@ -65831,7 +65831,7 @@ fn describe_scheduled_instance_availability(&self, input: &DescribeScheduledInst
     fn unmonitor_instances(&self,
                            input: &UnmonitorInstancesRequest)
                            -> Result<UnmonitorInstancesResult, UnmonitorInstancesError> {
-        let mut request = SignedRequest::new("POST", "ec2", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ec2", &self.region, "/");
         let mut params = Params::new();
 
         params.put("Action", "UnmonitorInstances");

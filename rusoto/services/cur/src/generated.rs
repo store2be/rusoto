@@ -392,7 +392,7 @@ impl<P, D> CostAndUsageReport for CostAndUsageReportClient<P, D>
         (&self,
          input: &DeleteReportDefinitionRequest)
          -> Result<DeleteReportDefinitionResponse, DeleteReportDefinitionError> {
-        let mut request = SignedRequest::new("POST", "cur", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cur", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -421,7 +421,7 @@ impl<P, D> CostAndUsageReport for CostAndUsageReportClient<P, D>
         (&self,
          input: &DescribeReportDefinitionsRequest)
          -> Result<DescribeReportDefinitionsResponse, DescribeReportDefinitionsError> {
-        let mut request = SignedRequest::new("POST", "cur", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cur", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -446,7 +446,7 @@ impl<P, D> CostAndUsageReport for CostAndUsageReportClient<P, D>
     fn put_report_definition(&self,
                              input: &PutReportDefinitionRequest)
                              -> Result<PutReportDefinitionResponse, PutReportDefinitionError> {
-        let mut request = SignedRequest::new("POST", "cur", self.region, "/");
+        let mut request = SignedRequest::new("POST", "cur", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",

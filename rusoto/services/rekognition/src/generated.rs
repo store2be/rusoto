@@ -2487,7 +2487,7 @@ impl<P, D> Rekognition for RekognitionClient<P, D>
     fn compare_faces(&self,
                      input: &CompareFacesRequest)
                      -> Result<CompareFacesResponse, CompareFacesError> {
-        let mut request = SignedRequest::new("POST", "rekognition", self.region, "/");
+        let mut request = SignedRequest::new("POST", "rekognition", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "RekognitionService.CompareFaces");
@@ -2513,7 +2513,7 @@ impl<P, D> Rekognition for RekognitionClient<P, D>
     fn create_collection(&self,
                          input: &CreateCollectionRequest)
                          -> Result<CreateCollectionResponse, CreateCollectionError> {
-        let mut request = SignedRequest::new("POST", "rekognition", self.region, "/");
+        let mut request = SignedRequest::new("POST", "rekognition", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "RekognitionService.CreateCollection");
@@ -2540,7 +2540,7 @@ impl<P, D> Rekognition for RekognitionClient<P, D>
     fn delete_collection(&self,
                          input: &DeleteCollectionRequest)
                          -> Result<DeleteCollectionResponse, DeleteCollectionError> {
-        let mut request = SignedRequest::new("POST", "rekognition", self.region, "/");
+        let mut request = SignedRequest::new("POST", "rekognition", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "RekognitionService.DeleteCollection");
@@ -2567,7 +2567,7 @@ impl<P, D> Rekognition for RekognitionClient<P, D>
     fn delete_faces(&self,
                     input: &DeleteFacesRequest)
                     -> Result<DeleteFacesResponse, DeleteFacesError> {
-        let mut request = SignedRequest::new("POST", "rekognition", self.region, "/");
+        let mut request = SignedRequest::new("POST", "rekognition", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "RekognitionService.DeleteFaces");
@@ -2591,7 +2591,7 @@ impl<P, D> Rekognition for RekognitionClient<P, D>
     fn detect_faces(&self,
                     input: &DetectFacesRequest)
                     -> Result<DetectFacesResponse, DetectFacesError> {
-        let mut request = SignedRequest::new("POST", "rekognition", self.region, "/");
+        let mut request = SignedRequest::new("POST", "rekognition", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "RekognitionService.DetectFaces");
@@ -2615,7 +2615,7 @@ impl<P, D> Rekognition for RekognitionClient<P, D>
     fn detect_labels(&self,
                      input: &DetectLabelsRequest)
                      -> Result<DetectLabelsResponse, DetectLabelsError> {
-        let mut request = SignedRequest::new("POST", "rekognition", self.region, "/");
+        let mut request = SignedRequest::new("POST", "rekognition", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "RekognitionService.DetectLabels");
@@ -2642,7 +2642,7 @@ impl<P, D> Rekognition for RekognitionClient<P, D>
         (&self,
          input: &DetectModerationLabelsRequest)
          -> Result<DetectModerationLabelsResponse, DetectModerationLabelsError> {
-        let mut request = SignedRequest::new("POST", "rekognition", self.region, "/");
+        let mut request = SignedRequest::new("POST", "rekognition", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "RekognitionService.DetectModerationLabels");
@@ -2669,7 +2669,7 @@ impl<P, D> Rekognition for RekognitionClient<P, D>
     fn get_celebrity_info(&self,
                           input: &GetCelebrityInfoRequest)
                           -> Result<GetCelebrityInfoResponse, GetCelebrityInfoError> {
-        let mut request = SignedRequest::new("POST", "rekognition", self.region, "/");
+        let mut request = SignedRequest::new("POST", "rekognition", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "RekognitionService.GetCelebrityInfo");
@@ -2696,7 +2696,7 @@ impl<P, D> Rekognition for RekognitionClient<P, D>
     fn index_faces(&self,
                    input: &IndexFacesRequest)
                    -> Result<IndexFacesResponse, IndexFacesError> {
-        let mut request = SignedRequest::new("POST", "rekognition", self.region, "/");
+        let mut request = SignedRequest::new("POST", "rekognition", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "RekognitionService.IndexFaces");
@@ -2720,7 +2720,7 @@ impl<P, D> Rekognition for RekognitionClient<P, D>
     fn list_collections(&self,
                         input: &ListCollectionsRequest)
                         -> Result<ListCollectionsResponse, ListCollectionsError> {
-        let mut request = SignedRequest::new("POST", "rekognition", self.region, "/");
+        let mut request = SignedRequest::new("POST", "rekognition", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "RekognitionService.ListCollections");
@@ -2745,7 +2745,7 @@ impl<P, D> Rekognition for RekognitionClient<P, D>
 
     #[doc="<p>Returns metadata for faces in the specified collection. This metadata includes information such as the bounding box coordinates, the confidence (that the bounding box contains a face), and face ID. For an example, see <a>example3</a>. </p> <p>This operation requires permissions to perform the <code>rekognition:ListFaces</code> action.</p>"]
     fn list_faces(&self, input: &ListFacesRequest) -> Result<ListFacesResponse, ListFacesError> {
-        let mut request = SignedRequest::new("POST", "rekognition", self.region, "/");
+        let mut request = SignedRequest::new("POST", "rekognition", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "RekognitionService.ListFaces");
@@ -2769,7 +2769,7 @@ impl<P, D> Rekognition for RekognitionClient<P, D>
     fn recognize_celebrities(&self,
                              input: &RecognizeCelebritiesRequest)
                              -> Result<RecognizeCelebritiesResponse, RecognizeCelebritiesError> {
-        let mut request = SignedRequest::new("POST", "rekognition", self.region, "/");
+        let mut request = SignedRequest::new("POST", "rekognition", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "RekognitionService.RecognizeCelebrities");
@@ -2796,7 +2796,7 @@ impl<P, D> Rekognition for RekognitionClient<P, D>
     fn search_faces(&self,
                     input: &SearchFacesRequest)
                     -> Result<SearchFacesResponse, SearchFacesError> {
-        let mut request = SignedRequest::new("POST", "rekognition", self.region, "/");
+        let mut request = SignedRequest::new("POST", "rekognition", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "RekognitionService.SearchFaces");
@@ -2820,7 +2820,7 @@ impl<P, D> Rekognition for RekognitionClient<P, D>
     fn search_faces_by_image(&self,
                              input: &SearchFacesByImageRequest)
                              -> Result<SearchFacesByImageResponse, SearchFacesByImageError> {
-        let mut request = SignedRequest::new("POST", "rekognition", self.region, "/");
+        let mut request = SignedRequest::new("POST", "rekognition", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "RekognitionService.SearchFacesByImage");

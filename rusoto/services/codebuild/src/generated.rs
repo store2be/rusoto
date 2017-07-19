@@ -1588,7 +1588,7 @@ impl<P, D> CodeBuild for CodeBuildClient<P, D>
     fn batch_get_builds(&self,
                         input: &BatchGetBuildsInput)
                         -> Result<BatchGetBuildsOutput, BatchGetBuildsError> {
-        let mut request = SignedRequest::new("POST", "codebuild", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codebuild", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeBuild_20161006.BatchGetBuilds");
@@ -1615,7 +1615,7 @@ impl<P, D> CodeBuild for CodeBuildClient<P, D>
     fn batch_get_projects(&self,
                           input: &BatchGetProjectsInput)
                           -> Result<BatchGetProjectsOutput, BatchGetProjectsError> {
-        let mut request = SignedRequest::new("POST", "codebuild", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codebuild", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeBuild_20161006.BatchGetProjects");
@@ -1642,7 +1642,7 @@ impl<P, D> CodeBuild for CodeBuildClient<P, D>
     fn create_project(&self,
                       input: &CreateProjectInput)
                       -> Result<CreateProjectOutput, CreateProjectError> {
-        let mut request = SignedRequest::new("POST", "codebuild", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codebuild", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeBuild_20161006.CreateProject");
@@ -1668,7 +1668,7 @@ impl<P, D> CodeBuild for CodeBuildClient<P, D>
     fn delete_project(&self,
                       input: &DeleteProjectInput)
                       -> Result<DeleteProjectOutput, DeleteProjectError> {
-        let mut request = SignedRequest::new("POST", "codebuild", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codebuild", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeBuild_20161006.DeleteProject");
@@ -1692,7 +1692,7 @@ impl<P, D> CodeBuild for CodeBuildClient<P, D>
 
     #[doc="<p>Gets a list of build IDs, with each build ID representing a single build.</p>"]
     fn list_builds(&self, input: &ListBuildsInput) -> Result<ListBuildsOutput, ListBuildsError> {
-        let mut request = SignedRequest::new("POST", "codebuild", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codebuild", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeBuild_20161006.ListBuilds");
@@ -1716,7 +1716,7 @@ impl<P, D> CodeBuild for CodeBuildClient<P, D>
     fn list_builds_for_project(&self,
                                input: &ListBuildsForProjectInput)
                                -> Result<ListBuildsForProjectOutput, ListBuildsForProjectError> {
-        let mut request = SignedRequest::new("POST", "codebuild", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codebuild", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeBuild_20161006.ListBuildsForProject");
@@ -1743,7 +1743,7 @@ impl<P, D> CodeBuild for CodeBuildClient<P, D>
     fn list_curated_environment_images
         (&self)
          -> Result<ListCuratedEnvironmentImagesOutput, ListCuratedEnvironmentImagesError> {
-        let mut request = SignedRequest::new("POST", "codebuild", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codebuild", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -1767,7 +1767,7 @@ impl<P, D> CodeBuild for CodeBuildClient<P, D>
     fn list_projects(&self,
                      input: &ListProjectsInput)
                      -> Result<ListProjectsOutput, ListProjectsError> {
-        let mut request = SignedRequest::new("POST", "codebuild", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codebuild", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeBuild_20161006.ListProjects");
@@ -1791,7 +1791,7 @@ impl<P, D> CodeBuild for CodeBuildClient<P, D>
 
     #[doc="<p>Starts running a build.</p>"]
     fn start_build(&self, input: &StartBuildInput) -> Result<StartBuildOutput, StartBuildError> {
-        let mut request = SignedRequest::new("POST", "codebuild", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codebuild", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeBuild_20161006.StartBuild");
@@ -1813,7 +1813,7 @@ impl<P, D> CodeBuild for CodeBuildClient<P, D>
 
     #[doc="<p>Attempts to stop running a build.</p>"]
     fn stop_build(&self, input: &StopBuildInput) -> Result<StopBuildOutput, StopBuildError> {
-        let mut request = SignedRequest::new("POST", "codebuild", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codebuild", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeBuild_20161006.StopBuild");
@@ -1839,7 +1839,7 @@ impl<P, D> CodeBuild for CodeBuildClient<P, D>
     fn update_project(&self,
                       input: &UpdateProjectInput)
                       -> Result<UpdateProjectOutput, UpdateProjectError> {
-        let mut request = SignedRequest::new("POST", "codebuild", self.region, "/");
+        let mut request = SignedRequest::new("POST", "codebuild", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "CodeBuild_20161006.UpdateProject");

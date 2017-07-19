@@ -2313,7 +2313,7 @@ impl<P, D> Batch for BatchClient<P, D>
 
         let request_uri = "/v1/canceljob";
 
-        let mut request = SignedRequest::new("POST", "batch", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "batch", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -2355,7 +2355,7 @@ impl<P, D> Batch for BatchClient<P, D>
 
         let request_uri = "/v1/createcomputeenvironment";
 
-        let mut request = SignedRequest::new("POST", "batch", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "batch", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -2397,7 +2397,7 @@ impl<P, D> Batch for BatchClient<P, D>
 
         let request_uri = "/v1/createjobqueue";
 
-        let mut request = SignedRequest::new("POST", "batch", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "batch", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -2442,7 +2442,7 @@ impl<P, D> Batch for BatchClient<P, D>
 
         let request_uri = "/v1/deletecomputeenvironment";
 
-        let mut request = SignedRequest::new("POST", "batch", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "batch", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -2484,7 +2484,7 @@ impl<P, D> Batch for BatchClient<P, D>
 
         let request_uri = "/v1/deletejobqueue";
 
-        let mut request = SignedRequest::new("POST", "batch", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "batch", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -2529,7 +2529,7 @@ impl<P, D> Batch for BatchClient<P, D>
 
         let request_uri = "/v1/deregisterjobdefinition";
 
-        let mut request = SignedRequest::new("POST", "batch", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "batch", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -2572,7 +2572,7 @@ impl<P, D> Batch for BatchClient<P, D>
 
         let request_uri = "/v1/describecomputeenvironments";
 
-        let mut request = SignedRequest::new("POST", "batch", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "batch", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -2615,7 +2615,7 @@ impl<P, D> Batch for BatchClient<P, D>
 
         let request_uri = "/v1/describejobdefinitions";
 
-        let mut request = SignedRequest::new("POST", "batch", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "batch", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -2660,7 +2660,7 @@ impl<P, D> Batch for BatchClient<P, D>
 
         let request_uri = "/v1/describejobqueues";
 
-        let mut request = SignedRequest::new("POST", "batch", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "batch", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -2704,7 +2704,7 @@ impl<P, D> Batch for BatchClient<P, D>
 
         let request_uri = "/v1/describejobs";
 
-        let mut request = SignedRequest::new("POST", "batch", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "batch", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -2745,7 +2745,7 @@ impl<P, D> Batch for BatchClient<P, D>
 
         let request_uri = "/v1/listjobs";
 
-        let mut request = SignedRequest::new("POST", "batch", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "batch", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -2787,7 +2787,7 @@ impl<P, D> Batch for BatchClient<P, D>
 
         let request_uri = "/v1/registerjobdefinition";
 
-        let mut request = SignedRequest::new("POST", "batch", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "batch", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -2830,7 +2830,7 @@ impl<P, D> Batch for BatchClient<P, D>
 
         let request_uri = "/v1/submitjob";
 
-        let mut request = SignedRequest::new("POST", "batch", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "batch", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -2871,7 +2871,7 @@ impl<P, D> Batch for BatchClient<P, D>
 
         let request_uri = "/v1/terminatejob";
 
-        let mut request = SignedRequest::new("POST", "batch", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "batch", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -2915,7 +2915,7 @@ impl<P, D> Batch for BatchClient<P, D>
 
         let request_uri = "/v1/updatecomputeenvironment";
 
-        let mut request = SignedRequest::new("POST", "batch", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "batch", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -2957,7 +2957,7 @@ impl<P, D> Batch for BatchClient<P, D>
 
         let request_uri = "/v1/updatejobqueue";
 
-        let mut request = SignedRequest::new("POST", "batch", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "batch", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 

@@ -2328,7 +2328,7 @@ impl<P, D> Snowball for SnowballClient<P, D>
     fn cancel_cluster(&self,
                       input: &CancelClusterRequest)
                       -> Result<CancelClusterResult, CancelClusterError> {
-        let mut request = SignedRequest::new("POST", "snowball", self.region, "/");
+        let mut request = SignedRequest::new("POST", "snowball", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2353,7 +2353,7 @@ impl<P, D> Snowball for SnowballClient<P, D>
 
     #[doc="<p>Cancels the specified job. You can only cancel a job before its <code>JobState</code> value changes to <code>PreparingAppliance</code>. Requesting the <code>ListJobs</code> or <code>DescribeJob</code> action will return a job's <code>JobState</code> as part of the response element data returned.</p>"]
     fn cancel_job(&self, input: &CancelJobRequest) -> Result<CancelJobResult, CancelJobError> {
-        let mut request = SignedRequest::new("POST", "snowball", self.region, "/");
+        let mut request = SignedRequest::new("POST", "snowball", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2380,7 +2380,7 @@ impl<P, D> Snowball for SnowballClient<P, D>
     fn create_address(&self,
                       input: &CreateAddressRequest)
                       -> Result<CreateAddressResult, CreateAddressError> {
-        let mut request = SignedRequest::new("POST", "snowball", self.region, "/");
+        let mut request = SignedRequest::new("POST", "snowball", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2407,7 +2407,7 @@ impl<P, D> Snowball for SnowballClient<P, D>
     fn create_cluster(&self,
                       input: &CreateClusterRequest)
                       -> Result<CreateClusterResult, CreateClusterError> {
-        let mut request = SignedRequest::new("POST", "snowball", self.region, "/");
+        let mut request = SignedRequest::new("POST", "snowball", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2432,7 +2432,7 @@ impl<P, D> Snowball for SnowballClient<P, D>
 
     #[doc="<p>Creates a job to import or export data between Amazon S3 and your on-premises data center. Your AWS account must have the right trust policies and permissions in place to create a job for Snowball. If you're creating a job for a node in a cluster, you only need to provide the <code>clusterId</code> value; the other job attributes are inherited from the cluster. </p>"]
     fn create_job(&self, input: &CreateJobRequest) -> Result<CreateJobResult, CreateJobError> {
-        let mut request = SignedRequest::new("POST", "snowball", self.region, "/");
+        let mut request = SignedRequest::new("POST", "snowball", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2459,7 +2459,7 @@ impl<P, D> Snowball for SnowballClient<P, D>
     fn describe_address(&self,
                         input: &DescribeAddressRequest)
                         -> Result<DescribeAddressResult, DescribeAddressError> {
-        let mut request = SignedRequest::new("POST", "snowball", self.region, "/");
+        let mut request = SignedRequest::new("POST", "snowball", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2487,7 +2487,7 @@ impl<P, D> Snowball for SnowballClient<P, D>
     fn describe_addresses(&self,
                           input: &DescribeAddressesRequest)
                           -> Result<DescribeAddressesResult, DescribeAddressesError> {
-        let mut request = SignedRequest::new("POST", "snowball", self.region, "/");
+        let mut request = SignedRequest::new("POST", "snowball", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2515,7 +2515,7 @@ impl<P, D> Snowball for SnowballClient<P, D>
     fn describe_cluster(&self,
                         input: &DescribeClusterRequest)
                         -> Result<DescribeClusterResult, DescribeClusterError> {
-        let mut request = SignedRequest::new("POST", "snowball", self.region, "/");
+        let mut request = SignedRequest::new("POST", "snowball", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2543,7 +2543,7 @@ impl<P, D> Snowball for SnowballClient<P, D>
     fn describe_job(&self,
                     input: &DescribeJobRequest)
                     -> Result<DescribeJobResult, DescribeJobError> {
-        let mut request = SignedRequest::new("POST", "snowball", self.region, "/");
+        let mut request = SignedRequest::new("POST", "snowball", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2568,7 +2568,7 @@ impl<P, D> Snowball for SnowballClient<P, D>
     fn get_job_manifest(&self,
                         input: &GetJobManifestRequest)
                         -> Result<GetJobManifestResult, GetJobManifestError> {
-        let mut request = SignedRequest::new("POST", "snowball", self.region, "/");
+        let mut request = SignedRequest::new("POST", "snowball", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2596,7 +2596,7 @@ impl<P, D> Snowball for SnowballClient<P, D>
     fn get_job_unlock_code(&self,
                            input: &GetJobUnlockCodeRequest)
                            -> Result<GetJobUnlockCodeResult, GetJobUnlockCodeError> {
-        let mut request = SignedRequest::new("POST", "snowball", self.region, "/");
+        let mut request = SignedRequest::new("POST", "snowball", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2622,7 +2622,7 @@ impl<P, D> Snowball for SnowballClient<P, D>
 
     #[doc="<p>Returns information about the Snowball service limit for your account, and also the number of Snowballs your account has in use.</p> <p>The default service limit for the number of Snowballs that you can have at one time is 1. If you want to increase your service limit, contact AWS Support.</p>"]
     fn get_snowball_usage(&self) -> Result<GetSnowballUsageResult, GetSnowballUsageError> {
-        let mut request = SignedRequest::new("POST", "snowball", self.region, "/");
+        let mut request = SignedRequest::new("POST", "snowball", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2649,7 +2649,7 @@ impl<P, D> Snowball for SnowballClient<P, D>
     fn list_cluster_jobs(&self,
                          input: &ListClusterJobsRequest)
                          -> Result<ListClusterJobsResult, ListClusterJobsError> {
-        let mut request = SignedRequest::new("POST", "snowball", self.region, "/");
+        let mut request = SignedRequest::new("POST", "snowball", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2677,7 +2677,7 @@ impl<P, D> Snowball for SnowballClient<P, D>
     fn list_clusters(&self,
                      input: &ListClustersRequest)
                      -> Result<ListClustersResult, ListClustersError> {
-        let mut request = SignedRequest::new("POST", "snowball", self.region, "/");
+        let mut request = SignedRequest::new("POST", "snowball", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2702,7 +2702,7 @@ impl<P, D> Snowball for SnowballClient<P, D>
 
     #[doc="<p>Returns an array of <code>JobListEntry</code> objects of the specified length. Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. Calling this API action in one of the US regions will return jobs from the list of all jobs associated with this account in all US regions.</p>"]
     fn list_jobs(&self, input: &ListJobsRequest) -> Result<ListJobsResult, ListJobsError> {
-        let mut request = SignedRequest::new("POST", "snowball", self.region, "/");
+        let mut request = SignedRequest::new("POST", "snowball", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target", "AWSIESnowballJobManagementService.ListJobs");
@@ -2728,7 +2728,7 @@ impl<P, D> Snowball for SnowballClient<P, D>
     fn update_cluster(&self,
                       input: &UpdateClusterRequest)
                       -> Result<UpdateClusterResult, UpdateClusterError> {
-        let mut request = SignedRequest::new("POST", "snowball", self.region, "/");
+        let mut request = SignedRequest::new("POST", "snowball", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2753,7 +2753,7 @@ impl<P, D> Snowball for SnowballClient<P, D>
 
     #[doc="<p>While a job's <code>JobState</code> value is <code>New</code>, you can update some of the information associated with a job. Once the job changes to a different job state, usually within 60 minutes of the job being created, this action is no longer available.</p>"]
     fn update_job(&self, input: &UpdateJobRequest) -> Result<UpdateJobResult, UpdateJobError> {
-        let mut request = SignedRequest::new("POST", "snowball", self.region, "/");
+        let mut request = SignedRequest::new("POST", "snowball", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",

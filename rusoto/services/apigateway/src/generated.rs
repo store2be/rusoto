@@ -13516,7 +13516,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
 
         let request_uri = "/apikeys";
 
-        let mut request = SignedRequest::new("POST", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -13560,7 +13560,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/restapis/{restapi_id}/authorizers",
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("POST", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -13605,7 +13605,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/domainnames/{domain_name}/basepathmappings",
                                   domain_name = input.domain_name);
 
-        let mut request = SignedRequest::new("POST", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -13650,7 +13650,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/restapis/{restapi_id}/deployments",
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("POST", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -13695,7 +13695,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/restapis/{restapi_id}/documentation/parts",
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("POST", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -13738,7 +13738,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/restapis/{restapi_id}/documentation/versions",
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("POST", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -13779,7 +13779,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
 
         let request_uri = "/domainnames";
 
-        let mut request = SignedRequest::new("POST", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -13822,7 +13822,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/restapis/{restapi_id}/models",
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("POST", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -13864,7 +13864,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/restapis/{restapi_id}/requestvalidators",
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("POST", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -13910,7 +13910,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   parent_id = input.parent_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("POST", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -13952,7 +13952,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
 
         let request_uri = "/restapis";
 
-        let mut request = SignedRequest::new("POST", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -13994,7 +13994,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/restapis/{restapi_id}/stages",
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("POST", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14035,7 +14035,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
 
         let request_uri = "/usageplans";
 
-        let mut request = SignedRequest::new("POST", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14080,7 +14080,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/usageplans/{usageplan_id}/keys",
                                   usageplan_id = input.usage_plan_id);
 
-        let mut request = SignedRequest::new("POST", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14122,7 +14122,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
 
         let request_uri = format!("/apikeys/{api_key}", api_key = input.api_key);
 
-        let mut request = SignedRequest::new("DELETE", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14157,7 +14157,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   authorizer_id = input.authorizer_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("DELETE", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14193,7 +14193,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   base_path = input.base_path,
                                   domain_name = input.domain_name);
 
-        let mut request = SignedRequest::new("DELETE", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14228,7 +14228,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/clientcertificates/{clientcertificate_id}",
                                   clientcertificate_id = input.client_certificate_id);
 
-        let mut request = SignedRequest::new("DELETE", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14261,7 +14261,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   deployment_id = input.deployment_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("DELETE", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14297,7 +14297,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   part_id = input.documentation_part_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("DELETE", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14330,7 +14330,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   doc_version = input.documentation_version,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("DELETE", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14362,7 +14362,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/domainnames/{domain_name}",
                                   domain_name = input.domain_name);
 
-        let mut request = SignedRequest::new("DELETE", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14399,7 +14399,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   resource_id = input.resource_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("DELETE", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14437,7 +14437,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   restapi_id = input.rest_api_id,
                                   status_code = input.status_code);
 
-        let mut request = SignedRequest::new("DELETE", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14469,7 +14469,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   resource_id = input.resource_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("DELETE", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14506,7 +14506,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   restapi_id = input.rest_api_id,
                                   status_code = input.status_code);
 
-        let mut request = SignedRequest::new("DELETE", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14540,7 +14540,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   model_name = input.model_name,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("DELETE", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14573,7 +14573,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   requestvalidator_id = input.request_validator_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("DELETE", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14607,7 +14607,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   resource_id = input.resource_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("DELETE", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14639,7 +14639,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
 
         let request_uri = format!("/restapis/{restapi_id}", restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("DELETE", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14672,7 +14672,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   restapi_id = input.rest_api_id,
                                   stage_name = input.stage_name);
 
-        let mut request = SignedRequest::new("DELETE", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14704,7 +14704,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/usageplans/{usageplan_id}",
                                   usageplan_id = input.usage_plan_id);
 
-        let mut request = SignedRequest::new("DELETE", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14740,7 +14740,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   key_id = input.key_id,
                                   usageplan_id = input.usage_plan_id);
 
-        let mut request = SignedRequest::new("DELETE", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14776,7 +14776,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   restapi_id = input.rest_api_id,
                                   stage_name = input.stage_name);
 
-        let mut request = SignedRequest::new("DELETE", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14809,7 +14809,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   restapi_id = input.rest_api_id,
                                   stage_name = input.stage_name);
 
-        let mut request = SignedRequest::new("DELETE", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("DELETE", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14843,7 +14843,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
 
         let request_uri = "/clientcertificates";
 
-        let mut request = SignedRequest::new("POST", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14882,7 +14882,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
 
         let request_uri = "/account";
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14921,7 +14921,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
 
         let request_uri = format!("/apikeys/{api_key}", api_key = input.api_key);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -14964,7 +14964,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
 
         let request_uri = "/apikeys";
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -15023,7 +15023,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   authorizer_id = input.authorizer_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -15067,7 +15067,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/restapis/{restapi_id}/authorizers",
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -15120,7 +15120,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   base_path = input.base_path,
                                   domain_name = input.domain_name);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -15165,7 +15165,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/domainnames/{domain_name}/basepathmappings",
                                   domain_name = input.domain_name);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -15217,7 +15217,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/clientcertificates/{clientcertificate_id}",
                                   clientcertificate_id = input.client_certificate_id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -15261,7 +15261,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
 
         let request_uri = "/clientcertificates";
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -15314,7 +15314,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   deployment_id = input.deployment_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -15364,7 +15364,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/restapis/{restapi_id}/deployments",
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -15417,7 +15417,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   part_id = input.documentation_part_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -15462,7 +15462,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/restapis/{restapi_id}/documentation/parts",
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -15524,7 +15524,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   doc_version = input.documentation_version,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -15567,7 +15567,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/restapis/{restapi_id}/documentation/versions",
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -15616,7 +15616,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/domainnames/{domain_name}",
                                   domain_name = input.domain_name);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -15659,7 +15659,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
 
         let request_uri = "/domainnames";
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -15711,7 +15711,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   restapi_id = input.rest_api_id,
                                   stage_name = input.stage_name);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -15761,7 +15761,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   resource_id = input.resource_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -15809,7 +15809,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   restapi_id = input.rest_api_id,
                                   status_code = input.status_code);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -15854,7 +15854,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   resource_id = input.resource_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -15899,7 +15899,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   restapi_id = input.rest_api_id,
                                   status_code = input.status_code);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -15943,7 +15943,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   model_name = input.model_name,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -15990,7 +15990,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   model_name = input.model_name,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -16033,7 +16033,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/restapis/{restapi_id}/models",
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -16083,7 +16083,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   requestvalidator_id = input.request_validator_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -16128,7 +16128,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/restapis/{restapi_id}/requestvalidators",
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -16179,7 +16179,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   resource_id = input.resource_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -16225,7 +16225,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/restapis/{restapi_id}/resources",
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -16278,7 +16278,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
 
         let request_uri = format!("/restapis/{restapi_id}", restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -16317,7 +16317,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
 
         let request_uri = "/restapis";
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -16366,7 +16366,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   sdk_type = input.sdk_type,
                                   stage_name = input.stage_name);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -16411,7 +16411,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
 
         let request_uri = format!("/sdktypes/{sdktype_id}", sdktype_id = input.id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -16450,7 +16450,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
 
         let request_uri = "/sdktypes";
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -16498,7 +16498,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   restapi_id = input.rest_api_id,
                                   stage_name = input.stage_name);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -16538,7 +16538,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/restapis/{restapi_id}/stages",
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -16582,7 +16582,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/usageplans/{usageplan_id}/usage",
                                   usageplan_id = input.usage_plan_id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -16634,7 +16634,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/usageplans/{usageplan_id}",
                                   usageplan_id = input.usage_plan_id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -16679,7 +16679,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   key_id = input.key_id,
                                   usageplan_id = input.usage_plan_id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -16724,7 +16724,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/usageplans/{usageplan_id}/keys",
                                   usageplan_id = input.usage_plan_id);
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -16778,7 +16778,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
 
         let request_uri = "/usageplans";
 
-        let mut request = SignedRequest::new("GET", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("GET", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -16831,7 +16831,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
 
         let request_uri = "/apikeys?mode=import";
 
-        let mut request = SignedRequest::new("POST", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -16881,7 +16881,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/restapis/{restapi_id}/documentation/parts",
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("PUT", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PUT", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -16927,7 +16927,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
 
         let request_uri = "/restapis?mode=import";
 
-        let mut request = SignedRequest::new("POST", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -16982,7 +16982,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   resource_id = input.resource_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("PUT", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PUT", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -17030,7 +17030,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   restapi_id = input.rest_api_id,
                                   status_code = input.status_code);
 
-        let mut request = SignedRequest::new("PUT", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PUT", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -17075,7 +17075,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   resource_id = input.resource_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("PUT", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PUT", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -17120,7 +17120,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   restapi_id = input.rest_api_id,
                                   status_code = input.status_code);
 
-        let mut request = SignedRequest::new("PUT", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PUT", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -17162,7 +17162,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
 
         let request_uri = format!("/restapis/{restapi_id}", restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("PUT", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PUT", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -17218,7 +17218,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   authorizer_id = input.authorizer_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("POST", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -17265,7 +17265,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   resource_id = input.resource_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("POST", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("POST", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -17307,7 +17307,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
 
         let request_uri = "/account";
 
-        let mut request = SignedRequest::new("PATCH", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PATCH", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -17348,7 +17348,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
 
         let request_uri = format!("/apikeys/{api_key}", api_key = input.api_key);
 
-        let mut request = SignedRequest::new("PATCH", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PATCH", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -17393,7 +17393,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   authorizer_id = input.authorizer_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("PATCH", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PATCH", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -17439,7 +17439,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   base_path = input.base_path,
                                   domain_name = input.domain_name);
 
-        let mut request = SignedRequest::new("PATCH", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PATCH", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -17484,7 +17484,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/clientcertificates/{clientcertificate_id}",
                                   clientcertificate_id = input.client_certificate_id);
 
-        let mut request = SignedRequest::new("PATCH", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PATCH", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -17527,7 +17527,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   deployment_id = input.deployment_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("PATCH", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PATCH", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -17573,7 +17573,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   part_id = input.documentation_part_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("PATCH", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PATCH", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -17617,7 +17617,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   doc_version = input.documentation_version,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("PATCH", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PATCH", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -17659,7 +17659,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/domainnames/{domain_name}",
                                   domain_name = input.domain_name);
 
-        let mut request = SignedRequest::new("PATCH", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PATCH", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -17706,7 +17706,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   resource_id = input.resource_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("PATCH", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PATCH", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -17755,7 +17755,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   restapi_id = input.rest_api_id,
                                   status_code = input.status_code);
 
-        let mut request = SignedRequest::new("PATCH", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PATCH", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -17797,7 +17797,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   resource_id = input.resource_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("PATCH", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PATCH", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -17844,7 +17844,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   restapi_id = input.rest_api_id,
                                   status_code = input.status_code);
 
-        let mut request = SignedRequest::new("PATCH", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PATCH", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -17888,7 +17888,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   model_name = input.model_name,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("PATCH", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PATCH", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -17931,7 +17931,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   requestvalidator_id = input.request_validator_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("PATCH", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PATCH", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -17977,7 +17977,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   resource_id = input.resource_id,
                                   restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("PATCH", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PATCH", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -18019,7 +18019,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
 
         let request_uri = format!("/restapis/{restapi_id}", restapi_id = input.rest_api_id);
 
-        let mut request = SignedRequest::new("PATCH", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PATCH", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -18062,7 +18062,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   restapi_id = input.rest_api_id,
                                   stage_name = input.stage_name);
 
-        let mut request = SignedRequest::new("PATCH", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PATCH", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -18103,7 +18103,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
                                   key_id = input.key_id,
                                   usageplan_id = input.usage_plan_id);
 
-        let mut request = SignedRequest::new("PATCH", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PATCH", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -18145,7 +18145,7 @@ impl<P, D> ApiGateway for ApiGatewayClient<P, D>
         let request_uri = format!("/usageplans/{usageplan_id}",
                                   usageplan_id = input.usage_plan_id);
 
-        let mut request = SignedRequest::new("PATCH", "apigateway", self.region, &request_uri);
+        let mut request = SignedRequest::new("PATCH", "apigateway", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 

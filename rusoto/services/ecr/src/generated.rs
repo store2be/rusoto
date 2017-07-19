@@ -2386,7 +2386,7 @@ impl<P, D> Ecr for EcrClient<P, D>
         (&self,
          input: &BatchCheckLayerAvailabilityRequest)
          -> Result<BatchCheckLayerAvailabilityResponse, BatchCheckLayerAvailabilityError> {
-        let mut request = SignedRequest::new("POST", "ecr", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ecr", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2411,7 +2411,7 @@ impl<P, D> Ecr for EcrClient<P, D>
     fn batch_delete_image(&self,
                           input: &BatchDeleteImageRequest)
                           -> Result<BatchDeleteImageResponse, BatchDeleteImageError> {
-        let mut request = SignedRequest::new("POST", "ecr", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ecr", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2439,7 +2439,7 @@ impl<P, D> Ecr for EcrClient<P, D>
     fn batch_get_image(&self,
                        input: &BatchGetImageRequest)
                        -> Result<BatchGetImageResponse, BatchGetImageError> {
-        let mut request = SignedRequest::new("POST", "ecr", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ecr", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2466,7 +2466,7 @@ impl<P, D> Ecr for EcrClient<P, D>
     fn complete_layer_upload(&self,
                              input: &CompleteLayerUploadRequest)
                              -> Result<CompleteLayerUploadResponse, CompleteLayerUploadError> {
-        let mut request = SignedRequest::new("POST", "ecr", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ecr", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2494,7 +2494,7 @@ impl<P, D> Ecr for EcrClient<P, D>
     fn create_repository(&self,
                          input: &CreateRepositoryRequest)
                          -> Result<CreateRepositoryResponse, CreateRepositoryError> {
-        let mut request = SignedRequest::new("POST", "ecr", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ecr", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2522,7 +2522,7 @@ impl<P, D> Ecr for EcrClient<P, D>
     fn delete_repository(&self,
                          input: &DeleteRepositoryRequest)
                          -> Result<DeleteRepositoryResponse, DeleteRepositoryError> {
-        let mut request = SignedRequest::new("POST", "ecr", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ecr", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2551,7 +2551,7 @@ impl<P, D> Ecr for EcrClient<P, D>
         (&self,
          input: &DeleteRepositoryPolicyRequest)
          -> Result<DeleteRepositoryPolicyResponse, DeleteRepositoryPolicyError> {
-        let mut request = SignedRequest::new("POST", "ecr", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ecr", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2579,7 +2579,7 @@ impl<P, D> Ecr for EcrClient<P, D>
     fn describe_images(&self,
                        input: &DescribeImagesRequest)
                        -> Result<DescribeImagesResponse, DescribeImagesError> {
-        let mut request = SignedRequest::new("POST", "ecr", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ecr", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2607,7 +2607,7 @@ impl<P, D> Ecr for EcrClient<P, D>
     fn describe_repositories(&self,
                              input: &DescribeRepositoriesRequest)
                              -> Result<DescribeRepositoriesResponse, DescribeRepositoriesError> {
-        let mut request = SignedRequest::new("POST", "ecr", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ecr", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2636,7 +2636,7 @@ impl<P, D> Ecr for EcrClient<P, D>
         (&self,
          input: &GetAuthorizationTokenRequest)
          -> Result<GetAuthorizationTokenResponse, GetAuthorizationTokenError> {
-        let mut request = SignedRequest::new("POST", "ecr", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ecr", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2665,7 +2665,7 @@ impl<P, D> Ecr for EcrClient<P, D>
         (&self,
          input: &GetDownloadUrlForLayerRequest)
          -> Result<GetDownloadUrlForLayerResponse, GetDownloadUrlForLayerError> {
-        let mut request = SignedRequest::new("POST", "ecr", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ecr", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2693,7 +2693,7 @@ impl<P, D> Ecr for EcrClient<P, D>
     fn get_repository_policy(&self,
                              input: &GetRepositoryPolicyRequest)
                              -> Result<GetRepositoryPolicyResponse, GetRepositoryPolicyError> {
-        let mut request = SignedRequest::new("POST", "ecr", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ecr", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2721,7 +2721,7 @@ impl<P, D> Ecr for EcrClient<P, D>
     fn initiate_layer_upload(&self,
                              input: &InitiateLayerUploadRequest)
                              -> Result<InitiateLayerUploadResponse, InitiateLayerUploadError> {
-        let mut request = SignedRequest::new("POST", "ecr", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ecr", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2749,7 +2749,7 @@ impl<P, D> Ecr for EcrClient<P, D>
     fn list_images(&self,
                    input: &ListImagesRequest)
                    -> Result<ListImagesResponse, ListImagesError> {
-        let mut request = SignedRequest::new("POST", "ecr", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ecr", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2772,7 +2772,7 @@ impl<P, D> Ecr for EcrClient<P, D>
 
     #[doc="<p>Creates or updates the image manifest and tags associated with an image.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended for general use by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p> </note>"]
     fn put_image(&self, input: &PutImageRequest) -> Result<PutImageResponse, PutImageError> {
-        let mut request = SignedRequest::new("POST", "ecr", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ecr", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2797,7 +2797,7 @@ impl<P, D> Ecr for EcrClient<P, D>
     fn set_repository_policy(&self,
                              input: &SetRepositoryPolicyRequest)
                              -> Result<SetRepositoryPolicyResponse, SetRepositoryPolicyError> {
-        let mut request = SignedRequest::new("POST", "ecr", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ecr", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",
@@ -2825,7 +2825,7 @@ impl<P, D> Ecr for EcrClient<P, D>
     fn upload_layer_part(&self,
                          input: &UploadLayerPartRequest)
                          -> Result<UploadLayerPartResponse, UploadLayerPartError> {
-        let mut request = SignedRequest::new("POST", "ecr", self.region, "/");
+        let mut request = SignedRequest::new("POST", "ecr", &self.region, "/");
 
         request.set_content_type("application/x-amz-json-1.1".to_owned());
         request.add_header("x-amz-target",

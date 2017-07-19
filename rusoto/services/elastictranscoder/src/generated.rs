@@ -3103,7 +3103,7 @@ impl<P, D> Ets for EtsClient<P, D>
         let request_uri = format!("/2012-09-25/jobs/{id}", id = input.id);
 
         let mut request =
-            SignedRequest::new("DELETE", "elastictranscoder", self.region, &request_uri);
+            SignedRequest::new("DELETE", "elastictranscoder", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -3143,7 +3143,7 @@ impl<P, D> Ets for EtsClient<P, D>
         let request_uri = "/2012-09-25/jobs";
 
         let mut request =
-            SignedRequest::new("POST", "elastictranscoder", self.region, &request_uri);
+            SignedRequest::new("POST", "elastictranscoder", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -3185,7 +3185,7 @@ impl<P, D> Ets for EtsClient<P, D>
         let request_uri = "/2012-09-25/pipelines";
 
         let mut request =
-            SignedRequest::new("POST", "elastictranscoder", self.region, &request_uri);
+            SignedRequest::new("POST", "elastictranscoder", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -3230,7 +3230,7 @@ impl<P, D> Ets for EtsClient<P, D>
         let request_uri = "/2012-09-25/presets";
 
         let mut request =
-            SignedRequest::new("POST", "elastictranscoder", self.region, &request_uri);
+            SignedRequest::new("POST", "elastictranscoder", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -3274,7 +3274,7 @@ impl<P, D> Ets for EtsClient<P, D>
         let request_uri = format!("/2012-09-25/pipelines/{id}", id = input.id);
 
         let mut request =
-            SignedRequest::new("DELETE", "elastictranscoder", self.region, &request_uri);
+            SignedRequest::new("DELETE", "elastictranscoder", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -3319,7 +3319,7 @@ impl<P, D> Ets for EtsClient<P, D>
         let request_uri = format!("/2012-09-25/presets/{id}", id = input.id);
 
         let mut request =
-            SignedRequest::new("DELETE", "elastictranscoder", self.region, &request_uri);
+            SignedRequest::new("DELETE", "elastictranscoder", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -3363,7 +3363,8 @@ impl<P, D> Ets for EtsClient<P, D>
         let request_uri = format!("/2012-09-25/jobsByPipeline/{pipeline_id}",
                                   pipeline_id = input.pipeline_id);
 
-        let mut request = SignedRequest::new("GET", "elastictranscoder", self.region, &request_uri);
+        let mut request =
+            SignedRequest::new("GET", "elastictranscoder", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -3414,7 +3415,8 @@ impl<P, D> Ets for EtsClient<P, D>
 
         let request_uri = format!("/2012-09-25/jobsByStatus/{status}", status = input.status);
 
-        let mut request = SignedRequest::new("GET", "elastictranscoder", self.region, &request_uri);
+        let mut request =
+            SignedRequest::new("GET", "elastictranscoder", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -3465,7 +3467,8 @@ impl<P, D> Ets for EtsClient<P, D>
 
         let request_uri = "/2012-09-25/pipelines";
 
-        let mut request = SignedRequest::new("GET", "elastictranscoder", self.region, &request_uri);
+        let mut request =
+            SignedRequest::new("GET", "elastictranscoder", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -3515,7 +3518,8 @@ impl<P, D> Ets for EtsClient<P, D>
 
         let request_uri = "/2012-09-25/presets";
 
-        let mut request = SignedRequest::new("GET", "elastictranscoder", self.region, &request_uri);
+        let mut request =
+            SignedRequest::new("GET", "elastictranscoder", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -3561,7 +3565,8 @@ impl<P, D> Ets for EtsClient<P, D>
 
         let request_uri = format!("/2012-09-25/jobs/{id}", id = input.id);
 
-        let mut request = SignedRequest::new("GET", "elastictranscoder", self.region, &request_uri);
+        let mut request =
+            SignedRequest::new("GET", "elastictranscoder", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -3602,7 +3607,8 @@ impl<P, D> Ets for EtsClient<P, D>
 
         let request_uri = format!("/2012-09-25/pipelines/{id}", id = input.id);
 
-        let mut request = SignedRequest::new("GET", "elastictranscoder", self.region, &request_uri);
+        let mut request =
+            SignedRequest::new("GET", "elastictranscoder", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -3645,7 +3651,8 @@ impl<P, D> Ets for EtsClient<P, D>
 
         let request_uri = format!("/2012-09-25/presets/{id}", id = input.id);
 
-        let mut request = SignedRequest::new("GET", "elastictranscoder", self.region, &request_uri);
+        let mut request =
+            SignedRequest::new("GET", "elastictranscoder", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -3685,7 +3692,7 @@ impl<P, D> Ets for EtsClient<P, D>
         let request_uri = "/2012-09-25/roleTests";
 
         let mut request =
-            SignedRequest::new("POST", "elastictranscoder", self.region, &request_uri);
+            SignedRequest::new("POST", "elastictranscoder", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -3726,7 +3733,8 @@ impl<P, D> Ets for EtsClient<P, D>
 
         let request_uri = format!("/2012-09-25/pipelines/{id}", id = input.id);
 
-        let mut request = SignedRequest::new("PUT", "elastictranscoder", self.region, &request_uri);
+        let mut request =
+            SignedRequest::new("PUT", "elastictranscoder", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -3772,7 +3780,7 @@ impl<P, D> Ets for EtsClient<P, D>
         let request_uri = format!("/2012-09-25/pipelines/{id}/notifications", id = input.id);
 
         let mut request =
-            SignedRequest::new("POST", "elastictranscoder", self.region, &request_uri);
+            SignedRequest::new("POST", "elastictranscoder", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
@@ -3816,7 +3824,7 @@ impl<P, D> Ets for EtsClient<P, D>
         let request_uri = format!("/2012-09-25/pipelines/{id}/status", id = input.id);
 
         let mut request =
-            SignedRequest::new("POST", "elastictranscoder", self.region, &request_uri);
+            SignedRequest::new("POST", "elastictranscoder", &self.region, &request_uri);
         request.set_content_type("application/x-amz-json-1.1".to_owned());
 
 
