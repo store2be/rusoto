@@ -100,7 +100,7 @@ impl SignedRequest {
             Some(ref p) => p.to_string(),
             None => {
                 match self.region {
-                    Region::Local(_) => "http".to_owned(),
+                    Region::Custom(_) => "http".to_owned(),
                     _                => "https".to_owned()
                 }
             }
@@ -410,14 +410,14 @@ fn build_hostname(service: &str, region: &Region) -> String {
     match service {
         "iam" => {
             match *region {
-                Region::Local(ref hostname) => hostname.to_owned(),
+                Region::Custom(ref hostname) => hostname.to_owned(),
                 Region::CnNorth1 => format!("{}.{}.amazonaws.com.cn", service, region),
                 _ => format!("{}.amazonaws.com", service),
             }
         }
         "s3" => {
             match *region {
-                Region::Local(ref hostname) => hostname.to_owned(),
+                Region::Custom(ref hostname) => hostname.to_owned(),
                 Region::UsEast1 => "s3.amazonaws.com".to_string(),
                 Region::CnNorth1 => format!("s3.{}.amazonaws.com.cn", region),
                 _ => format!("s3-{}.amazonaws.com", region),
@@ -425,7 +425,7 @@ fn build_hostname(service: &str, region: &Region) -> String {
         }
         _ => {
             match *region {
-                Region::Local(ref hostname) => hostname.to_owned(),
+                Region::Custom(ref hostname) => hostname.to_owned(),
                 Region::CnNorth1 => format!("{}.{}.amazonaws.com.cn", service, region),
                 _ => format!("{}.{}.amazonaws.com", service, region),
             }

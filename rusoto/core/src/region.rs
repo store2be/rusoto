@@ -10,6 +10,8 @@ use std::str::FromStr;
 use std::fmt::{Display, Error as FmtError, Formatter};
 
 /// An AWS region.
+/// `Custom` can be used to use a local or otherwise non-AWS endpoint.  This may be used for API-compatible services, such as DynamoDB Local or Ceph.
+/// Example: `Region::Custom("localhost:8000".to_owned())` instead of `Region::UsEast1`.
 /// `CnNorth1` is currently untested due to Rusoto maintainers not having access to AWS China.
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub enum Region {
@@ -28,7 +30,7 @@ pub enum Region {
     UsWest1,
     UsWest2,
     CnNorth1,
-    Local(String)
+    Custom(String)
 }
 
 /// An error produced when attempting to convert a `str` into a `Region` fails.
@@ -55,7 +57,7 @@ impl Display for Region {
             Region::UsWest1 => "us-west-1",
             Region::UsWest2 => "us-west-2",
             Region::CnNorth1 => "cn-north-1",
-            Region::Local(ref hostname) => &hostname,
+            Region::Custom(ref hostname) => &hostname,
         };
 
         write!(f, "{}", region_str)
