@@ -3267,6 +3267,13 @@ impl<P, D> DynamoDb for DynamoDbClient<P, D>
     fn list_tables(&self, input: &ListTablesInput) -> Result<ListTablesOutput, ListTablesError> {
         let mut request = SignedRequest::new("POST", "dynamodb", &self.region, "/");
 
+        // hand crafted changes to use as discussion point:
+        use rusoto_core::region::GetScheme;
+        match &self.region {
+            Custom => request.set_scheme(Some(self.region.get_scheme())),
+            _ => (),
+        }
+
         request.set_content_type("application/x-amz-json-1.0".to_owned());
         request.add_header("x-amz-target", "DynamoDB_20120810.ListTables");
         let encoded = serde_json::to_string(input).unwrap();

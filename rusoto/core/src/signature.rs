@@ -63,6 +63,10 @@ impl SignedRequest {
         self.hostname = hostname;
     }
 
+    pub fn set_scheme(&mut self, scheme: Option<String>) {
+        self.scheme = scheme;
+    }
+
     pub fn set_endpoint_prefix(&mut self, endpoint_prefix: String) {
         self.hostname = Some(build_hostname(&endpoint_prefix, &self.region));
     }

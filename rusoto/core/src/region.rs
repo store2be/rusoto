@@ -64,6 +64,17 @@ impl Display for Region {
     }
 }
 
+pub trait GetScheme {
+    fn get_scheme(&self) -> String;
+}
+
+impl GetScheme for Region {
+    // This would actually check for http or https leading, default to https:
+    fn get_scheme(&self) -> String {
+        "http".to_owned()
+    }
+}
+
 impl FromStr for Region {
     type Err = ParseRegionError;
 
