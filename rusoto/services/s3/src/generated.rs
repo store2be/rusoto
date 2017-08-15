@@ -16482,6 +16482,8 @@ impl Error for UploadPartCopyError {
 }
 /// Trait representing the capabilities of the Amazon S3 API. Amazon S3 clients implement this trait.
 pub trait S3 {
+    fn presigned_url(&self, input: &GetObjectRequest) -> Result<String, GetObjectError>;
+
     #[doc="<p>Aborts a multipart upload.</p><p>To verify that all parts have been removed, so you don't get charged for the part storage, you should call the List Parts operation and ensure the parts list is empty.</p>"]
     fn abort_multipart_upload(&self,
                               input: &AbortMultipartUploadRequest)
@@ -19013,6 +19015,92 @@ impl<P, D> S3 for S3Client<P, D>
                                                          .as_ref()))
             }
         }
+    }
+
+    fn presigned_url(&self, input: &GetObjectRequest) -> Result<String, GetObjectError> {
+        let mut params = Params::new();
+        let mut request_uri = "/{Bucket}/{Key}".to_string();
+
+        request_uri = request_uri.replace("{Bucket}", &input.bucket.to_string());
+        request_uri = request_uri.replace("{Key}", &input.key.to_string());
+
+        let mut request = SignedRequest::new("GET", "s3", self.region, &request_uri);
+
+
+        if let Some(ref if_match) = input.if_match {
+            request.add_header("If-Match", &if_match.to_string());
+        }
+
+        if let Some(ref if_modified_since) = input.if_modified_since {
+            request.add_header("If-Modified-Since", &if_modified_since.to_string());
+        }
+
+        if let Some(ref if_none_match) = input.if_none_match {
+            request.add_header("If-None-Match", &if_none_match.to_string());
+        }
+
+        if let Some(ref if_unmodified_since) = input.if_unmodified_since {
+            request.add_header("If-Unmodified-Since", &if_unmodified_since.to_string());
+        }
+
+        if let Some(ref range) = input.range {
+            request.add_header("Range", &range.to_string());
+        }
+
+        if let Some(ref request_payer) = input.request_payer {
+            request.add_header("x-amz-request-payer", &request_payer.to_string());
+        }
+
+        if let Some(ref sse_customer_algorithm) = input.sse_customer_algorithm {
+            request.add_header("x-amz-server-side-encryption-customer-algorithm",
+                               &sse_customer_algorithm.to_string());
+        }
+
+        if let Some(ref sse_customer_key) = input.sse_customer_key {
+            request.add_header("x-amz-server-side-encryption-customer-key",
+                               &sse_customer_key.to_string());
+        }
+
+        if let Some(ref sse_customer_key_md5) = input.sse_customer_key_md5 {
+            request.add_header("x-amz-server-side-encryption-customer-key-MD5",
+                               &sse_customer_key_md5.to_string());
+        }
+
+        if let Some(ref part_number) = input.part_number {
+            params.put("partNumber", part_number);
+        }
+
+        if let Some(ref response_cache_control) = input.response_cache_control {
+            params.put("response-cache-control", response_cache_control);
+        }
+
+        if let Some(ref response_content_disposition) = input.response_content_disposition {
+            params.put("response-content-disposition", response_content_disposition);
+        }
+
+        if let Some(ref response_content_encoding) = input.response_content_encoding {
+            params.put("response-content-encoding", response_content_encoding);
+        }
+
+        if let Some(ref response_content_language) = input.response_content_language {
+            params.put("response-content-language", response_content_language);
+        }
+
+        if let Some(ref response_content_type) = input.response_content_type {
+            params.put("response-content-type", response_content_type);
+        }
+
+        if let Some(ref response_expires) = input.response_expires {
+            params.put("response-expires", response_expires);
+        }
+
+        if let Some(ref version_id) = input.version_id {
+            params.put("versionId", version_id);
+        }
+
+        request.set_params(params);
+
+        Ok(request.presigned_url(&try!(self.credentials_provider.credentials())))
     }
 
     #[doc="Retrieves objects from Amazon S3."]

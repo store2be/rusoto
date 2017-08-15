@@ -21,6 +21,33 @@ use rusoto_core::default_tls_client;
 
 type TestClient = S3Client<DefaultCredentialsProvider, Client>;
 
+#[test]
+fn test_presigned_url() {
+    let _ = env_logger::init();
+
+    let client = S3Client::new(default_tls_client().unwrap(),
+                               DefaultCredentialsProvider::new().unwrap(),
+                               Region::EuCentral1);
+
+    let test_bucket = format!("rusoto_test_bucket_{}", get_time().sec);
+    let filename = format!("test_file_{}", get_time().sec);
+
+    test_get_presigned_url(&client, &test_bucket, &filename);
+}
+
+fn test_get_presigned_url(client: &TestClient, _bucket: &str, _filename: &str) {
+    let get_req = GetObjectRequest {
+        bucket: "example_bucket".to_string(),
+        key: "example_file".to_string(),
+        ..Default::default()
+    };
+
+    let result = client.presigned_url(&get_req).unwrap();
+    println!("get object result: {:#?}", result);
+    assert_eq!(result, "tomato");
+}
+
+
 // Rust is in bad need of an integration test harness
 // This creates the S3 resources needed for a suite of tests,
 // executes those tests, and then destroys the resources
