@@ -39,7 +39,7 @@
 //!     },
 //! }
 
-extern crate hyper;
+pub extern crate hyper;
 extern crate hyper_native_tls;
 #[macro_use]
 extern crate lazy_static;
