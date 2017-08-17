@@ -152,7 +152,16 @@ impl SignedRequest {
         self.params.put("X-Amz-Algorithm", "AWS4-HMAC-SHA256");
         self.params.put("X-Amz-Credential", format!("{}/{}/{}/{}/aws4_request", &creds.aws_access_key_id(), format!("{}", &current_date), self.region, self.service));
         self.params.put("X-Amz-Date", format!("{}", &current_time_fmted));
-        self.params.put("X-Amz-Expires", format!("{}", 3600));
+        let expiration_time = {
+            let default_expiration_time = "3600".to_string();
+            let default_expiration_time_2 = "3600".to_string();
+            self.params.get("response-expires")
+                .clone()
+                .unwrap_or(&Some(default_expiration_time))
+                .clone()
+                .unwrap_or(default_expiration_time_2)
+        };
+        self.params.put("X-Amz-Expires", format!("{}", expiration_time));
         self.params.put("X-Amz-SignedHeaders", &signed_headers);
 
         self.canonical_query_string = build_canonical_query_string(&self.params);
